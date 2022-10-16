@@ -1,0 +1,94 @@
+.bar{
+	border-color: #ffffff;
+}
+
+.outter_ele{
+	display: flex;
+	align-items: flex-end;
+}
+
+.sheet_table{
+	width:100%;
+	/*margin-bottom:20px;*/
+}
+
+.lyrics_td{
+	border-right-style: solid;
+	border-right-color: #ffffff;
+	width: 10px;
+}
+
+.css_sheet_lyrics_pass {
+	color: red;
+}
+
+.css_tr_bottom {
+	height: 30px;
+}
+
+.css_adjust_chord_height{
+	height:50px;
+}
+
+.lyrics_td_font{
+	font-size: 12px;
+}
+
+.flow_control_td{
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #ffffff;
+	border-bottom-color: #e2e6ea;
+	width: 10px;
+	height: 5px;
+}
+
+.css_sheet_bottom{
+	/*border: 1px solid black;*/
+	height: 10px;
+}
+
+.sheet_pass{
+	border-bottom-color: black;
+}
+
+.player_tab_measure{
+	height:10px;
+	border-left: 1px solid deepskyblue;
+	padding: 0px;
+	/*text-align: center;*/
+}
+
+.player_tab_string_bg{
+	height:100%;
+	width: auto;
+	padding: 0px;
+	text-align: center;
+	font-size: 10px;
+	font-weight:bold;
+	background-image: url("../img/tab.png");
+}
+
+.strokeme
+{
+	color: black;
+	text-shadow:
+	-2px -2px 0 #ffffff,
+	2px -2px 0 #ffffff,
+	-2px 2px 0 #ffffff,
+	2px 2px 0 #ffffff;
+}
+
+.player_stroke{
+	color: #aaaaaa;
+}
+
+.strum_accent{
+	color: red;
+}
+
+.footer{
+	border: 1px solid red;
+	height:60px;
+	background-color: yellow;
+}

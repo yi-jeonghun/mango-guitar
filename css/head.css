@@ -1,0 +1,37 @@
+.head{
+	height:100px;
+	border: 1px solid black;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	background-color: deepskyblue;
+}
+
+.head-title{
+	font-size: 40px;
+	font-weight: bold;
+	margin-right: 40px;
+}
+
+.head-menu{
+	margin-left: 10px;
+	font-weight: bold;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.g-signin2{
+	float: right;
+}
+
+a:link {
+	color: black;
+}
+a:visited {
+	color: black;
+}
+a:hover {
+	color: black;
+}
+a:active {
+	color: black;
+}

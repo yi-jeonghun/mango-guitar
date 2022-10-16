@@ -1,0 +1,63 @@
+
+.cm_chord_display{
+	margin-right: 10px;
+	/*border: 1px solid black;*/
+}
+
+.cm_chord_td{
+	width: 20px;
+	height: 12px;
+	text-align: center;
+	vertical-align: middle;
+	/*border: 1px solid black;*/
+	color: black;
+	font-size: 8px;
+}
+
+.cm_chord_table{
+	width: 100px;
+}
+
+.cm_chord_table_sm{
+	-ms-transform: scale(1, 1); /* IE 9 */
+	-webkit-transform: scale(1, 1); /* Safari */
+	transform: scale(1, 1);
+	-webkit-transform-origin-x: 0;
+	-webkit-transform-origin-y: 70px;
+}
+
+.cm_fret_neck{
+	background-image: url("../img/fret_neck.png");
+}
+
+.cm_fret_neck_top{
+	background-image: url("../img/fret_neck_top.png");
+}
+
+.cm_fret_neck_bottom{
+	background-image: url("../img/fret_neck_bottom.png");
+}
+
+.cm_fret_middle{
+	background-image: url("../img/fret_middle.png");
+}
+
+.cm_fret_middle_top{
+	background-image: url("../img/fret_middle_top.png");
+}
+
+.cm_fret_middle_bottom{
+	background-image: url("../img/fret_middle_bottom.png");
+}
+
+.cm_fret{
+	background-image: url("../img/fret.png");
+}
+
+.cm_fret_top{
+	background-image: url("../img/fret_top.png");
+}
+
+.cm_fret_bottom{
+	background-image: url("../img/fret_bottom.png");
+}

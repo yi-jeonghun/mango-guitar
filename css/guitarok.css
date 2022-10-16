@@ -1,0 +1,26 @@
+a:link {
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	color: black;
+}
+
+a:active {
+	color: black;
+}
+
+.chord-chard-link{
+}
+/*.music-link a:link{*/
+	/*color: black;*/
+/*}*/
+
+.menu-row{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,24 @@
+
+.chord-chard-link{
+}
+.icon_color{
+	color: red;
+}
+.type_icon{
+	margin-right: 5px;
+	color: purple;
+}
+.page_cur{
+	color: gray;
+}
+.page_link{
+	font-weight: bold;
+	cursor: pointer;
+}
+.link{
+	cursor: pointer;
+}
+
+div{
+	/*border: 1px solid black;*/
+}

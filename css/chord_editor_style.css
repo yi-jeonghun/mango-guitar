@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+#id_sheet{
+	border: 1px solid gray;
+	height: 600px;
+	overflow-x: auto;
+	overflow-y: auto;
+	background-image: url("/img/mobile_width_guide_line.png");
+	font-size: 16px;
+	position: relative;
+	font-family: 'Nanum Gothic Coding';
+}
+#id_chord_textarea{
+	white-space: nowrap;
+	font-family: 'Nanum Gothic Coding';
+	background-image: url("/img/mobile_width_guide_line.png");
+}
+.chord_txt{
+	margin-right: 10px;
+	cursor:pointer;
+}
+.chord-sm{
+	color: #000000;
+	background-color: #cccccc;
+	cursor:pointer;
+}
+.chord-float{
+	position: absolute;
+}
+.chord_txt_wrong{
+	color: red;
+}
+.line_highlight{
+	background-color: #b8daff;
+}

@@ -1,0 +1,297 @@
+@charset "UTF-8";
+
+body {
+	background-color: #444444;
+}
+
+.note {
+	width:15px;
+	height: 12px;
+	padding: 0px;
+	/*border-spacing: 0px;*/
+	background-color: #eeeeee;
+	margin: 0px;
+}
+
+.note_border_normal{
+	border: 1px solid black;
+}
+
+.note_border_measure_split{
+	border: 1px solid black;
+	border-right-color: blue;
+	border-right-width: 3px;
+}
+
+.note_border_2_split{
+	border: 1px solid black;
+	border-right-color: red;
+	border-right-width: 1px;
+}
+
+.c-line {
+	background-color: #555555;
+}
+
+.sharp-line {
+	background-color: #aaaaaa;
+}
+
+.note_assigned {
+	background-color: cyan;
+}
+
+.note_assigned_continue{
+	background-color: blue;
+}
+
+.note_assigned_first {
+	border-right: 1px solid cyan;
+}
+
+.note_assigned_last {
+	border-left: 1px solid cyan;
+}
+
+.chord_stroke_up{
+	background-image:url("../img/stroke_up.png");
+	/*width: 100%;*/
+	/*height: auto;*/
+}
+
+.chord_stroke_down{
+	background-image:url("../img/stroke_down.png");
+	/*width: 100%;*/
+	/*height: auto;*/
+}
+
+.chord_stroke_snap{
+	background-image:url("../img/stroke_snap.png");
+	/*width: 100%;*/
+	/*height: auto;*/
+}
+
+.note_assigned_single_bg{
+	background-image:url("../img/single.png");
+	width: 100%;
+	height: auto;
+}
+
+.note_assigned_first_bg{
+	background-image:url("../img/first.png");
+	width: 100%;
+	height: auto;
+}
+
+.note_assigned_first_last_bg{
+	background-image:url("../img/first_last.png");
+	width: 100%;
+	height: auto;
+}
+
+.note_assigned_last_bg{
+	background-image:url("../img/last.png");
+	width: 100%;
+	height: auto;
+}
+
+.sheet_table{
+	width:100%;
+	border: 1px solid black;
+	/*background-color:blue;*/
+}
+
+.sheet_table_selected {
+	border:3px dotted white;
+}
+
+.slide{
+	border:2px dotted white;
+}
+
+.cell_lyrics {
+	width: 15px;
+	height: 80px;
+	/*border: 1px solid black;*/
+	background-color: mintcream;
+	font-size: 9px;
+}
+
+.cell_lyrics_selected {
+	background-color: #007bff;
+}
+
+.cell_chord{
+	width: 15px;
+	height: 15px;
+	/*border: 1px solid black;*/
+	font-size: 9px;
+}
+
+.cell_chord_not_selected{
+	background-color: mintcream;
+}
+
+.cell_chord_selected {
+	background-color: #007bff;
+}
+
+.chord_row{
+	width:100%;
+	height:20px;
+	/*background-color:#aaaaaa;*/
+}
+
+.lyrics_row{
+	width:100%;
+	height:20px;
+	/*background-color:#aaaaaa;*/
+}
+
+.lyrics_td{
+	width: 20px;
+	border: 1px solid black;
+}
+
+.measure{
+	background-color:#cccc00;
+}
+
+.flow_control_row{
+	width:100%;
+	height:10px;
+	/*background-color:#aaaaaa;*/
+}
+
+.disp_scale {
+	width: 14px;
+	height: 12px;
+	border: 1px solid black;
+	padding: 0px;
+	border-spacing: 0px;
+	background-color: #eeeeee;
+	margin: 0px;
+	font-size: 8px;
+}
+
+.disp_scale_font{
+	font-size: 8px;
+}
+
+.bar {
+	width: 100%;
+	height: 50px;
+}
+
+.table_button_group {
+	align-items: center
+}
+
+.node_btn {
+	background-color: #007bff;
+}
+
+.node_btn_selected {
+	color: #007bff;
+}
+
+.sheet_pass {
+	background-color: #e0a800;
+}
+
+.table_pass {
+	border-color: red;
+}
+
+.bpm{
+	width:50px;
+}
+
+.songToJSON{
+	width: 100%;
+}
+
+#id_button_bpm_minus{
+	width:10px;
+}
+
+td[id^="bar_chord_id"]{
+	border: 1px solid black;
+}
+
+td[id^="bar_text_id"]{
+	border: 1px solid black;
+}
+
+td[id^="id_sheet_flow"]{
+	border: 1px solid black;
+	border-bottom-color: red;
+}
+
+label{
+	color: #e2e6ea;
+}
+
+.strum_cell_first{
+	width:15px;
+	font-size: 8px;
+	border-left: none;
+	border-right: 1px solid black;
+}
+
+.strum_cell{
+	width:15px;
+	font-size: 8px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.strum_cell_right{
+	width:15px;
+	font-size: 8px;
+	border-left: 1px solid black;
+	border-right: none;
+}
+
+.strum_accent{
+	color: red;
+}
+
+.strum_cell_pattern{
+	background-color: #e2e6ea;
+}
+
+.strum_cell_custom{
+	background-color: #e0a800;
+}
+
+.note_cnt{
+	font-size: 10px;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	background-color: lightgray;
+}
+
+.note_cnt_selected{
+	background-color: yellow;
+}
+
+.tab_pattern_cell{
+	width:10px;
+	height:10px;
+	border:1px solid gray;
+}
+
+.tab_pattern_cell_fill{
+	background-color: black;
+}
+
+.tab_pattern_occupied{
+	background-color: greenyellow;
+}
+
+.tab_pattern_same{
+	background-color: darkgray;
+}

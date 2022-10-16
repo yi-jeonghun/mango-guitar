@@ -1,0 +1,61 @@
+
+/*.measure{*/
+	/*margin-bottom: 15px;*/
+/*}*/
+
+.outter_ele {
+	/*border: 1px solid black;*/
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 40px;
+}
+.measure_sequence{
+	font-size:6px;
+	margin-right: 5px;
+}
+
+.measure_table{
+	width:100%;
+	/*vertical-align: bottom;*/
+}
+
+.td_reheasal{
+	/*border: 1px solid red;*/
+	font-size: 12px;
+	vertical-align: bottom;
+	height: 20px;
+}
+
+.td_chord{
+	/*border: 1px solid red;*/
+	font-size: 12px;
+	vertical-align: bottom;
+}
+
+.td_lyrics{
+	font-size: 12px;
+}
+
+.tr_lyric{
+	border-left: 1px black solid;
+}
+
+.td_flow{
+	/*border: 1px black solid;*/
+	border-left: 3px white solid;
+	border-right: 3px white solid;
+	width: 10px;
+	height:1px;
+	font-size: 1px;
+	color: #dddddd;
+	background-color: #dddddd;
+}
+.td_flow_pass{
+	background-color: #b8daff;
+	color: #b8daff;
+}
+.footer{
+	border: 1px solid red;
+	height:60px;
+	background-color: yellow;
+}

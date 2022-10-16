@@ -1,0 +1,27 @@
+
+.root-btn{
+	margin-right: 5px;
+	width: 40px;
+}
+
+.type-btn{
+	margin-right: 5px;
+	width: 50px;
+}
+
+#id_type_list{
+	margin-top: 30px;
+}
+
+.chord-btn{
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+#id_chord_display{
+	margin-top: 10px;
+}
+
+.chord-item{
+	margin-top:15px;
+}
