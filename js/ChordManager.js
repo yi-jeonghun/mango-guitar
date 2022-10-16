@@ -85,7 +85,7 @@ function ChordManager(){
 			ele_table.append(ele_tr_fret);
 			var ele_td_fret1 = $('<td></td>');
 			ele_tr_fret.append(ele_td_fret1);
-			var ele_td_fret2 = $('<td colspan="4" style="font-size:8x"></td>');
+			var ele_td_fret2 = $('<td colspan="4" style="font-size:1em; padding-top:10px"></td>');
 			ele_tr_fret.append(ele_td_fret2);
 			ele_td_fret2.text('Fret ' + chordInfo.fret);
 		}

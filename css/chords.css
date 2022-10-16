@@ -12,10 +12,14 @@
 	/*border: 1px solid black;*/
 	color: black;
 	font-size: 8px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 1px;
 }
 
 .cm_chord_table{
 	width: 100px;
+	line-height: 1px;
 }
 
 .cm_chord_table_sm{
