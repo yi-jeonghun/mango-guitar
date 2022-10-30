@@ -972,4 +972,8 @@ function MangoPlayer(){
 	this.IsPlaying = function(){
 		return self.__yt_player.IsPlaying();
 	};
+
+	this.ChangeSpeed = function(speed_float){
+		self.__yt_player.ChangeSpeed(speed_float);
+	};
 }

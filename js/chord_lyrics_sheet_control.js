@@ -9,6 +9,7 @@ function ChordLyricsSheetControl(){
 	this._sheet_scroll_top = 0;
 	this._chord_scroll_top = 0;
 	this._chordManager = null;
+	this._speed = 1.0;
 
 	this.Init = function(){
 		self._chordManager = new ChordManager();
@@ -31,6 +32,24 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.InitHandle = function(){
+		$('#id_btn_speed_plus').on('click', function(){
+			if(self._speed == 1.5){
+				return;
+			}
+			self._speed = new Number(self._speed) + new Number(0.1);
+			self._speed = self._speed.toFixed(1);
+			$('#id_label_speed').html(self._speed);
+			window._mango_player.ChangeSpeed(self._speed);
+		});
+		$('#id_btn_speed_minus').on('click', function(){
+			if(self._speed == 0.5){
+				return;
+			}
+			self._speed = new Number(self._speed) - new Number(0.1);
+			self._speed = self._speed.toFixed(1);
+			$('#id_label_speed').html(self._speed);
+			window._mango_player.ChangeSpeed(self._speed);
+		});
 		$('#id_btn_reload').on('click', function(){
 			self.Preview();
 			$('#id_sheet').scrollTop(0);
@@ -90,6 +109,7 @@ function ChordLyricsSheetControl(){
 				window._mango_player.TryMusic({
 					video_id:self._sheet.video_id
 				});
+				window._mango_player.ChangeSpeed(self._speed);
 				window._mango_player.__yt_player._player.width = 50;
 				window._mango_player.__yt_player._player.height = 50;
 				clearInterval(interval_id);
