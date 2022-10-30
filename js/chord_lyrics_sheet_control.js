@@ -72,6 +72,13 @@ function ChordLyricsSheetControl(){
 		$.getJSON(`db/chord_lyrics_sheet/${sheet_uid}.json`, function(sheet) {
 			self._sheet = sheet;
 			self._sheet.chord_list = JSON.parse(self._sheet.chord_list);
+			if(self._sheet.capo > 0){
+				for(var i=0 ; i<self._sheet.chord_list.length ; i++){
+					for(var c=self._sheet.capo ; c>0 ; c--){
+						self._sheet.chord_list[i].chord = self._chordDB.Transpose(self._sheet.chord_list[i].chord, 'down');
+					}
+				}
+			}
 			self.DISP_Sheet();
 			self.LoadVideo();
 		});
@@ -95,6 +102,9 @@ function ChordLyricsSheetControl(){
 	this.DISP_Sheet = function(){
 		$('#id_label_title').html(self._sheet.title);
 		$('#id_label_artist').html(self._sheet.artist_name);
+		if(self._sheet.capo > 0){
+			$('#id_label_capo').html(`Capo : ${self._sheet.capo}`);
+		}
 		self.Preview();
 	};
 
@@ -134,7 +144,13 @@ function ChordLyricsSheetControl(){
 				h += '&nbsp;';
 			}else{
 				if(self._chordDB.HasChord(chars[c])){
-					h += `<span id="id_chord_sync-${self._chord_sync_index}" class="chord-sm" onmousedown="PlayChord('${chars[c]}')">${chars[c]}</span>&nbsp;`;
+					var chord_txt = chars[c];
+					if(self._sheet.capo > 0){
+						for(var t=self._sheet.capo ; t>0 ; t--){
+							chord_txt = self._chordDB.Transpose(chord_txt, 'down');
+						}
+					}
+					h += `<span id="id_chord_sync-${self._chord_sync_index}" class="chord-sm" onmousedown="PlayChord('${chord_txt}')">${chord_txt}</span>&nbsp;`;
 					self._chord_sync_index++;
 				}else{
 					h += chars[c] + '&nbsp;';
