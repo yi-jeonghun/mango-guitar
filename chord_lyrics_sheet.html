@@ -9,6 +9,8 @@
 	<link href="lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
 	<link href="lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
 	<link href="lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="css/chords.css" rel="stylesheet">
 	<link href="css/head.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/chord_player_style.css">
 
@@ -29,7 +31,7 @@
 <!--=============================== HEAD ==================================-->	
 
 <div class="container py-3">
-	<div class="row border-bottom">
+	<div class="row border-bottom" style="height: 110px;">
 		<div class="col-8">
 			<h4 id="id_label_title"></h4>
 			<div id="id_label_artist"></div>			
@@ -40,8 +42,9 @@
 			</div>			
 		</div>
 	</div>
-	<div class="row py-2 border-bottom">
-		<div class="col-12 text-right">
+	<div class="row py-0 border-bottom my-0" style="height: 120px;">
+		<div class="col-8 border py-0" id="id_div_chord_preview" style="display:flex; overflow-y:hide; overflow-x: auto; white-space: nowrap;"></div>
+		<div class="col-4 text-right">
 			<button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button>
 			<button type="button" class="btn btn-sm btn-primary" id="id_btn_play">Play</button>
 			<button type="button" class="btn btn-sm btn-primary" id="id_btn_stop">Stop</button>	
