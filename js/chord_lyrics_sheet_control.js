@@ -296,7 +296,7 @@ function ChordLyricsSheetControl(){
 						
 						$(`#id_div_chord_preview`).animate({
 							scrollTop: ele.position().top + self._chord_scroll_top
-						}, 500);
+						}, 300);
 					}
 
 					self._flow_sync_chord_index = i+1;
@@ -311,7 +311,7 @@ function ChordLyricsSheetControl(){
 	
 				$(`#id_sheet`).animate({
 					scrollTop: self._chord_position_list[synced_index].top - 10
-				}, 1500);
+				}, 300);
 			}	
 		}
 	};

@@ -39,22 +39,28 @@
 		<div class="col-4">
 			<div id="id_MP_div_video" class="MP_div_video_sm flex" style="width: 100; height: 100;">
 				<div id="id_MP_player" class="MP_player_sm" style="width: 100; height: 100;"></div>
-			</div>			
+			</div>
 		</div>
 	</div>
 	<div class="row py-0 border-bottom py-2" style="">
-		<div class="col-6">
+		<div class="col-4">
 			<span id="id_label_capo"></span>
 		</div>
-		<div class="col-6 text-right">
+		<div class="col-4">
+			Speed
+			<span class="text-center mx-2" id="id_label_speed">1.0</span>
+			<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+			<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>
+		</div>
+		<div class="col-4 text-right">
 			<button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button>
 			<button type="button" class="btn btn-sm btn-primary" id="id_btn_play">Play</button>
 			<button type="button" class="btn btn-sm btn-primary" id="id_btn_stop">Stop</button>	
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-6 border" id="id_sheet" style="height: 500px; overflow-y: auto;"></div>
-		<div class="col-6 border py-0">
+	<div class="row border">
+		<div class="col-6 border" id="id_sheet" style="height:500px; overflow-y: auto;"></div>
+		<div class="col-6 border">
 			<div class="container-fluid">
 				<div class="row" id="id_div_chord_preview" style="height:500px; overflow-y: auto;"></div>
 			</div>
