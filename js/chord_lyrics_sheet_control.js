@@ -120,6 +120,10 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.DISP_Sheet = function(){
+		$('#id_title').html(`${self._sheet.artist_name} - ${self._sheet.title} @ mango-guitar.com`)
+		$('#id_description').attr('content', `${self._sheet.artist_name} - ${self._sheet.title} @ mango-guitar.com`)
+		$('#id_keyword').attr('content', `${self._sheet.artist_name} - ${self._sheet.title} / guitar chords @ mango-guitar.com`)
+
 		$('#id_label_title').html(self._sheet.title);
 		$('#id_label_artist').html(self._sheet.artist_name);
 		if(self._sheet.capo > 0){
