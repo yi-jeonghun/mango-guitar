@@ -22,9 +22,10 @@ function IndexControl(){
 	this.DISP_SheetList = function(){
 		var h = `
 		<div class="row">
+			<div class="col-2 border"></div>
 			<div class="col-4 border">Artist</div>
 			<div class="col-4 border">Title</div>
-			<div class="col-4 border"></div>
+			<div class="col-2 border">Date</div>
 		</div>
 		`;
 
@@ -33,17 +34,18 @@ function IndexControl(){
 			var link = `./chord_lyrics_sheet.html?id=${sheet.sheet_uid}_${sheet.artist_name}-${sheet.title}`;
 			h += `
 			<div class="row border">
+				<div class="col-2 border">
+					<a href="${link}">
+					<image style="width:100px; height:auto" src="https://img.youtube.com/vi/${sheet.video_id}/0.jpg"></image>
+					</a>
+				</div>
 				<div class="col-4 border">
 					<a href="${link}">${sheet.artist_name}</a>
 				</div>
 				<div class="col-4 border">
 					<a href="${link}">${sheet.artist_name} ${sheet.title}</a>
 				</div>
-				<div class="col-4 border">
-					<a href="${link}">
-					<image style="width:100px; height:auto" src="https://img.youtube.com/vi/${sheet.video_id}/0.jpg"></image>
-					</a>
-				</div>
+				<div class="col-2 border ">${sheet.date_created}</div>
 			</div>
 			`;
 		}
