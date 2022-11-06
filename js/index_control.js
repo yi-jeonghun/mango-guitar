@@ -43,7 +43,7 @@ function IndexControl(){
 					<a href="${link}">${sheet.artist_name}</a>
 				</div>
 				<div class="col-4 border">
-					<a href="${link}">${sheet.artist_name} ${sheet.title}</a>
+					<a href="${link}">${sheet.title}</a>
 				</div>
 				<div class="col-2 border ">${sheet.date_created}</div>
 			</div>
