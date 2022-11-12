@@ -109,7 +109,7 @@ function ChordLyricsSheetControl(){
 				window._mango_player.TryMusic({
 					video_id:self._sheet.video_id
 				});
-				window._mango_player.ChangeSpeed(self._speed);
+				// window._mango_player.ChangeSpeed(self._speed);
 				window._mango_player.__yt_player._player.width = 50;
 				window._mango_player.__yt_player._player.height = 50;
 				clearInterval(interval_id);
