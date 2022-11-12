@@ -144,6 +144,7 @@ function ChordLyricsSheetControl(){
 			line = self.ParseLineBold(line);
 			line = line.replace(/\s/g, '`');
 			line = self.ParseLineChord(line);
+			line = self.ConvertChosung(line);
 
 			line = '<span id="id_line-' + i + '">' + line + '</span>';
 			line += "<br>";
@@ -159,6 +160,21 @@ function ChordLyricsSheetControl(){
 		self.DISP_SubBeat();
 		self.DISP_ChordPreview();
 	};
+
+	this._cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+	this. ConvertChosung = function(str){
+		var result = "";
+		for(i=0 ; i<str.length ; i++){
+			var code = str.charCodeAt(i) - 44032;
+			if(code >- 1 && code < 11172){
+				result += self._cho[Math.floor(code/588)];
+			}
+			else{
+				result += str.charAt(i);
+			}
+		}
+		return result;
+	}
 
 	this.ParseLineChord = function(line){
 		var chars = line.split(/`/g);
