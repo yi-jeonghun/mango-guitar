@@ -85,6 +85,14 @@ function ChordLyricsSheetControl(){
 				self._chord_scroll_top = chord_scroller.scrollTop;
 			});
 		}
+
+		document.fonts.onloadingdone = function (fontFaceSetEvent) {
+			// alert('onloadingdone we have ' + fontFaceSetEvent.fontfaces.length + ' font faces loaded');
+			for(var i=0 ; i<fontFaceSetEvent.fontfaces.length ; i++){
+				console.log('font ' + JSON.stringify(fontFaceSetEvent.fontfaces[i]));
+			}
+			self.Preview();
+		};
 	};
 
 	this.LoadSheet = function(sheet_uid){
