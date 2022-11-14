@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-11-13</lastmod>
+		<lastmod>2022-11-14</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -163,6 +163,11 @@
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=TXKWgKtrM6_이적-하늘을 달리다</loc>
 		<lastmod>2022-11-06T07:45:58.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=ubwrIC8jpP_임영웅-다시 만날 수 있을까</loc>
+		<lastmod>2022-11-13T12:01:04.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
