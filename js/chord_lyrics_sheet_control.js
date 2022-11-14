@@ -152,7 +152,7 @@ function ChordLyricsSheetControl(){
 			line = self.ParseLineBold(line);
 			line = line.replace(/\s/g, '`');
 			line = self.ParseLineChord(line);
-			line = self.ConvertChosung(line);
+			// line = self.ConvertChosung(line);
 
 			line = '<span id="id_line-' + i + '">' + line + '</span>';
 			line += "<br>";
