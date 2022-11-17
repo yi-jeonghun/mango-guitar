@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-11-16</lastmod>
+		<lastmod>2022-11-17</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -66,6 +66,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=BgTpTwA72D_김광석-흐린 가을 하늘에 편지를 써</loc>
+		<lastmod>2022-11-17T10:53:37.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=BI1RQfwb0u_강산에-거꾸로 강을 거슬러 오르는 저 힘찬 연어들처럼</loc>
 		<lastmod>2022-11-08T12:01:26.000Z</lastmod>
 		<priority>1.0</priority>
@@ -96,8 +101,18 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=ecq7G7RUGv_수와진-파초</loc>
+		<lastmod>2022-11-17T11:13:10.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=Eo1QGydgk2_윤하-사건의 지평선</loc>
 		<lastmod>2022-11-12T12:24:12.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=f27uYcbH6s_김세환-토요일 밤에</loc>
+		<lastmod>2022-11-17T11:26:08.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
