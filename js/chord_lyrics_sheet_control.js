@@ -10,6 +10,7 @@ function ChordLyricsSheetControl(){
 	this._chord_scroll_top = 0;
 	this._chordManager = null;
 	this._speed = 1.0;
+	this._chord_chart = [];
 
 	this.Init = function(){
 		self._chordManager = new ChordManager();
@@ -53,7 +54,7 @@ function ChordLyricsSheetControl(){
 		$('#id_btn_reload').on('click', function(){
 			self.Preview();
 			$('#id_sheet').scrollTop(0);
-			$('#id_div_chord_preview').scrollLeft(0);
+			$('#id_div_chord_flow').scrollTop(0);
 		});
 		$('#id_btn_play').on('click', function(){
 			self.Preview();
@@ -71,6 +72,8 @@ function ChordLyricsSheetControl(){
 			self.ClearChordSync();
 			window._mango_player.Stop();		
 		});
+		$('#id_nav_chord_flow').on('click', self.SwitchChordFlow);
+		$('#id_nav_chord_chart').on('click', self.SwitchChordChart);
 
 		{
 			const sheet_scroller = document.querySelector("#id_sheet");
@@ -80,7 +83,7 @@ function ChordLyricsSheetControl(){
 		}
 
 		{
-			const chord_scroller = document.querySelector("#id_div_chord_preview");
+			const chord_scroller = document.querySelector("#id_div_chord_flow");
 			chord_scroller.addEventListener("scroll", (event) => {
 				self._chord_scroll_top = chord_scroller.scrollTop;
 			});
@@ -106,6 +109,22 @@ function ChordLyricsSheetControl(){
 					}
 				}
 			}
+
+			self._chord_chart = [];
+			for(var i=0 ; i<self._sheet.chord_list.length ; i++){
+				var chord = self._sheet.chord_list[i].chord;
+				var found = false;
+				for(var g=0 ; g<self._chord_chart.length ; g++){
+					if(self._chord_chart[g] == chord){
+						found = true;
+						break;
+					}
+				}
+				if(found == false){
+					self._chord_chart.push(chord);
+				}
+			}
+
 			self.DISP_Sheet();
 			self.LoadVideo();
 		});
@@ -166,7 +185,8 @@ function ChordLyricsSheetControl(){
 
 		self.SetChordPositionList();
 		self.DISP_SubBeat();
-		self.DISP_ChordPreview();
+		self.DISP_ChordFlow();
+		self.DISP_ChordChart();
 	};
 
 	this._cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
@@ -254,7 +274,7 @@ function ChordLyricsSheetControl(){
 				$(`#id_chord_beat-${b}`).css('color', 'black');
 			}
 
-			$(`#id_chord_preview-${i}`).css('visibility', 'visible');
+			$(`#id_chord_flow-${i}`).css('visibility', 'visible');
 		}
 	};
 
@@ -310,20 +330,22 @@ function ChordLyricsSheetControl(){
 			}
 		}
 
-		//Update Chord
+		//Update Chord Flow
 		{
+			var nav_bar_height = 45;
 			var synced_index = -1;
 			for(var i=self._flow_sync_chord_index ; i<self._sheet.chord_list.length ; i++){
 				var chord = self._sheet.chord_list[i];
 				if(self._timelapse >= chord.time_ms){
 					//Hide chord preview
 					{
-						var ele = $(`#id_chord_preview-${i}`);
+						var ele = $(`#id_chord_flow-${i}`);
 
-						$(`#id_chord_preview-${i-1}`).css('visibility', 'hidden');
+						$(`#id_chord_flow-${i-1}`).css('visibility', 'hidden');
 						
-						$(`#id_div_chord_preview`).animate({
-							scrollTop: ele.position().top + self._chord_scroll_top
+						console.log(`ele.position().top ${ele.position().top + self._chord_scroll_top}  self._chord_scroll_top ${self._chord_scroll_top}`);
+						$(`#id_div_chord_flow`).animate({
+							scrollTop: ele.position().top + self._chord_scroll_top - nav_bar_height
 						}, 300);
 					}
 
@@ -341,6 +363,12 @@ function ChordLyricsSheetControl(){
 					scrollTop: self._chord_position_list[synced_index].top - 10
 				}, 300);
 			}	
+		}
+
+		//Update Chord Chart
+		{
+			//음악 진행에 맞춰서 chord chart에서도 현재 코드를 highlight 하려고 했는데
+			//별로 필요가 없을 듯 하여 우선은 작업하지 않음.
 		}
 	};
 
@@ -377,8 +405,8 @@ function ChordLyricsSheetControl(){
 		}
 	};
 
-	this.DISP_ChordPreview = function(){
-		var parent_ele = $('#id_div_chord_preview');
+	this.DISP_ChordFlow = function(){
+		var parent_ele = $('#id_div_chord_flow');
 		parent_ele.empty();
 
 		var beat_index = 0;
@@ -391,7 +419,7 @@ function ChordLyricsSheetControl(){
 				beat_index++;
 			}
 
-			var div_ele = $(`<div class="col-3" style="margin-bottom:20px" id="id_chord_preview-${i}"></div>`);
+			var div_ele = $(`<div class="col-3" style="margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
 
 			var chord_ele = self._chordManager.GetChordDisplay(chord_txt, false);
 			chord_ele.on('mousedown', self.PlayChord);
@@ -405,4 +433,47 @@ function ChordLyricsSheetControl(){
 		}
 	};
 
+	this.DISP_ChordChart = function(){
+		var parent_ele = $('#id_div_chord_chart');
+		parent_ele.empty();
+
+		for(var g=0 ; g<self._chord_chart.length ; g++){
+			var chord_txt = self._chord_chart[g];
+			var div_ele = $(`<div class="col-3" style="margin-bottom:20px"></div>`);
+
+			var chord_ele = self._chordManager.GetChordDisplay(chord_txt, false);
+			chord_ele.on('mousedown', self.PlayChord);
+			chord_ele.attr('chord', chord_txt);
+			chord_ele.attr('index', g);
+
+			div_ele.append(`<div class="text-center" id="id_div_chord_chart-${g}">${chord_txt}</div>`)
+			div_ele.append(chord_ele);
+
+			parent_ele.append(div_ele);
+
+			// console.log(chord_chart[g]);
+		}
+	};
+
+	this.SwitchChordChart = function(){
+		self.SwitchChordChartAndFlow('chart');
+	};
+	this.SwitchChordFlow = function(){
+		self.SwitchChordChartAndFlow('flow');
+	};
+
+	this.SwitchChordChartAndFlow = function(type){
+		$('#id_nav_chord_flow').removeClass('active');
+		$('#id_nav_chord_chart').removeClass('active');
+
+		if(type == 'chart'){
+			$('#id_nav_chord_chart').addClass('active');
+			$('#id_div_chord_chart').show();
+			$('#id_div_chord_flow').hide();
+		}else if(type == 'flow'){
+			$('#id_nav_chord_flow').addClass('active');
+			$('#id_div_chord_flow').show();
+			$('#id_div_chord_chart').hide();
+		}
+	};
 }
