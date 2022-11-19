@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-11-18</lastmod>
+		<lastmod>2022-11-20</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -216,8 +216,13 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=q42HXiljFC_조덕배-끔에</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=q42HXiljFC_조덕배-꿈에</loc>
 		<lastmod>2022-11-10T12:00:37.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=qi0aQbVw34_김광석-나의 노래</loc>
+		<lastmod>2022-11-19T13:42:28.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
