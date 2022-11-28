@@ -23,8 +23,9 @@ function IndexControl(){
 		var h = `
 		<div class="row">
 			<div class="col-2 border"></div>
-			<div class="col-4 border">Artist</div>
+			<div class="col-2 border">Artist</div>
 			<div class="col-4 border">Title</div>
+			<div class="col-2 border">Year</div>
 			<div class="col-2 border">Date</div>
 		</div>
 		`;
@@ -39,11 +40,14 @@ function IndexControl(){
 					<image style="width:100px; height:auto" src="https://img.youtube.com/vi/${sheet.video_id}/0.jpg"></image>
 					</a>
 				</div>
-				<div class="col-4 border">
+				<div class="col-2 border">
 					<a href="${link}">${sheet.artist_name}</a>
 				</div>
 				<div class="col-4 border">
 					<a href="${link}">${sheet.title}</a>
+				</div>
+				<div class="col-2 border">
+					${sheet.release_year}
 				</div>
 				<div class="col-2 border ">${sheet.date_created}</div>
 			</div>
