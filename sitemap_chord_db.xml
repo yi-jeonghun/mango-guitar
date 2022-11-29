@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-11-28</lastmod>
+		<lastmod>2022-11-29</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=vjQ7MDHZ8c_노사연-만남</loc>
+		<lastmod>2022-11-29T10:03:55.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=N2eLFgFDO0_최성수-동행</loc>
@@ -381,12 +386,12 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=Avu25WdYav_잔나비-주저하는 연인들을 위해</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=FVZzeThnuf_이문세-가로수 그늘 아래 서면</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=FVZzeThnuf_이문세-가로수 그늘 아래 서면</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=Avu25WdYav_잔나비-주저하는 연인들을 위해</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
