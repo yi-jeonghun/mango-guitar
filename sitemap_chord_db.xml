@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-11-29</lastmod>
+		<lastmod>2022-11-30</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=708SEUbQTR_이문세-나는 행복한 사람</loc>
+		<lastmod>2022-11-30T12:16:18.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=GJYFIRdpPg_이정열-그대 고운 내 사랑</loc>
+		<lastmod>2022-11-30T11:00:37.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=uLDfnLUFDe_임영웅-사랑은 늘 도망가</loc>
+		<lastmod>2022-11-30T10:16:34.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=W6tTUXMu2k_들국화-사노라면</loc>
@@ -386,17 +401,12 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=Avu25WdYav_잔나비-주저하는 연인들을 위해</loc>
-		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=T5oRzPvLck_이문세-사랑은 늘 도망가</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=abqVIBvF1i_10CM-사랑은 은하수 다방에서</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=Avu25WdYav_잔나비-주저하는 연인들을 위해</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
@@ -406,12 +416,17 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=4muKBwItZ0_이문세-소녀</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=abqVIBvF1i_10CM-사랑은 은하수 다방에서</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=FVZzeThnuf_이문세-가로수 그늘 아래 서면</loc>
+		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=4muKBwItZ0_이문세-소녀</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
