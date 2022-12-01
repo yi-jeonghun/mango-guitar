@@ -148,8 +148,8 @@ function ChordLyricsSheetControl(){
 
 	this.DISP_Sheet = function(){
 		$('#id_title').html(`${self._sheet.artist_name} - ${self._sheet.title} @ mango-guitar.com`)
-		$('#id_description').attr('content', `${self._sheet.artist_name} ${self._sheet.title} Guitar Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords`)
-		$('#id_keyword').attr('content', `${self._sheet.artist_name}, ${self._sheet.title}, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync`)
+		$('#id_description').attr('content', `${self._sheet.artist_name} ${self._sheet.title} Guitar Chord, Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords`)
+		$('#id_keyword').attr('content', `${self._sheet.artist_name}, ${self._sheet.title}, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync, 기타, 통기타, 기타 악보, 기타 코드, 코드 악보, 기타 코드 악보, 쉬운 기타 악보, 쉬운 기타 코드`)
 
 		$('#id_label_title').html(self._sheet.title);
 		$('#id_label_artist').html(self._sheet.artist_name);
