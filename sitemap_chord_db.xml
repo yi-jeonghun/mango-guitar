@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-01</lastmod>
+		<lastmod>2022-12-03</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=GQSWTDb5GN_최진희-그대는 나의 인생</loc>
+		<lastmod>2022-12-02T22:34:36.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=nQYjPgpdxa_강은철-삼포로 가는 길</loc>
@@ -421,17 +426,17 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=abqVIBvF1i_10CM-사랑은 은하수 다방에서</loc>
-		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=kterMJ40oK_IVE-After Like</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=4muKBwItZ0_이문세-소녀</loc>
+		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=abqVIBvF1i_10CM-사랑은 은하수 다방에서</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
@@ -446,12 +451,12 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=cdAKhLnZCP_자전거 탄 풍경-너에게 난 나에게 넌</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=FeiiN4EEs9_임영웅-별빛 같은 나의 사랑아</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=FeiiN4EEs9_임영웅-별빛 같은 나의 사랑아</loc>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=cdAKhLnZCP_자전거 탄 풍경-너에게 난 나에게 넌</loc>
 		<lastmod>2022-11-05T06:58:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
