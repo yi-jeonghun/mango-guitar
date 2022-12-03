@@ -5,3 +5,8 @@ function GetURLParam(name){
 	}
 	return decodeURI(results[1]) || 0;
 };
+
+function DateYMD(date_str){
+	var ret = date_str.split('T')[0];
+	return ret;
+}
