@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-04</lastmod>
+		<lastmod>2022-12-06</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -62,7 +62,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=I8ftQCikMq&name=김세환</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<lastmod>2022-12-04T09:35:10.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -106,6 +106,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=A79mAEywh3&name=남궁옥분</loc>
+		<lastmod>2022-12-06T10:45:18.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=VrVjSJ8n3g&name=노사연</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -113,6 +118,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=AJ4BIOg5wn&name=더 클래식</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=PhveNKnF5M&name=둘 다섯</loc>
+		<lastmod>2022-12-06T10:27:11.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -148,6 +158,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=nsEwrqq0H7&name=사랑과 평화</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=3MHhNTBPAx&name=산울림</loc>
+		<lastmod>2022-12-06T11:44:32.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -358,6 +373,16 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=y9uAfLEkj1&name=패티 김</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=EWl1qhxPX8&name=펄시스터즈</loc>
+		<lastmod>2022-12-06T12:17:34.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=EWYkHaSIuv&name=하수영</loc>
+		<lastmod>2022-12-06T11:19:02.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
