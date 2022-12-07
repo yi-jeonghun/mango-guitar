@@ -77,7 +77,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=Pg1CHkzYFQ&name=김정호</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<lastmod>2022-12-07T11:33:54.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -388,6 +388,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=EWYkHaSIuv&name=하수영</loc>
 		<lastmod>2022-12-06T11:19:02.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=d23nwUCRHB&name=한대수</loc>
+		<lastmod>2022-12-07T12:08:41.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
