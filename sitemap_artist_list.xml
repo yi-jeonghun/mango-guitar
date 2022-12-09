@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-08</lastmod>
+		<lastmod>2022-12-09</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -167,7 +167,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=3MHhNTBPAx&name=산울림</loc>
-		<lastmod>2022-12-06T11:44:32.000Z</lastmod>
+		<lastmod>2022-12-09T12:34:57.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -212,7 +212,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=L14vl6tAKX&name=양희은</loc>
-		<lastmod>2022-12-08T12:19:24.000Z</lastmod>
+		<lastmod>2022-12-08T12:19:59.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -271,6 +271,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=gZdSMQvogr&name=이수미</loc>
+		<lastmod>2022-12-08T12:28:36.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=YM70MplVjK&name=이적</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -288,6 +293,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=w0N4Bh0Cth&name=이치현과 벗님들</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=r01EQRDJDH&name=이태원</loc>
+		<lastmod>2022-12-09T11:42:55.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -352,7 +362,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=NQ89nLzahh&name=최진희</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<lastmod>2022-12-09T12:10:15.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
