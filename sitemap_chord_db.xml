@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-09</lastmod>
+		<lastmod>2022-12-10</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=eE5QjVdxWr_이장희-나 그대에게 모두 드리리</loc>
+		<lastmod>2022-12-09T20:19:47.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=f4cUCxTPVs_소리새-그대 그리고 나</loc>
+		<lastmod>2022-12-09T13:36:52.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=OvuSEw17NZ_윤항기-장미빛 스카프</loc>

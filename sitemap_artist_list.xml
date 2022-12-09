@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-09</lastmod>
+		<lastmod>2022-12-10</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -176,6 +176,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=a048RbgtSs&name=소리새</loc>
+		<lastmod>2022-12-09T20:13:26.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=CnDXl21IzB&name=송창식</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -278,6 +283,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=gZdSMQvogr&name=이수미</loc>
 		<lastmod>2022-12-08T12:28:36.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=seN1v0IYyx&name=이장희</loc>
+		<lastmod>2022-12-09T20:39:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
