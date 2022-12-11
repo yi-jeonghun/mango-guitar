@@ -5,6 +5,8 @@ $('document').ready(function(){
 function MusicListControl(){
 	var self = this;
 	this._sheet_list = null;
+	this._cur_page = 0;
+	this._count_per_page = 24;
 
 	this.Init = function(){
 		self.LoadList();
@@ -15,43 +17,50 @@ function MusicListControl(){
 		$.getJSON('db/sheet_list.json', function(sheet_list) {
 			// console.log('sheet_list ' + JSON.stringify(sheet_list));
 			self._sheet_list = sheet_list;
+			self.DISP_paging();
 			self.DISP_SheetList();
 		});
 	};
 
-	this.DISP_SheetList = function(){
-		var h = `
-		<div class="row">
-			<div class="col-2 border"></div>
-			<div class="col-2 border">Artist</div>
-			<div class="col-4 border">Title</div>
-			<div class="col-2 border">Year</div>
-			<div class="col-2 border">Date</div>
-		</div>
-		`;
+	this.MoveToPage = function(page){
+		console.log('page ' + page);
+		self._cur_page = page;
+		self.DISP_paging();
+		self.DISP_SheetList();
+	};
 
-		for(var i=0 ; i<self._sheet_list.length ; i++){
+	this.DISP_paging = function(){
+		console.log('len ' + this._sheet_list.length);
+		var page_count = Math.ceil(this._sheet_list.length / self._count_per_page) ;
+		console.log('page_count ' + page_count);
+
+		var h = '';
+		for(var i=0 ; i<page_count ; i++){
+			console.log('i ' + i);
+			var on_click = `window._music_list_control.MoveToPage(${i})`;
+			if(self._cur_page == i){
+				h += `<span style="padding:5px"><u>&nbsp;<b>${i+1}</b>&nbsp;</u><span>`;
+			}else{
+				h += `<span style="padding:5px; cursor:pointer" onClick="${on_click}">&nbsp;${i+1}&nbsp;</span>`;
+			}
+		}
+		$('#id_div_page').html(h);
+	};
+
+	this.DISP_SheetList = function(){
+		var begin_idx = self._cur_page * self._count_per_page;
+
+		var h = '';
+
+		var count = 0;
+		for(var i=begin_idx ; i<self._sheet_list.length ; i++){
+			count++;
+			if(count > self._count_per_page){
+				break;
+			}
+
 			var sheet = self._sheet_list[i];
-			var link = `./chord_lyrics_sheet.html?id=${sheet.sheet_uid}_${sheet.artist_name}-${sheet.title}`;
-			h += `
-			<div class="row border">
-				<div class="col-2 border">
-					<a href="${link}">
-					<image style="width:100px; height:auto" src="https://img.youtube.com/vi/${sheet.video_id}/0.jpg"></image>
-					</a>
-				</div>
-				<div class="col-2 border">
-					<a href="${link}">${sheet.artist_name}</a>
-				</div>
-				<div class="col-4 border">
-					<a href="${link}">${sheet.title}</a>
-				</div>
-				<div class="col-2 border">
-					${sheet.release_year}
-				</div>
-				<div class="col-2 border ">${sheet.date_created}</div>
-			</div>
-			`;
+			h += GetSheetItem(sheet);
 		}
 
 		$('#id_div_list').html(h);
