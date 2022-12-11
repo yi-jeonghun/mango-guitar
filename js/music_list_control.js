@@ -7,6 +7,7 @@ function MusicListControl(){
 	this._sheet_list = null;
 	this._cur_page = 0;
 	this._count_per_page = 24;
+	this._era = 'all';
 
 	this.Init = function(){
 		self.LoadList();
@@ -14,8 +15,14 @@ function MusicListControl(){
 	};
 
 	this.LoadList = function(){
-		$.getJSON('db/sheet_list.json', function(sheet_list) {
-			// console.log('sheet_list ' + JSON.stringify(sheet_list));
+		var json_file = 'db/sheet_list.json';
+		if(self._era == 'all'){
+			json_file = 'db/sheet_list.json';
+		}else{
+			json_file = `db/sheet_list_${self._era}.json`;
+		}
+
+		$.getJSON(json_file, function(sheet_list) {
 			self._sheet_list = sheet_list;
 			self.DISP_paging();
 			self.DISP_SheetList();
@@ -27,6 +34,23 @@ function MusicListControl(){
 		self._cur_page = page;
 		self.DISP_paging();
 		self.DISP_SheetList();
+	};
+
+	this.ChangeEra = function(era){
+		console.log('era ' + era);
+		self._era = era;
+
+		$('#id_btn_era-all').removeClass('btn-primary');
+		$('#id_btn_era-1960').removeClass('btn-primary');
+		$('#id_btn_era-1970').removeClass('btn-primary');
+		$('#id_btn_era-1980').removeClass('btn-primary');
+		$('#id_btn_era-1990').removeClass('btn-primary');
+		$('#id_btn_era-2000').removeClass('btn-primary');
+		$('#id_btn_era-2010').removeClass('btn-primary');
+
+		$(`#id_btn_era-${self._era}`).addClass('btn-primary');
+
+		self.LoadList();
 	};
 
 	this.DISP_paging = function(){
