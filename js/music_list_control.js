@@ -47,6 +47,7 @@ function MusicListControl(){
 		$('#id_btn_era-1990').removeClass('btn-primary');
 		$('#id_btn_era-2000').removeClass('btn-primary');
 		$('#id_btn_era-2010').removeClass('btn-primary');
+		$('#id_btn_era-2020').removeClass('btn-primary');
 
 		$(`#id_btn_era-${self._era}`).addClass('btn-primary');
 

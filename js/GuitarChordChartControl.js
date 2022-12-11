@@ -239,7 +239,7 @@ function GuitarChordChartControl(){
 			chord_display_ele.on('mousedown', self.PlayChord);
 			chord_display_ele.attr('chord', chord);
 			chord_display_ele.attr('index', i);
-			chord_display_ele.addClass('col-6 col-sm-4 col-md-3 col-lg-2 chord-item');
+			chord_display_ele.addClass('col-6 col-sm-4 col-md-3 col-lg-2 chord-item pointer');
 			chord_list_ele.append(chord_display_ele);
 		}
 	};
