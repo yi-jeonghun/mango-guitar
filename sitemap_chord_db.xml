@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-13</lastmod>
+		<lastmod>2022-12-16</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=w8yBxPJn69_해바라기-내 마음의 보석상자</loc>
+		<lastmod>2022-12-16T12:19:53.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=3kxAkhLPSk_최헌-오동잎</loc>
