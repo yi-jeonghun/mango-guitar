@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-17</lastmod>
+		<lastmod>2022-12-21</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=03PDnvJWKB_양수경-사랑은 창밖에 빗물 같아요</loc>
+		<lastmod>2022-12-21T12:00:26.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=7iNqsD3NSw_해바라기-사랑의 시</loc>
