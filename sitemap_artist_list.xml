@@ -396,6 +396,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=pzLQkDq7a7&name=전영</loc>
+		<lastmod>2022-12-22T09:34:17.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=uKySS0YNuT&name=전인권</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -433,6 +438,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=ZnrXxHlRyo&name=채정안</loc>
 		<lastmod>2022-12-07T11:04:47.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=tupOiMHkzF&name=최백호</loc>
+		<lastmod>2022-12-22T10:09:29.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
