@@ -301,6 +301,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=I4HrlfVeZ3&name=이광조</loc>
+		<lastmod>2022-12-22T11:37:23.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=Y0Gfkz6A6u&name=이동원</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -442,7 +447,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=tupOiMHkzF&name=최백호</loc>
-		<lastmod>2022-12-22T10:09:29.000Z</lastmod>
+		<lastmod>2022-12-22T10:13:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
