@@ -266,6 +266,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=7J54MXE8lR&name=여진</loc>
+		<lastmod>2022-12-24T04:55:34.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=SVwND8VOyz&name=영탁</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -522,7 +527,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=tzmUDLxYqD&name=해바라기</loc>
-		<lastmod>2022-12-24T04:23:56.000Z</lastmod>
+		<lastmod>2022-12-24T04:24:24.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
