@@ -76,6 +76,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=MlwNk9CcSm&name=김세화</loc>
+		<lastmod>1970-01-01T00:00:00.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=I8ftQCikMq&name=김세환</loc>
 		<lastmod>2022-12-04T09:35:10.000Z</lastmod>
 		<priority>1.0</priority>
@@ -321,6 +326,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=lWK8VZPYmb&name=윤형주</loc>
+		<lastmod>2022-12-25T09:45:04.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=I4HrlfVeZ3&name=이광조</loc>
 		<lastmod>2022-12-22T11:37:59.000Z</lastmod>
 		<priority>1.0</priority>
@@ -542,7 +552,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=bcG6C9g84p&name=한영애</loc>
-		<lastmod>2022-12-25T00:36:17.000Z</lastmod>
+		<lastmod>2022-12-25T00:41:44.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
