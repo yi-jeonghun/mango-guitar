@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2022-12-24</lastmod>
+		<lastmod>2022-12-25</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=accWzFKGL4_최성수-남남</loc>
+		<lastmod>2022-12-24T23:31:17.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=Sjgr8WXb2q_장혜리-내게 남은 사랑을 드릴께요</loc>
