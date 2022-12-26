@@ -16,7 +16,7 @@ function GetSheetItem(sheet){
 	var link_artist = `./artist.html?artist_uid=${sheet.artist_uid}&name=${sheet.artist_name}`;
 
 	var h = `
-	<div class="col-2 py-2">
+	<div class="col-sm-2 col-6 py-2">
 		<a href="${link_sheet}"><img style="width:100%; height:auto;" src="https://img.youtube.com/vi/${sheet.video_id}/0.jpg"></a>
 		<div>
 			<a href="${link_sheet}">${sheet.title}</a>

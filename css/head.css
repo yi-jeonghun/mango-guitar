@@ -1,26 +1,77 @@
 .head{
 	height:100px;
 	border: 1px solid black;
-	padding-top: 20px;
-	padding-bottom: 0px;
 	background-color: deepskyblue;
 }
 
 .head-title{
+	position: absolute;
+	left: 10px;
+	top: 15px;
 	font-size: 40px;
 	font-weight: bold;
 	margin-right: 40px;
 }
 
 .head-menu{
+	position: absolute;
+	left: 300px;
+	top: 40px;
 	margin-left: 10px;
 	font-weight: bold;
 	color: #ffffff;
 	cursor: pointer;
 }
 
-.g-signin2{
-	float: right;
+.head-menu-item{
+	margin-right: 20px
+}
+
+.head-logo-img{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 70px; 
+	height: 70px;
+}
+
+@media (max-width: 576px) {
+	.head{
+		height:80px;
+		border: 1px solid black;
+		background-color: deepskyblue;
+	}
+
+	.head-title{
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		font-size: 20px;
+		font-weight: bold;
+		margin-right: 40px;
+	}		
+
+	.head-menu{
+		position: absolute;
+		left: 10px;
+		top: 45px;
+		margin-left: 10px;
+		font-weight: bold;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	.head-menu-item{
+		margin-right: 10px
+	}
+	
+	.head-logo-img{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 50px; 
+		height: 50px;
+	}	
 }
 
 a:link {
