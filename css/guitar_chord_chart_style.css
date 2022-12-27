@@ -1,7 +1,8 @@
 
 .root-btn{
-	margin-right: 5px;
-	width: 40px;
+	width: 45px;
+	height: 45px;
+	margin: 5px;
 }
 
 .type-btn{
@@ -14,8 +15,9 @@
 }
 
 .chord-btn{
-	margin-right: 5px;
-	margin-top: 5px;
+	margin: 5px;
+	height: 40px;
+	/* padding: 5px; */
 }
 
 #id_chord_display{
