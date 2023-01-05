@@ -41,36 +41,40 @@
 <!--=============================== HEAD ==================================-->	
 
 <div class="container py-3">
-	<div class="row border-bottom" style="height: 110px;">
+	<div class="row border-bottom" id="id_div_title_area">
 		<div class="col-8">
 			<h4 id="id_label_title"></h4>
 			<div id="id_label_artist"></div>			
 		</div>
 		<div class="col-4">
-			<div id="id_MP_div_video" class="MP_div_video_sm flex" style="width: 100; height: 100;">
-				<div id="id_MP_player" class="MP_player_sm" style="width: 100; height: 100;"></div>
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
 			</div>
 		</div>
 	</div>
-	<div class="row py-0 border-bottom py-2" style="">
+	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
 		<div class="col-4">
-			<span id="id_label_capo"></span>
+			<div class="capo-div"><span id="id_label_capo"></span></div>
 		</div>
 		<div class="col-4">
-			Speed
-			<span class="text-center mx-2" id="id_label_speed">1.0</span>
-			<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
-			<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>
+			<div class="speed-div">
+				Speed
+				<span class="text-center mx-2" id="id_label_speed">1.0</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
+			</div>
 		</div>
 		<div class="col-4 text-right">
-			<button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button>
-			<button type="button" class="btn btn-sm btn-primary" id="id_btn_play">Play</button>
-			<button type="button" class="btn btn-sm btn-primary" id="id_btn_stop">Stop</button>	
+			<div class="button-div">
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_stop">Stop</button>
+			</div>
 		</div>
 	</div>
 	<div class="row border">
-		<div class="col-6" id="id_sheet" style="height:545px; overflow-y: auto;"></div>
-		<div class="col-6 border-left">
+		<div class="col-12 col-sm-6" id="id_sheet"></div>
+		<div class="col-6 col-sm-6 border-left" id="id-div-chord-area">
 			<div style="height: 45px;" class="py-1">
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
@@ -87,6 +91,10 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="footer">
+	
 </div>
 
 </body>

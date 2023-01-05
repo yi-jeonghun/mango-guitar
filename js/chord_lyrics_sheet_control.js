@@ -396,12 +396,12 @@ function ChordLyricsSheetControl(){
 
 			var h = ``;
 			for(var b=0 ; b<self._sheet.chord_list[i].time_ms_arr.length ; b++){
-				h += `<i style="z-index:1" id="id_beat-${beat_index}">.</i>`;
+				h += `<i style="" id="id_beat-${beat_index}">.</i>`;
 				self._beat_list.push(self._sheet.chord_list[i].time_ms_arr[b]);
 				beat_index++;
 			}
 
-			$(`<span style="z-index:2; position:absolute; left:${pos.left}px; top:${pos.top+5}px;font-size:0.8em">${h}</span>`).insertAfter(ele);
+			$(`<span style="position:absolute; left:${pos.left}px; top:${pos.top+5}px;font-size:0.8em">${h}</span>`).insertAfter(ele);
 		}
 	};
 
