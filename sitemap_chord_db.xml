@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-01-05</lastmod>
+		<lastmod>2023-01-06</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=ts08SasqZx_임지훈-내 그리운 나라</loc>
+		<lastmod>2023-01-06T10:55:05.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=6zIKq89IAr_전인권-돌고 돌고 돌고</loc>
