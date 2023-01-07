@@ -102,6 +102,7 @@
 	/* 270 = 80 + 70 + 100 */
 	#id_sheet{
 		height: calc(100vh - 250px);
-		overflow-y: auto;
+		overflow: auto;
+		white-space: nowrap;
 	}	
 }
