@@ -177,6 +177,8 @@ function ChordLyricsSheetControl(){
 			line += "<br>";
 			htm += line;
 		}
+		htm += "<br>";
+
 		self._total_lines = i;
 
 		var sheet_ele = $('#id_sheet');
