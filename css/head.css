@@ -35,13 +35,28 @@
 	height: 70px;
 }
 
+#icon_menu_bar{
+	visibility: hidden;
+	display: none;
+	cursor: pointer;
+}
+.head_menu_title{
+	visibility: hidden;
+	display: none;
+}
+.menu_close_btn{
+	position: absolute; 
+	right: 15px; 
+	font-size: 1.3em;
+	cursor: pointer;
+}
+
 @media (max-width: 576px) {
 	.head{
-		height:80px;
+		height:50px;
 		border: 1px solid black;
 		background-color: deepskyblue;
 	}
-
 	.head-title{
 		position: absolute;
 		left: 10px;
@@ -50,28 +65,41 @@
 		font-weight: bold;
 		margin-right: 40px;
 	}		
-
 	.head-menu{
-		position: absolute;
-		left: 10px;
-		top: 45px;
-		margin-left: 10px;
-		font-weight: bold;
-		color: #ffffff;
-		cursor: pointer;
+		margin: 0px;
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 280px;
+		height: 100vh;
+		z-index: 3;
+		display: none;
+		background-color: white;
+		border: solid 1px black;
 	}
-
 	.head-menu-item{
-		margin-right: 10px
+		margin: 15px;
+		display: block;
 	}
-	
 	.head-logo-img{
 		position: absolute;
-		top: 10px;
-		right: 10px;
-		width: 50px; 
-		height: 50px;
+		top: 5px;
+		right: 5px;
+		width: 40px; 
+		height: 40px;
 	}
+	#icon_menu_bar{
+		visibility: visible;
+		display: inline;
+	}	
+	.head_menu_title{
+		color: black;
+		visibility: visible;
+		display: block;
+		margin: 10px;
+		border-bottom: solid 1px black;
+		height: 40px;
+	}	
 }
 
 a:link {

@@ -99,9 +99,9 @@
 		visibility: hidden;
 		display: none;
 	}
-	/* 270 = 80 + 70 + 100 */
+	/* 220 = 50 + 70 + 100 */
 	#id_sheet{
-		height: calc(100vh - 250px);
+		height: calc(100vh - 220px);
 		overflow: auto;
 		white-space: nowrap;
 	}	
