@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-01-25</lastmod>
+		<lastmod>2023-01-26</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -41,6 +41,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=5XU3DoBMJA&name=Ed Sheeran</loc>
+		<lastmod>2023-01-25T04:54:16.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=QqGPM7qxkH&name=Elvis Presley</loc>
 		<lastmod>2023-01-24T23:01:29.000Z</lastmod>
 		<priority>1.0</priority>
@@ -73,6 +78,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=SpdmSCVU4V&name=Norah Jones</loc>
 		<lastmod>2023-01-22T08:41:29.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=KefoVSMw5M&name=Passenger</loc>
+		<lastmod>2023-01-26T12:08:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
