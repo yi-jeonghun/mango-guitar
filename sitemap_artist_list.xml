@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-01-27</lastmod>
+		<lastmod>2023-01-29</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -23,6 +23,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=x4PNoa6P8I&name=Brothers Four</loc>
 		<lastmod>2023-01-22T08:41:53.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=MKTgWBBVnb&name=Bruno Mars</loc>
+		<lastmod>2023-01-28T22:07:12.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
