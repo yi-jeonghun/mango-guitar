@@ -159,25 +159,175 @@ function ChordLyricsSheetControl(){
 		self.Preview();
 	};
 
+	this.IsOverflowLine = function(width, line){
+		var ret = {
+			is_overflow: false,
+			split1: '',
+			split2: '',
+			position: -1
+		};
+		var line_width = 0;
+
+		for(var c=0 ; c<line.length ; c++) {
+			line_width += 8;
+			// console.log(line[c] + ' line_width ' + line_width);
+			if(line_width >= width){
+				ret.is_overflow = true;
+				if(line[c] == ' '){
+					ret.position = c;	
+				}else{
+					for(var r=c-1 ; r>=0 ; r--){
+						if(line[r] == ' '){
+							ret.position = r;
+							break;
+						}
+					}
+				}
+				break;
+			}
+		}
+
+		if(ret.is_overflow == true){
+			ret.split1 = line.substr(0, ret.position);
+			ret.split1 = ret.split1.trimRight();
+			ret.split2 = line.substr(ret.position);
+			ret.split2 = ret.split2.trimRight();
+		}
+
+		return ret;
+	};
+
 	this._chord_sync_index = 0;
+	this._overflow_lines = [];
 	this.Preview = function(){
+		self._overflow_lines = [];
+		var sheet_ele = $('#id_sheet');
+		var width = sheet_ele.width();
+		console.log('sheet_ele width ' + width);
+
 		self._chord_sync_index = 0;
 		var txt = self._sheet.lyrics_chord;
 		var htm = '';
-		var lines = txt.split('\n');
+		var lines_temp = txt.split('\n');
+		var lines = [];
 
+		/* transpose */
+		for(var i=0 ; i<lines_temp.length ; i++) {
+			// console.log('before transpose ' + lines_temp[i]);
+			lines_temp[i] = self.TransposeLine(lines_temp[i]);
+			// console.log('after transpose ' + lines_temp[i]);
+		}
+
+		/* Overflow 처리하기 */
+		for(var i=0 ; i<lines_temp.length ; i++) {
+			var line = lines_temp[i];
+
+			if(i == lines_temp.length - 2){
+				// 마지막 2번째 줄 까지만 처리함.
+				break;
+			}
+			if(i >= lines_temp.length-1){
+				break;
+			}
+
+			// console.log('line idx ' + i);
+			var first_chord_line = self.IsChordLine(lines_temp[i]);
+			var second_chord_line = self.IsChordLine(lines_temp[i+1]);
+			// console.log('first_chord_line ' + first_chord_line);
+			// console.log('second_chord_line ' + second_chord_line);
+
+			// 첫 줄은 코드 둘째 줄은 가사 쌍인 경우만 처리
+			// 그 외는 overflow가 잘 없기 때문.
+			if(first_chord_line == true && second_chord_line == false){
+				var ret_1st = self.IsOverflowLine(width, lines_temp[i]);
+				var ret_2nd = self.IsOverflowLine(width, lines_temp[i+1]);
+				if(ret_1st.is_overflow == false && ret_2nd.is_overflow == false){
+					lines.push(lines_temp[i]);
+					lines.push(lines_temp[i+1]);
+				}else if(ret_1st.is_overflow == true && ret_2nd.is_overflow == false){
+					self._overflow_lines[lines.length] = 'start';
+					if(ret_1st.split1 != ''){
+						lines.push(ret_1st.split1);
+					}
+					lines.push(lines_temp[i+1]);
+					if(ret_1st.split2 != ''){
+						lines.push(ret_1st.split2);
+					}
+					self._overflow_lines[lines.length-1] = 'end';
+				}else if(ret_1st.is_overflow == false && ret_2nd.is_overflow == true){
+					self._overflow_lines[lines.length] = 'start';
+					lines.push(lines_temp[i]);
+					lines.push(ret_2nd.split1);
+					if(ret_2nd.split2 != ''){
+						lines.push(ret_2nd.split2);
+					}
+					self._overflow_lines[lines.length-1] = 'end';
+				}else if(ret_1st.is_overflow == true && ret_2nd.is_overflow == true){
+					self._overflow_lines[lines.length] = 'start';
+					console.log('lines.length ' + lines.length + ' ' + self._overflow_lines[lines.length]);
+					lines.push(ret_1st.split1);
+					lines.push(ret_2nd.split1);
+
+					var padding_1st = 0;
+					var padding_2nd = 0;
+					if(ret_1st.position == ret_2nd.position){
+						paddind_1st = 0;
+						padding_2nd = 0;	
+					}else if(ret_1st.position > ret_2nd.position){
+						padding_1st = ret_1st.position - ret_2nd.position;
+					}else if(ret_1st.position < ret_2nd.position){
+						padding_2nd = ret_2nd.position - ret_1st.position;
+					}
+
+					if(ret_1st.split2 != ''){
+						var tmp = '';
+						for(var p=0 ; p<padding_1st ; p++){
+							tmp += ' ';
+						}
+						lines.push(tmp + ret_1st.split2);
+					}
+					if(ret_2nd.split2 != ''){
+						var tmp = '';
+						for(var p=0 ; p<padding_2nd ; p++){
+							tmp += ' ';
+						}
+						lines.push(tmp + ret_2nd.split2);
+					}
+					self._overflow_lines[lines.length-1] = 'end';
+					console.log('lines.length ' + lines.length + ' ' + self._overflow_lines[lines.length]);
+				}
+				i = i + 1;
+			}else{
+				lines.push(line);
+			}
+		}
+		
+		/* 라인 별로 보여주기 */
 		for(var i=0 ; i<lines.length ; i++) {
 			var line = lines[i];
+
 			line = self.ParseLineBold(line);
 			line = line.replace(/\s/g, '`');
 			line = self.ParseLineChord(line);
 			// line = self.ConvertChosung(line);
 
 			line = '<span id="id_line-' + i + '">' + line + '</span>';
-			line += "<br>";
+
+			console.log('self._overflow_lines[i] ' + self._overflow_lines[i]);
+			if(self._overflow_lines[i] == 'start'){
+				htm += '<div style="margin-bottom: 3px; background-color:#eeeeee">';
+			}
 			htm += line;
+			if(self._overflow_lines[i] == 'end'){
+				htm += '</div>';
+			}
+
+			htm += "<br>";
+			// htm += line;
 		}
 		htm += "<br>";
+
+		console.log('self._chord_sync_index ' + self._chord_sync_index);
 
 		self._total_lines = i;
 
@@ -206,6 +356,52 @@ function ChordLyricsSheetControl(){
 		return result;
 	}
 
+	this.IsChordLine = function(line){
+		line = line.replace(/\s/g, '`');
+		// console.log('line ' + line);
+		var chars = line.split(/`/g);
+		for(var c=0 ; c<chars.length ; c++){
+			if(chars[c] == ""){
+				
+			}else{
+				// console.log('chars[c]) ' + chars[c]);
+				if(self._chordDB.HasChord(chars[c])){
+					return true;
+				}else{
+					
+				}
+			}
+		}
+		return false;
+	};
+
+	this.TransposeLine = function(line){
+		// console.log('capo ' + self._sheet.capo + ' transpose before ' + line);
+		line = line.replace(/\s/g, '`');
+		var chars = line.split(/`/g);
+		var h = '';
+		for(var c=0 ; c<chars.length ; c++){
+			if(chars[c] == ""){
+				h += ' ';
+			}else{
+				if(self._chordDB.HasChord(chars[c])){
+					var chord_txt = chars[c];
+					if(self._sheet.capo > 0){
+						for(var t=self._sheet.capo ; t>0 ; t--){
+							chord_txt = self._chordDB.Transpose(chord_txt, 'down');
+						}
+					}
+					h += chord_txt + ' ';
+				}else{
+					h += chars[c] + ' ';
+				}
+			}
+		}
+		// console.log('transpose after ' + h);
+
+		return h;
+	};
+
 	this.ParseLineChord = function(line){
 		var chars = line.split(/`/g);
 		var h = '';
@@ -215,11 +411,11 @@ function ChordLyricsSheetControl(){
 			}else{
 				if(self._chordDB.HasChord(chars[c])){
 					var chord_txt = chars[c];
-					if(self._sheet.capo > 0){
-						for(var t=self._sheet.capo ; t>0 ; t--){
-							chord_txt = self._chordDB.Transpose(chord_txt, 'down');
-						}
-					}
+					// if(self._sheet.capo > 0){
+					// 	for(var t=self._sheet.capo ; t>0 ; t--){
+					// 		chord_txt = self._chordDB.Transpose(chord_txt, 'down');
+					// 	}
+					// }
 					h += `<span id="id_chord_sync-${self._chord_sync_index}" class="chord-sm" onmousedown="PlayChord('${chord_txt}')">${chord_txt}</span>&nbsp;`;
 					self._chord_sync_index++;
 				}else{
@@ -377,6 +573,7 @@ function ChordLyricsSheetControl(){
 	this._chord_position_list = [];
 	this.SetChordPositionList = function(){
 		self._chord_position_list = [];
+		console.log('self._sheet.chord_list length ' + self._sheet.chord_list.length);
 		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
 			var ele = $('#id_chord_sync-'+i);
 			var pos = ele.position();
