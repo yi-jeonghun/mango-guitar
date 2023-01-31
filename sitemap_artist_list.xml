@@ -47,7 +47,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=5XU3DoBMJA&name=Ed Sheeran</loc>
-		<lastmod>2023-01-30T22:15:29.000Z</lastmod>
+		<lastmod>2023-01-30T22:18:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -83,6 +83,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=ls2fk0mdlf&name=John Lenon</loc>
 		<lastmod>2023-01-22T08:42:19.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=mUDVZC3Eck&name=Justin Bieber</loc>
+		<lastmod>2023-01-31T09:59:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
