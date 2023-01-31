@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-01-31</lastmod>
+		<lastmod>2023-02-01</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -33,6 +33,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=j8xpzj4EAP&name=BTS</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=Qcv8Yo5bUx&name=Coldplay</loc>
+		<lastmod>2023-01-31T21:52:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -87,12 +92,17 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=mUDVZC3Eck&name=Justin Bieber</loc>
-		<lastmod>2023-01-31T09:59:06.000Z</lastmod>
+		<lastmod>2023-01-31T10:16:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=SpdmSCVU4V&name=Norah Jones</loc>
 		<lastmod>2023-01-22T08:41:29.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=qABa85fvkj&name=Oasis</loc>
+		<lastmod>2023-01-31T11:39:14.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
