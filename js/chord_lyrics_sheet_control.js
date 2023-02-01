@@ -298,7 +298,15 @@ function ChordLyricsSheetControl(){
 				}
 				i = i + 1;
 			}else{
-				lines.push(line);
+				var ret_1st = self.IsOverflowLine(width, lines_temp[i]);
+				if(ret_1st.is_overflow){
+					self._overflow_lines[lines.length] = 'start';
+					lines.push(ret_1st.split1);
+					lines.push(ret_1st.split2);
+					self._overflow_lines[lines.length-1] = 'end';
+				}else{
+					lines.push(line);
+				}
 			}
 		}
 		
@@ -313,9 +321,9 @@ function ChordLyricsSheetControl(){
 
 			line = '<span id="id_line-' + i + '">' + line + '</span>';
 
-			console.log('self._overflow_lines[i] ' + self._overflow_lines[i]);
+			// console.log('self._overflow_lines[i] ' + self._overflow_lines[i]);
 			if(self._overflow_lines[i] == 'start'){
-				htm += '<div style="margin-bottom: 3px; background-color:#eeeeee">';
+				htm += '<div style="background-color:#eeeeee">';
 			}
 			htm += line;
 			if(self._overflow_lines[i] == 'end'){
@@ -327,7 +335,7 @@ function ChordLyricsSheetControl(){
 		}
 		htm += "<br>";
 
-		console.log('self._chord_sync_index ' + self._chord_sync_index);
+		// console.log('self._chord_sync_index ' + self._chord_sync_index);
 
 		self._total_lines = i;
 
