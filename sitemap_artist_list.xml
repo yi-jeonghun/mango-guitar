@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-02-01</lastmod>
+		<lastmod>2023-02-02</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -101,8 +101,13 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=OkBnz9kpjJ&name=Milie Cyrus</loc>
+		<lastmod>2023-02-02T11:23:15.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=wUk6CvvpKE&name=NCT DREAM</loc>
-		<lastmod>2023-02-01T11:21:33.000Z</lastmod>
+		<lastmod>2023-02-01T12:21:13.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -148,6 +153,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=mHaLNlDfGW&name=The Carpenters</loc>
 		<lastmod>2023-01-17T12:51:57.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=ms4xcTG0sD&name=Train</loc>
+		<lastmod>2023-02-02T09:25:23.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
