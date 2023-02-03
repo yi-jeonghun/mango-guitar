@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-02-02</lastmod>
+		<lastmod>2023-02-03</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=XCneLff23V_John Denver-Take Me Home Country Roads</loc>
+		<lastmod>2023-02-02T12:21:35.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=z8HCqCwgOA_Milie Cyrus-Flowers</loc>
