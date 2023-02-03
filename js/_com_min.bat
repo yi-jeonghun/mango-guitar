@@ -1,1 +1,0 @@
-terser --compress --mangle --verbose ChordDB.js ChordManager.js Drums.js MusicXMLPlayer.js const.js -o ..\com_min.js
