@@ -333,7 +333,7 @@ function ChordLyricsSheetControl(){
 			htm += "<br>";
 			// htm += line;
 		}
-		htm += "<br>";
+		htm += "<br><br><br><br>";
 
 		// console.log('self._chord_sync_index ' + self._chord_sync_index);
 
