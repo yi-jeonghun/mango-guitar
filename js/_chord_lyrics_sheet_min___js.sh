@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/chord_lyrics_sheet_control.js"></script>
 comment
 
-uglifyjs --compress --mangle -o _chord_lyrics_sheet.min.js -- \
+uglifyjs --compress --mangle -o chord_lyrics_sheet.min.js -- \
 	head_control.js \
 	ChordDB.js \
 	ChordManager.js \
