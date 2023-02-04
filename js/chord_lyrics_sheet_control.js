@@ -222,13 +222,13 @@ function ChordLyricsSheetControl(){
 		for(var i=0 ; i<lines_temp.length ; i++) {
 			var line = lines_temp[i];
 
-			if(i == lines_temp.length - 2){
-				// 마지막 2번째 줄 까지만 처리함.
-				break;
-			}
-			if(i >= lines_temp.length-1){
-				break;
-			}
+			// if(i == lines_temp.length - 2){
+			// 	// 마지막 2번째 줄 까지만 처리함.
+			// 	break;
+			// }
+			// if(i >= lines_temp.length-1){
+			// 	break;
+			// }
 
 			// console.log('line idx ' + i);
 			var first_chord_line = self.IsChordLine(lines_temp[i]);
@@ -365,6 +365,10 @@ function ChordLyricsSheetControl(){
 	}
 
 	this.IsChordLine = function(line){
+		if(line == null || line == undefined || line == ''){
+			return;
+		}
+		// console.log('line ' + line);
 		line = line.replace(/\s/g, '`');
 		// console.log('line ' + line);
 		var chars = line.split(/`/g);
@@ -419,11 +423,6 @@ function ChordLyricsSheetControl(){
 			}else{
 				if(self._chordDB.HasChord(chars[c])){
 					var chord_txt = chars[c];
-					// if(self._sheet.capo > 0){
-					// 	for(var t=self._sheet.capo ; t>0 ; t--){
-					// 		chord_txt = self._chordDB.Transpose(chord_txt, 'down');
-					// 	}
-					// }
 					h += `<span id="id_chord_sync-${self._chord_sync_index}" class="chord-sm" onmousedown="PlayChord('${chord_txt}')">${chord_txt}</span>&nbsp;`;
 					self._chord_sync_index++;
 				}else{
@@ -581,7 +580,6 @@ function ChordLyricsSheetControl(){
 	this._chord_position_list = [];
 	this.SetChordPositionList = function(){
 		self._chord_position_list = [];
-		console.log('self._sheet.chord_list length ' + self._sheet.chord_list.length);
 		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
 			var ele = $('#id_chord_sync-'+i);
 			var pos = ele.position();
