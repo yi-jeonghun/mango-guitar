@@ -10,7 +10,15 @@ function MusicListControl(){
 	this._era = 'all';
 
 	this.Init = function(){
+		var era = GetURLParam('era');
+		if(era == 'all' || era == null){
+			self._era = 'all';
+		}else{
+			self._era = era;
+		}
+		console.debug('era ' + self._era);
 		self.LoadList();
+		self.FocusEraButton();
 		return this;
 	};
 
@@ -29,29 +37,20 @@ function MusicListControl(){
 		});
 	};
 
+	this.GoToEra = function(era){
+		window.location.href = `./music_list.html?era=${era}`;
+	};
+
 	this.MoveToPage = function(page){
-		console.log('page ' + page);
+		console.debug('page ' + page);
 		self._cur_page = page;
 		self.DISP_paging();
 		self.DISP_SheetList();
 	};
 
-	this.ChangeEra = function(era){
-		console.log('era ' + era);
-		self._era = era;
-
-		$('#id_btn_era-all').removeClass('btn-primary');
-		$('#id_btn_era-1960').removeClass('btn-primary');
-		$('#id_btn_era-1970').removeClass('btn-primary');
-		$('#id_btn_era-1980').removeClass('btn-primary');
-		$('#id_btn_era-1990').removeClass('btn-primary');
-		$('#id_btn_era-2000').removeClass('btn-primary');
-		$('#id_btn_era-2010').removeClass('btn-primary');
-		$('#id_btn_era-2020').removeClass('btn-primary');
-
+	this.FocusEraButton = function(){
+		console.debug('self._era ' + self._era);
 		$(`#id_btn_era-${self._era}`).addClass('btn-primary');
-
-		self.LoadList();
 	};
 
 	this.DISP_paging = function(){
