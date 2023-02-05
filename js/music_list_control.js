@@ -8,17 +8,27 @@ function MusicListControl(){
 	this._cur_page = 0;
 	this._count_per_page = 24;
 	this._era = 'all';
+	this._region = 'all';
 
 	this.Init = function(){
 		var era = GetURLParam('era');
-		if(era == 'all' || era == null){
+		if(era == null){
 			self._era = 'all';
 		}else{
 			self._era = era;
 		}
+
+		var region = GetURLParam('region');
+		if(region == null){
+			self._region = region;
+		}else{
+			self._region = region;
+		}
+
 		console.debug('era ' + self._era);
+		console.debug('region ' + self._region);
 		self.LoadList();
-		self.FocusEraButton();
+		self.FocusEraRegionButton();
 		return this;
 	};
 
@@ -31,14 +41,34 @@ function MusicListControl(){
 		}
 
 		$.getJSON(json_file, function(sheet_list) {
-			self._sheet_list = sheet_list;
+			console.debug(JSON.stringify(sheet_list[0]));
+			self._sheet_list = [];
+
+			if(self._region == 'all'){
+				self._sheet_list = sheet_list;
+			}else if(self._region == 'pop'){
+				for(var i=0 ; i<sheet_list.length ; i++){
+					if(sheet_list[i].region_type == 'POP_SONG'){
+						self._sheet_list.push(sheet_list[i]);
+					}
+				}
+			}else if(self._region == 'kpop'){
+				for(var i=0 ; i<sheet_list.length ; i++){
+					if(sheet_list[i].region_type == 'KPOP'){
+						self._sheet_list.push(sheet_list[i]);
+					}
+				}
+			}
 			self.DISP_paging();
 			self.DISP_SheetList();
 		});
 	};
 
 	this.GoToEra = function(era){
-		window.location.href = `./music_list.html?era=${era}`;
+		window.location.href = `./music_list.html?era=${era}&region=${self._region}`;
+	};
+	this.GoToRegion = function(region){
+		window.location.href = `./music_list.html?era=${self._era}&region=${region}`;
 	};
 
 	this.MoveToPage = function(page){
@@ -48,9 +78,11 @@ function MusicListControl(){
 		self.DISP_SheetList();
 	};
 
-	this.FocusEraButton = function(){
+	this.FocusEraRegionButton = function(){
 		console.debug('self._era ' + self._era);
+		console.debug('self._region ' + self._region);
 		$(`#id_btn_era-${self._era}`).addClass('btn-primary');
+		$(`#id_btn_region-${self._region}`).addClass('btn-primary');
 	};
 
 	this.DISP_paging = function(){

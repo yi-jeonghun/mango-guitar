@@ -34,17 +34,26 @@
 <div include-html="head.html"></div>
 <!--=============================== HEAD ==================================-->	
 
-<div class="container py-3">
-	<div class="row border-bottom">
-		<div class="col-12 py-1">
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-all"  onClick="window._music_list_control.GoToEra('all')"> All</button>
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1960"  onClick="window._music_list_control.GoToEra('1960')">1960</button>
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1970"  onClick="window._music_list_control.GoToEra('1970')">1970</button>
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1980"  onClick="window._music_list_control.GoToEra('1980')">1980</button>
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1990"  onClick="window._music_list_control.GoToEra('1990')">1990</button>
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-2000"  onClick="window._music_list_control.GoToEra('2000')">2000</button>
-			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-2010"  onClick="window._music_list_control.GoToEra('2010')">2010</button>
+<div class="container" style="padding-bottom: 3px;">
+	<div class="row">
+		<div class="col-12 py-1" style="overflow-y: scroll; white-space: nowrap;">
+			Era 
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-all"  onClick="window._music_list_control.GoToEra('all')">All</button>
 			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-2020"  onClick="window._music_list_control.GoToEra('2020')">2020</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-2010"  onClick="window._music_list_control.GoToEra('2010')">2010</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-2000"  onClick="window._music_list_control.GoToEra('2000')">2000</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1990"  onClick="window._music_list_control.GoToEra('1990')">1990</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1980"  onClick="window._music_list_control.GoToEra('1980')">1980</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1970"  onClick="window._music_list_control.GoToEra('1970')">1970</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_era-1960"  onClick="window._music_list_control.GoToEra('1960')">1960</button>
+		</div>
+	</div>
+	<div class="row border-bottom">
+		<div class="col-12 py-1" style="overflow-y: scroll; white-space: nowrap;">
+			Region
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_region-all"  onClick="window._music_list_control.GoToRegion('all')">All</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_region-pop"  onClick="window._music_list_control.GoToRegion('pop')">Pop</button>
+			<button type="button" class="border btn btn-sm mx-1 my-1" id="id_btn_region-kpop"  onClick="window._music_list_control.GoToRegion('kpop')">K-Pop</button>
 		</div>
 	</div>
 	<div class="row" id="id_div_list"></div>
