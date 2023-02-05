@@ -21,7 +21,7 @@ function GetSheetItem(sheet){
 		<div>
 			<a href="${link_sheet}">${sheet.title}</a>
 		</div>
-		<div>
+		<div style="font-size:0.8em; color:#777777">
 			<a href="${link_artist}">${sheet.artist_name}</a>
 		</div>
 		<div class="d-flex">
