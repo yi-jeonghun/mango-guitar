@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-02-03</lastmod>
+		<lastmod>2023-02-06</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -26,6 +26,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=UrkwAD5ENC&name=Bob Dylan</loc>
+		<lastmod>2023-02-05T22:39:19.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=x4PNoa6P8I&name=Brothers Four</loc>
 		<lastmod>2023-01-22T08:41:53.000Z</lastmod>
 		<priority>1.0</priority>
@@ -42,7 +47,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=Qcv8Yo5bUx&name=Coldplay</loc>
-		<lastmod>2023-02-03T13:13:23.000Z</lastmod>
+		<lastmod>2023-02-03T13:18:57.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -148,6 +153,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=W1xhfa1OFM&name=Tammy Wynette</loc>
 		<lastmod>2023-01-22T08:42:00.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=1bg2VMBysg&name=Test</loc>
+		<lastmod>2023-02-04T11:16:00.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -422,7 +432,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=N7SoVZ2f4e&name=양수경</loc>
-		<lastmod>2022-12-21T12:21:25.000Z</lastmod>
+		<lastmod>2023-02-04T11:19:56.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -497,7 +507,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=iTplEbPVql&name=이문세</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<lastmod>2023-02-04T13:40:00.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
