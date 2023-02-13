@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-02-12</lastmod>
+		<lastmod>2023-02-13</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=e1sGSEnToY_%ED%95%9C%EB%8F%99%EC%A4%80-%EB%84%88%EB%A5%BC%20%EC%82%AC%EB%9E%91%ED%95%B4</loc>
+		<lastmod>2023-02-12T23:40:53.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=KGDu4c1ebE_%EB%B0%95%EC%98%81%EB%AF%B8-%EB%82%98%EB%8A%94%20%EC%99%B8%EB%A1%9C%EC%9B%80%20%EA%B7%B8%EB%8C%80%EB%8A%94%20%EA%B7%B8%EB%A6%AC%EC%9B%80</loc>
+		<lastmod>2023-02-12T23:17:00.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=cs7Ku56yd9_%EC%A1%B0%EB%8D%95%EB%B0%B0-%EA%B7%B8%EB%8C%80%20%EB%82%B4%EB%A7%98%EC%97%90%20%EB%93%A4%EC%96%B4%EC%98%A4%EB%A9%B4%EC%9D%80</loc>
+		<lastmod>2023-02-12T23:00:35.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=GgpipV3pMA_The%20Animals-House%20Of%20The%20Rising%20Sun</loc>
