@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-02-13</lastmod>
+		<lastmod>2023-02-14</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=nqeMHGPYu3_Harry%20Styles-As%20It%20Was</loc>
+		<lastmod>2023-02-13T13:13:44.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=e1sGSEnToY_%ED%95%9C%EB%8F%99%EC%A4%80-%EB%84%88%EB%A5%BC%20%EC%82%AC%EB%9E%91%ED%95%B4</loc>
