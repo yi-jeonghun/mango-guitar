@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-02-14</lastmod>
+		<lastmod>2023-02-16</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=VhIHtTAmBF_%EA%B0%95%EC%82%B0%EC%97%90-%EB%84%8C%20%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%96%B4</loc>
+		<lastmod>2023-02-15T22:04:12.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=PBIrMvFXk8_Frank%20Sinatra-Fly%20Me%20To%20The%20Moon</loc>
+		<lastmod>2023-02-15T08:20:15.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=eSWcBkZ3KU_Pink%20Floyd-Wish%20You%20Were%20Here</loc>
+		<lastmod>2023-02-14T21:55:33.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet.html?id=3GOFC2u6I1_Tom%20Odell-Another%20Love</loc>
