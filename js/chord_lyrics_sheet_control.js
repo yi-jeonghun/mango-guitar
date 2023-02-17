@@ -423,6 +423,11 @@ function ChordLyricsSheetControl(){
 			}else{
 				if(self._chordDB.HasChord(chars[c])){
 					var chord_txt = chars[c];
+
+					if(chord_txt == 'A#'){
+						chord_txt = 'Bb';
+					}
+
 					h += `<span id="id_chord_sync-${self._chord_sync_index}" class="chord-sm" onmousedown="PlayChord('${chord_txt}')">${chord_txt}</span>&nbsp;`;
 					self._chord_sync_index++;
 				}else{
