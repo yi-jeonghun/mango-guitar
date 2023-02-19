@@ -11,6 +11,10 @@ function ChordLyricsSheetControl(){
 	this._chordManager = null;
 	this._speed = 1.0;
 	this._chord_chart = [];
+	this._is_embed = false;
+	this._is_small_screen = false;
+	this._ele_chord_flow = null;
+	this._id_div_chord_flow = 'id_div_chord_flow';
 
 	this.Init = function(){
 		self._chordManager = new ChordManager();
@@ -19,9 +23,39 @@ function ChordLyricsSheetControl(){
 		window._mango_player.SetFlowEventCallback(self.OnFlowEvent);
 
 		self._chordDB = new ChordDB();
+
+		var embed_param = null;
+		{
+			embed_param = GetURLParam('embed');
+			if(embed_param != null){
+				self._is_embed = true;
+				self.ChangeScreenForEmbed();
+			}
+		}
+
+		console.debug('document.body.clientWidth ' + document.body.clientWidth);
+		if(document.body.clientWidth <= 576){
+			self._is_small_screen = true;
+		}
+		console.debug('self._is_small_screen ' + self._is_small_screen);
+		if(self._is_small_screen){
+			self._id_div_chord_flow = 'id_div_chord_flow_embed';
+			self._ele_chord_flow = $(`#id_div_chord_flow_embed`);
+			self._ele_chord_flow.show();
+			self._ele_chord_flow.css('position', 'fixed');
+			self._ele_chord_flow.css('left', '0px');
+			self._ele_chord_flow.css('top', '0px');
+			self._ele_chord_flow.css('position', 'fixed');
+		}else{
+			self._id_div_chord_flow = 'id_div_chord_flow';
+			self._ele_chord_flow = $(`#id_div_chord_flow`);
+		}
+		if(self._is_embed == false && self._is_small_screen == true){
+			self._ele_chord_flow.hide();
+		}
+
 		var id = GetURLParam('id');
 		var arr = id.split('_');
-
 		if(arr.length > 0){
 			var sheet_uid = arr[0];
 			self.LoadSheet(sheet_uid);
@@ -30,6 +64,12 @@ function ChordLyricsSheetControl(){
 		self.InitHandle();
 		self.Update();
 		return this;
+	};
+
+	this.ChangeScreenForEmbed = function(){
+		$('#id_div_head').hide();
+		$('#id_div_title_area').css('height', '120px');
+		$('#id_btn_play').hide();
 	};
 
 	this.InitHandle = function(){
@@ -54,9 +94,12 @@ function ChordLyricsSheetControl(){
 		$('#id_btn_reload').on('click', function(){
 			self.Preview();
 			$('#id_sheet').scrollTop(0);
-			$('#id_div_chord_flow').scrollTop(0);
+			self._ele_chord_flow.scrollTop(0);
 		});
 		$('#id_btn_play').on('click', function(){
+			if(self._is_embed == false && self._is_small_screen == true){
+				self._ele_chord_flow.show();
+			}
 			self.Preview();
 			self.ClearChordSync();
 			self._flow_sync_chord_index = 0;
@@ -66,6 +109,10 @@ function ChordLyricsSheetControl(){
 			window._mango_player.Play();
 		});
 		$('#id_btn_stop').on('click', function(){
+			if(self._is_embed == false && self._is_small_screen == true){
+				self._ele_chord_flow.hide();
+			}
+
 			self._timelapse = 0;
 			self._timelapse_youtube = 0;
 			self._flow_sync_chord_index = 0;
@@ -83,7 +130,7 @@ function ChordLyricsSheetControl(){
 		}
 
 		{
-			const chord_scroller = document.querySelector("#id_div_chord_flow");
+			const chord_scroller = document.querySelector(`#${self._id_div_chord_flow}`);
 			chord_scroller.addEventListener("scroll", (event) => {
 				self._chord_scroll_top = chord_scroller.scrollTop;
 			});
@@ -486,6 +533,8 @@ function ChordLyricsSheetControl(){
 
 			$(`#id_chord_flow-${i}`).css('visibility', 'visible');
 		}
+		self._ele_chord_flow.scrollTop(0);
+		self._ele_chord_flow.scrollLeft(0);
 	};
 
 	this._delta = 0;
@@ -554,9 +603,16 @@ function ChordLyricsSheetControl(){
 						$(`#id_chord_flow-${i-1}`).css('visibility', 'hidden');
 						
 						console.log(`ele.position().top ${ele.position().top + self._chord_scroll_top}  self._chord_scroll_top ${self._chord_scroll_top}`);
-						$(`#id_div_chord_flow`).animate({
-							scrollTop: ele.position().top + self._chord_scroll_top - nav_bar_height
-						}, 300);
+						if(self._is_small_screen){
+							$(`#${self._id_div_chord_flow}`).animate({
+								// scrollTop: ele.position().top + self._chord_scroll_top - nav_bar_height
+								scrollLeft: (110 * i)
+							}, 300);	
+						}else{
+							$(`#${self._id_div_chord_flow}`).animate({
+								scrollTop: ele.position().top + self._chord_scroll_top - nav_bar_height
+							}, 300);	
+						}
 					}
 
 					self._flow_sync_chord_index = i+1;
@@ -568,7 +624,7 @@ function ChordLyricsSheetControl(){
 			if(synced_index != -1){
 				var ele = $('#id_chord_sync-'+synced_index);
 				ele.css('color', 'red');
-	
+
 				$(`#id_sheet`).animate({
 					scrollTop: self._chord_position_list[synced_index].top - 10
 				}, 300);
@@ -616,8 +672,7 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.DISP_ChordFlow = function(){
-		var parent_ele = $('#id_div_chord_flow');
-		parent_ele.empty();
+		self._ele_chord_flow.empty();
 
 		var beat_index = 0;
 		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
@@ -629,7 +684,12 @@ function ChordLyricsSheetControl(){
 				beat_index++;
 			}
 
-			var div_ele = $(`<div class="col-3" style="margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
+			var div_ele = null;
+			if(self._is_small_screen){
+				div_ele = $(`<div class="border" style="display:inline-block; width:110px; height: 110px; margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
+			}else{
+				div_ele = $(`<div class="col-3" style="margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
+			}
 
 			var chord_ele = self._chordManager.GetChordDisplay(chord_txt, false);
 			chord_ele.on('mousedown', self.PlayChord);
@@ -639,7 +699,7 @@ function ChordLyricsSheetControl(){
 			div_ele.append(`<div class="text-center">${chord_txt} ${h}</div>`)
 			div_ele.append(chord_ele);
 
-			parent_ele.append(div_ele);
+			self._ele_chord_flow.append(div_ele);
 		}
 	};
 
@@ -679,10 +739,10 @@ function ChordLyricsSheetControl(){
 		if(type == 'chart'){
 			$('#id_nav_chord_chart').addClass('active');
 			$('#id_div_chord_chart').show();
-			$('#id_div_chord_flow').hide();
+			self._ele_chord_flow.hide();
 		}else if(type == 'flow'){
 			$('#id_nav_chord_flow').addClass('active');
-			$('#id_div_chord_flow').show();
+			self._ele_chord_flow.show();
 			$('#id_div_chord_chart').hide();
 		}
 	};
