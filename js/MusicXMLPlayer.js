@@ -7,7 +7,6 @@ const PLAYER_STATE = {
 function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCallback){
 	var self = this;
 	this._music = null;
-	this._chordDB = null;
 	this._chordManager = null;
 	this._audioContext = null;
 	this._player = null;
@@ -43,8 +42,7 @@ function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCall
 		self._audioContext = new AudioContextFunc();
 		self._player = new WebAudioFontPlayer();
 		//self._player.loader.waitLoad(self.CallbackInstLoad);
-		self._chordDB = new ChordDB();
-		self._chordManager = new ChordManager();
+		self._chordManager = new ChordManager().Init();
 	};
 
 	this.LoadMusic = function(music){
@@ -500,7 +498,7 @@ function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCall
 	};
 
 	this.PlayChord = function (chord, time_offset, volume) {
-		var chord_info = self._chordDB.GetChordInfo(chord);
+		var chord_info = self._chordManager._chordDB.GetChordInfo(chord);
 		if(chord_info == null){
 			console.error("Cannot find chord " + chord);
 			return;

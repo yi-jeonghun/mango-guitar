@@ -35,6 +35,10 @@
 	height: 70px;
 }
 
+.head-choose-instrument{
+	margin-left: 100px;
+}
+
 #icon_menu_bar{
 	visibility: hidden;
 	display: none;
@@ -99,6 +103,9 @@
 		margin: 10px;
 		border-bottom: solid 1px black;
 		height: 40px;
+	}	
+	.head-choose-instrument{
+		margin-left: 15px;
 	}	
 }
 

@@ -15,7 +15,6 @@ function ChordPlayerControl() {
 	this._font_size = 16;
 	this._chordManager = null;
 	this._musicXMLPlayer = null;
-	this._chordDB = null;
 	this._scrolling = false;
 	this._time_in_milli = 0;
 	this._elapsed_time = parseInt(0);
@@ -31,11 +30,10 @@ function ChordPlayerControl() {
 
 	this.Init = function(){
 		self.InitComponentHandle();
-		self._chordDB = new ChordDB();
 		self._musicXMLPlayer = new MusicXMLPlayer(null, null, null);
 		self._musicXMLPlayer.Init();
 		self._musicXMLPlayer.LoadInstruments();
-		self._chordManager = new ChordManager();
+		self._chordManager = new ChordManager().Init();
 
 		var music_param = self.GetURLParam('music');
 		if(music_param != null){
@@ -340,7 +338,7 @@ function ChordPlayerControl() {
 			var list = lines[i].split(' ');
 			for(var l=0 ; l<list.length ; l++){
 				var chord = list[l].trim();
-				if(chord != '' && self._chordDB.HasChord(chord)){
+				if(chord != '' && self._chordManager.HasChord(chord)){
 					self.PutChord(chord);
 				}
 			}
@@ -421,7 +419,7 @@ function ChordPlayerControl() {
 			}
 
 			var chord_float_ele = null;
-			if(self._chordDB.HasChord(chord_txt)){
+			if(self._chordManager.HasChord(chord_txt)){
 				chord_float_ele = $('<div onmousedown="PlayChord(\'' + chord_txt + '\')"></div>');
 			}else{
 				chord_float_ele = $('<div></div>');
@@ -478,7 +476,7 @@ function ChordPlayerControl() {
 			if(chars[c] == ""){
 				htm += '&nbsp;';
 			}else{
-				if(self._chordDB.HasChord(chars[c])){
+				if(self._chordManager.HasChord(chars[c])){
 					htm += '<span class="chord-sm" onmousedown="PlayChord(\'' + chars[c] + '\')">' + chars[c] + '</span>' + '&nbsp;';
 				}else{
 					htm += chars[c] + '&nbsp;';

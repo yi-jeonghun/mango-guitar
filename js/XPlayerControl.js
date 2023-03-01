@@ -15,7 +15,7 @@ function XPlayerControl(){
 	this.Init = function(){
 		self._musicXMLPlayer = new MusicXMLPlayer(self.FlowControlCallback, self.PlayEndCallback, self.OnInstrumentLoaded);
 		self._musicXMLPlayer.Init();
-		self._chordManager = new ChordManager();
+		self._chordManager = new ChordManager().Init();
 		self._scroll = new Scroll();
 		self.InitComponentHandle();
 		self.InitLoading();

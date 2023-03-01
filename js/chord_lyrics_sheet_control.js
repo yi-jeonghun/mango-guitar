@@ -5,7 +5,6 @@ $('document').ready(function(){
 function ChordLyricsSheetControl(){
 	var self = this;
 	this._sheet = null;
-	this._chordDB = null;
 	this._sheet_scroll_top = 0;
 	this._chord_scroll_top = 0;
 	this._chordManager = null;
@@ -15,14 +14,13 @@ function ChordLyricsSheetControl(){
 	this._is_small_screen = false;
 	this._ele_chord_flow = null;
 	this._id_div_chord_flow = 'id_div_chord_flow';
+	this._transposed_chord_list = [];
 
 	this.Init = function(){
-		self._chordManager = new ChordManager();
+		self._chordManager = new ChordManager().Init();
 		var playlist_storage = new PlaylistStorage_Local();
 		window._mango_player = new MangoPlayer().Init(playlist_storage, 100, 100);
 		window._mango_player.SetFlowEventCallback(self.OnFlowEvent);
-
-		self._chordDB = new ChordDB();
 
 		var embed_param = null;
 		{
@@ -143,35 +141,52 @@ function ChordLyricsSheetControl(){
 			}
 			self.Preview();
 		};
+
+		$('#id_select_capo').on('change', function(){
+			console.debug('capo changed ');
+			var capo = $('#id_select_capo').val();
+			console.debug('capo ' + capo);
+			self._sheet.capo = capo;
+			self.Transpose();
+			self.Preview();
+			self.DISP_ChordFlow();
+			self.DISP_ChordChart();
+			});
+	};
+
+	this.Transpose = function(){
+		//deep copy chord info list
+		self._transposed_chord_list = [];
+		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
+			var chord_info = {
+				beat_count: self._sheet.chord_list[i].beat_count,
+				chord: self._sheet.chord_list[i].chord,
+				time_ms: self._sheet.chord_list[i].time_ms,
+				time_ms_arr: []
+			};
+
+			for(var k=0 ; k<self._sheet.chord_list[i].time_ms_arr.length ; k++){
+				chord_info.time_ms_arr.push(self._sheet.chord_list[i].time_ms_arr[k]);
+			}
+
+			self._transposed_chord_list.push(chord_info);
+		}
+
+		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
+			var chord_txt = self._sheet.chord_list[i].chord;
+			for(var c=self._sheet.capo ; c>0 ; c--){
+				chord_txt = self._chordManager.Transpose(chord_txt, 'down');
+			}
+			self._transposed_chord_list[i].chord = chord_txt;
+		}
 	};
 
 	this.LoadSheet = function(sheet_uid){
 		$.getJSON(`db/chord_lyrics_sheet/${sheet_uid}.json`, function(sheet) {
 			self._sheet = sheet;
 			self._sheet.chord_list = JSON.parse(self._sheet.chord_list);
-			if(self._sheet.capo > 0){
-				for(var i=0 ; i<self._sheet.chord_list.length ; i++){
-					for(var c=self._sheet.capo ; c>0 ; c--){
-						self._sheet.chord_list[i].chord = self._chordDB.Transpose(self._sheet.chord_list[i].chord, 'down');
-					}
-				}
-			}
 
-			self._chord_chart = [];
-			for(var i=0 ; i<self._sheet.chord_list.length ; i++){
-				var chord = self._sheet.chord_list[i].chord;
-				var found = false;
-				for(var g=0 ; g<self._chord_chart.length ; g++){
-					if(self._chord_chart[g] == chord){
-						found = true;
-						break;
-					}
-				}
-				if(found == false){
-					self._chord_chart.push(chord);
-				}
-			}
-
+			self.Transpose();
 			self.DISP_Sheet();
 			self.LoadVideo();
 		});
@@ -201,9 +216,15 @@ function ChordLyricsSheetControl(){
 		$('#id_label_title').html(self._sheet.title);
 		$('#id_label_artist').html(self._sheet.artist_name);
 		if(self._sheet.capo > 0){
-			$('#id_label_capo').html(`Capo : ${self._sheet.capo}`);
+			// $('#id_label_capo').html(`Capo : ${self._sheet.capo}`);
+			$('#id_select_capo').val(self._sheet.capo);
+		}else{
+			$('#id_select_capo').val('0');
 		}
+
 		self.Preview();
+		self.DISP_ChordFlow();
+		self.DISP_ChordChart();
 	};
 
 	this.IsOverflowLine = function(width, line){
@@ -258,11 +279,8 @@ function ChordLyricsSheetControl(){
 		var lines_temp = txt.split('\n');
 		var lines = [];
 
-		/* transpose */
 		for(var i=0 ; i<lines_temp.length ; i++) {
-			// console.log('before transpose ' + lines_temp[i]);
 			lines_temp[i] = self.TransposeLine(lines_temp[i]);
-			// console.log('after transpose ' + lines_temp[i]);
 		}
 
 		/* Overflow 처리하기 */
@@ -392,8 +410,6 @@ function ChordLyricsSheetControl(){
 
 		self.SetChordPositionList();
 		self.DISP_SubBeat();
-		self.DISP_ChordFlow();
-		self.DISP_ChordChart();
 	};
 
 	this._cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
@@ -424,7 +440,7 @@ function ChordLyricsSheetControl(){
 				
 			}else{
 				// console.log('chars[c]) ' + chars[c]);
-				if(self._chordDB.HasChord(chars[c])){
+				if(self._chordManager.HasChord(chars[c])){
 					return true;
 				}else{
 					
@@ -443,11 +459,11 @@ function ChordLyricsSheetControl(){
 			if(chars[c] == ""){
 				h += ' ';
 			}else{
-				if(self._chordDB.HasChord(chars[c])){
+				if(self._chordManager.HasChord(chars[c])){
 					var chord_txt = chars[c];
 					if(self._sheet.capo > 0){
 						for(var t=self._sheet.capo ; t>0 ; t--){
-							chord_txt = self._chordDB.Transpose(chord_txt, 'down');
+							chord_txt = self._chordManager.Transpose(chord_txt, 'down');
 						}
 					}
 					h += chord_txt + ' ';
@@ -468,7 +484,7 @@ function ChordLyricsSheetControl(){
 			if(chars[c] == ""){
 				h += '&nbsp;';
 			}else{
-				if(self._chordDB.HasChord(chars[c])){
+				if(self._chordManager.HasChord(chars[c])){
 					var chord_txt = chars[c];
 
 					if(chord_txt == 'A#'){
@@ -641,6 +657,7 @@ function ChordLyricsSheetControl(){
 	this._chord_position_list = [];
 	this.SetChordPositionList = function(){
 		self._chord_position_list = [];
+		console.debug('self._sheet.chord_list.length ' + self._sheet.chord_list.length);
 		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
 			var ele = $('#id_chord_sync-'+i);
 			var pos = ele.position();
@@ -675,11 +692,11 @@ function ChordLyricsSheetControl(){
 		self._ele_chord_flow.empty();
 
 		var beat_index = 0;
-		for(var i=0 ; i<self._sheet.chord_list.length ; i++){
-			var chord_txt = self._sheet.chord_list[i].chord;
+		for(var i=0 ; i<self._transposed_chord_list.length ; i++){
+			var chord_txt = self._transposed_chord_list[i].chord;
 
 			var h = ``;
-			for(var b=0 ; b<self._sheet.chord_list[i].time_ms_arr.length ; b++){
+			for(var b=0 ; b<self._transposed_chord_list[i].time_ms_arr.length ; b++){
 				h += `<i id="id_chord_beat-${beat_index}">.</i>`;
 				beat_index++;
 			}
@@ -704,6 +721,23 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.DISP_ChordChart = function(){
+		self._chord_chart = [];
+		for(var i=0 ; i<self._transposed_chord_list.length ; i++){
+			var chord = self._transposed_chord_list[i].chord;
+			var found = false;
+			for(var g=0 ; g<self._chord_chart.length ; g++){
+				if(self._chord_chart[g] == chord){
+					found = true;
+					break;
+				}
+			}
+			if(found == false){
+				self._chord_chart.push(chord);
+			}
+		}
+
+		console.debug('DISP_ChordChart ' );
+		$('#id_div_chord_chart').html('');
 		var parent_ele = $('#id_div_chord_chart');
 		parent_ele.empty();
 
@@ -720,8 +754,6 @@ function ChordLyricsSheetControl(){
 			div_ele.append(chord_ele);
 
 			parent_ele.append(div_ele);
-
-			// console.log(chord_chart[g]);
 		}
 	};
 

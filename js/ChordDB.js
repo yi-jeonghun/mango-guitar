@@ -5,8 +5,9 @@ function ChordInfo(fret, stringFrets, fingers){
 	this.fingers = fingers;
 };
 
-function ChordDB() {
+function ChordDB(instrument) {
 	var self = this;
+	this._instrument = instrument;
 
 	this._ROOT_LIST = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B'];
 	this._TYPE_LIST = [
@@ -182,8 +183,19 @@ function ChordDB() {
 	}
 
 	this.FindDB = function(chord){
+		// console.debug('find DB ' + chord);
 		var chord_key = self.GetChordKey(chord);
-		switch(chord_key){
+
+		if(self._instrument == 'guitar'){
+			return self.FindDBGuitar(chord_key);
+		}else if(self._instrument == 'ukulele'){
+			return self.FindDBUkulele(chord_key);
+		}
+	};
+
+	//[Barre, [지판숫자], [손가락숫자]]
+	this.FindDBGuitar = function(chord){
+		switch(chord){
 			case 'C':
 				return [
 					[0, [-1,3,2,0,1,0], [0,3,2,0,1,0]],
@@ -3422,6 +3434,1215 @@ function ChordDB() {
 					[0,[-1,-1,1,2,0,2],[0,0,1,2,0,3]],
 					[6,[-1,1,2,3,2,2],[0,1,2,3,2,2]],
 					[4,[-1,3,1,1,1,2],[0,3,1,1,1,2]]
+				];
+		}
+	};
+
+	this.FindDBUkulele = function(chord){
+		switch(chord){
+			case 'C':
+				return [[0, [0,0,0,3], [0,0,0,3]]];
+			case 'Cm':
+				return [[0, [0,3,3,3], [0,1,1,1]]];
+			case 'C5':
+				return [];
+			case 'C7':
+				return [[0, [0,0,0,1], [0,0,0,1]]];
+			case 'Cm7':
+				return [[0, [3,3,3,3], [1,1,1,1]]];
+			case 'CM7':
+				return [[0, [0,0,0,2], [0,0,0,2]]];
+			case 'CmM7':
+				return [[0, [4,3,3,3], [2,1,1,1]]];
+			case 'Cm#7':
+				return [];
+			case 'C7b5':
+				return [];
+			case 'C7#5':
+				return [];
+			case 'Cm7b5':
+				return [[0, [3,3,2,3], [2,3,1,4]]];
+			case 'Cm7#5':
+				return [];
+			case 'C7b9':
+			case 'Cb5':
+			case 'C6':
+				return [[0, [0,0,0,0], [0,0,0,0]]];
+			case 'Cm6':
+				return [[0, [2,3,3,3], [1,2,3,4]]];
+			case 'C9':
+				return [[0, [3,2,0,3], [2,1,0,3]]];
+			case 'C9b5':
+				return [];
+			case 'C9#5':
+				return [];
+			case 'Cm9':
+				return [[0, [3,1,4,3], [2,1,4,3]]];
+			case 'CM9':
+				return [[0, [3,0,0,4], [1,0,0,3]]];
+			case 'Cadd9':
+				return [[0, [0,2,0,3], [0,2,0,3]]];
+			case 'C7#9':
+				return [];
+			case 'C11':
+				return [[2, [2,4,0,2], [1,4,0,2]]];
+			case 'Cm11':
+				return [[0, [3,3,1,3], [2,3,1,4]]];
+			case 'C13':
+				return [[0, [3,0,0,0], [3,0,0,0]]];
+			case 'CM13':
+				return [];
+			case 'Csus2':
+				return [[0, [0,2,3,3], [0,1,2,3]]];
+			case 'Csus4':
+				return [[0, [0,0,1,3,], [0,0,1,3]]];
+			case 'C7sus4':
+				return [[0, [0,0,1,1,], [0,0,1,1]]];
+			case 'C9sus4':
+				return [];
+			case 'Cdim':
+				return [[0, [0,3,1,3], [0,2,1,3]]];
+			case 'Cdim7':
+				return [[0, [2,3,2,3], [1,3,2,4]]];
+			case 'Caug':
+				return [[0, [1,0,0,3], [1,0,0,3]]];
+			case 'C/D'    : return [];
+			case 'C/E'    : return [];
+			case 'C/G'    : return [];
+			case 'C/A'    : return [];
+			case 'C/B'    : return [];
+			case 'C/Bb'   : return [];
+			case 'Cm/Eb'  : return [];
+			case 'Cm6/G'  : return [];
+//---------------------------------------------------------------------------------------
+			case 'C#':
+			case 'Db':
+				return [[0, [1,1,1,4], [1,1,1,4]]];
+			case 'C#m':
+			case 'Dbm':
+				return [[0, [1,4,4,4], [1,4,4,4]]];
+			case 'C#7':
+			case 'Db7':
+				return [[0, [1,1,1,2], [1,1,1,2]]];
+			case 'C#m7':
+			case 'Dbm7':
+				return [[0, [1,1,0,2], [1,2,0,3]]];
+			case 'C#M7':
+			case 'DbM7':
+				return [[0, [1,1,1,3], [1,1,1,3]]];
+			case 'C#mM7':
+			case 'DbmM7':
+				return [[0, [1,0,0,4], [1,0,0,4]]];
+			case 'C#m#7'  :
+			case 'Dbm#7'  : return [];
+			case 'C#7b5'  :
+			case 'Db7b5'  : return [];
+			case 'C#7#5'  :
+			case 'Db7#5'  : return [];
+			case 'C#m7b5' :
+			case 'Dbm7b5' :
+				return [[0, [0,1,0,2], [0,1,0,3]]];
+			case 'C#m7#5':
+			case 'Dbm7#5': return [];
+			case 'C#7b9'  :
+			case 'Db7b9'  :
+				return [];
+			case 'C#b5'   :
+			case 'Dbb5'   :
+				return [];
+			case 'C#6'    :
+			case 'Db6'    :
+				return [[0, [1,1,1,1], [1,1,1,1]]];
+			case 'C#m6'   :
+			case 'Dbm6'   :
+				return [[0, [1,1,0,1], [1,2,0,3]]];
+			case 'C#9'    :
+			case 'Db9'    :
+				return [[0, [1,3,1,2], [1,3,1,2]]];
+			case 'C#9b5'  :
+			case 'Db9b5'  :
+				return [
+				];
+			case 'C#9#5'  :
+			case 'Db9#5'  :
+				return [
+				];
+			case 'C#m9'   :
+			case 'Dbm9'   :
+				return [[0, [4,3,0,4], [3,2,0,4]]];
+			case 'C#M9'   :
+			case 'DbM9'   :
+				return [[0, [1,3,1,3], [1,3,1,4]]];
+			case 'C#add9' :
+			case 'Dbadd9' :
+				return [[0, [1,3,1,4], [1,3,1,4]]];
+			case 'C#7#9'  :
+			case 'Db7#9'  :
+				return [];
+			case 'C#11'   :
+			case 'Db11'   :
+				return [[0, [2,2,3,4], [1,1,2,3]]];
+			case 'C#m11'  :
+			case 'Dbm11'  :
+				return [[0, [4,4,2,4], [2,3,1,4]]];
+			case 'C#13'   :
+			case 'Db13'   :
+				return [[0, [4,1,1,1], [3,1,1,1]]];
+			case 'C#M13'  :
+			case 'DbM13'  :
+				return [];
+			case 'C#sus2' :
+			case 'Dbsus2' :
+				return [[0, [1,3,4,4], [1,2,3,4]]];
+			case 'C#sus4' :
+			case 'Dbsus4' :
+				return [[0, [1,1,2,4], [1,1,2,4]]];
+			case 'C#7sus4':
+			case 'Db7sus4':
+				return [[0, [1,1,2,2], [1,2,3,4]]];
+			case 'C#9sus4':
+			case 'Db9sus4':
+				return [
+				];
+			case 'C#dim'  :
+			case 'Dbdim'  :
+				return [];
+			case 'C#dim7' :
+			case 'Dbdim7' :
+				return [[0, [0,1,0,1], [0,1,0,3]]];
+			case 'C#aug'  :
+			case 'Dbaug'  :
+				return [[0, [2,1,1,0], [3,1,2,0]]];
+			case 'C#5'  :
+			case 'Db5'  :
+				return [[0, [1,1,4,4], [1,1,3,4]]];
+			case 'C#/F'   :
+			case 'Db/F'   :
+				return [];
+			case 'C#/G#'  :
+			case 'Db/Ab'  :
+				return [];
+			case 'C#/C'   :
+			case 'Db/C'   :
+				return [];
+			case 'C#/B'   :
+			case 'Db/B'   :
+				return [];
+			case 'C#/D#'  :
+			case 'Db/Eb'  :
+				return [];
+			case 'C#m7/B':
+				return [
+				];
+			case 'C#m/A':
+				return [
+				];
+//---------------------------------------------------------------------------------------
+			case 'D'      :
+				return [[0, [2,2,2,0], [1,2,3,0]]];
+			case 'Dm'     :
+				return [[0, [2,2,1,0], [2,3,1,0]]];
+			case 'D7'     :
+				return [[0, [2,2,2,3], [1,1,1,2]]];
+			case 'Dm7'    :
+				return [[0, [2,2,1,3], [2,3,1,4]]];
+			case 'DM7'    :
+				return [[0, [2,2,2,4], [1,1,1,3]]];
+			case 'DmM7':
+				return [[0, [4,3,3,3], [2,1,1,1]]];
+			case 'Dm#7'   :
+				return [
+				];
+			case 'D7b5'   :
+				return [
+				];
+			case 'D7#5'   :
+				return [
+				];
+			case 'Dm7b5'  :
+				return [[0, [1,2,1,3], [1,2,1,3]]];
+			case 'Dm7#5':
+				return [
+				];
+			case 'D7b9'   : return [];
+			case 'Db5'    : return [];
+			case 'D6'     :
+				return [[0, [2,2,2,2], [1,1,1,1]]];
+			case 'Dm6'    :
+				return [[0, [2,2,1,2], [2,3,1,4]]];
+			case 'D9'     :
+				return [[0, [4,3,1,3], [3,2,1,4]]];
+			case 'D9b5'   :
+				return [
+				];
+			case 'D9#5'   :
+				return [
+				];
+			case 'Dm9'    :
+				return [[0, [4,4,0,4], [1,2,0,3]]];
+			case 'DM9'    :
+				return [[0, [4,4,0,3], [2,3,0,1]]];
+			case 'Dadd9'  : return [[0, [1,3,1,4], [1,3,1,4]]];
+			case 'D7#9'   :
+				return [
+				];
+			case 'D11'    : return [[0, [0,2,2,3], [0,1,2,3]]];
+			case 'Dm11'   :
+				return [[0, [0,2,1,3], [0,2,1,3]]];
+			case 'D13'    : return [[0, [4,1,1,1], [4,1,1,1]]];
+			case 'DM13'   :
+				return [
+				];
+			case 'Dsus2'  :
+				return [[0, [2,2,0,0], [2,3,0.0]]];
+			case 'Dsus4'  :
+				return [[0, [0,2,3,0], [0,2,3,0]]];
+			case 'D7sus4' :
+				return [[0, [2,2,3,3], [1,2,3,4]]];
+			case 'D9sus4' :
+				return [
+				];
+			case 'Ddim'   : return [[0, [1,2,1,0], [1,3,2,0]]];
+			case 'Ddim7'  :
+				return [[0, [1,2,1,2], [1,3,2,4]]];
+			case 'Daug'   : return [[0, [3,2,2,1], [4,2,3,1]]];
+			case 'D5':
+				return [[0, [2,2,0,0], [2,3,0,0]]];
+			case 'D/C'    : return [];
+			case 'D/E'    : return [];
+			case 'D/A'    : return [];
+			case 'D/C#'   : return [];
+			case 'D/F#'   : return [];
+			case 'Dm/C':
+				return [
+				];
+//---------------------------------------------------------------------------------------
+			case 'D#':
+			case 'Eb':
+				return [[0, [0,3,3,1], [0,2,3,1]]];
+			case 'D#m':
+			case 'Ebm':
+				return [[0, [3,3,2,1], [3,4,2,1]]];
+			case 'D#7':
+			case 'Eb7':
+				return [[0, [3,3,3,4], [1,1,1,2]]];
+			case 'D#m7':
+			case 'Ebm7':
+				return [[0, [3,3,2,4], [2,3,1,4]]];
+			case 'D#M7':
+			case 'EbM7':
+				return [[2, [2,2,2,4], [1,1,1,3]]];
+			case 'D#mM7':
+			case 'EbmM7':
+				return [[4, [4,3,3,3], [2,1,1,1]]];
+			case 'D#m#7':
+			case 'Ebm#7':
+				return [
+				];
+			case 'D#7b5':
+			case 'Eb7b5':
+				return [
+				];
+			case 'D#7#5':
+			case 'Eb7#5':
+				return [
+				];
+			case 'D#m7b5':
+			case 'Ebm7b5':
+				return [[0, [2,3,2,4], [1,3,2,4]]];
+			case 'D#m7#5':
+			case 'Ebm7#5':
+				return [
+				];
+			case 'D#7b9':
+			case 'Eb7b9':
+				return [];
+			case 'D#b5':
+			case 'Ebb5':
+				return [];
+			case 'D#6':
+			case 'Eb6':
+				return [[0, [3,3,3,3], [1,1,1,1]]];
+			case 'D#m6':
+			case 'Ebm6':
+				return [[0, [3,3,2,3], [2,3,1,4]]];
+			case 'D#9':
+			case 'Eb9':
+				return [[0, [1,1,4,4], [1,1,3,4]]];
+			case 'D#9b5':
+			case 'Eb9b5':
+				return [
+				];
+			case 'D#9#5':
+			case 'Eb9#5':
+				return [
+				];
+			case 'D#m9':
+			case 'Ebm9':
+				return [
+				];
+			case 'D#M9':
+			case 'EbM9':
+				return [
+				];
+			case 'D#add9':
+			case 'Ebadd9':
+				return [[0, [0,3,1,1], [0,3,1,1]]];
+			case 'D#7#9':
+			case 'Eb7#9':
+				return [];
+			case 'D#11':
+			case 'Eb11':
+				return [];
+			case 'D#m11':
+			case 'Ebm11':
+				return [
+				];
+			case 'D#13':
+			case 'Eb13':
+				return [];
+			case 'D#M13':
+			case 'EbM13':
+				return [
+				];
+			case 'D#sus2':
+			case 'Ebsus2':
+				return [[0, [3,3,1,1], [3,4,1,1]]];
+			case 'D#sus4':
+			case 'Ebsus4':
+				return [[0, [1,3,4,1], [1,3,4,1]]];
+			case 'D#7sus4':
+			case 'Eb7sus4':
+				return [[0, [3,3,4,4], [1,2,3,4]]];
+			case 'D#9sus4':
+			case 'Eb9sus4':
+				return [
+				];
+			case 'D#dim'  :
+			case 'Ebdim'  :
+				return [[0, [2,3,2,0], [1,2,3,0]]];
+			case 'D#dim7'  :
+			case 'Ebdim7'  :
+				return [[0, [2,3,2,3], [1,3,2,4]]];
+			case 'D#aug'  :
+			case 'Ebaug'  :
+				return [[0, [0,3,3,2], [0,2,3,1]]];
+			case 'D#5':
+			case 'Eb5':
+				return [
+				];
+			case 'D#/G'  :
+			case 'Eb/G'  :
+				return [];
+			case 'D#/A#'  :
+			case 'Eb/Bb'  :
+				return [];
+			case 'D#/D'  :
+			case 'Eb/D'  :
+				return [];
+			case 'D#/C#'  :
+			case 'Eb/Db'  :
+				return [];
+			case 'D#/F'  :
+			case 'Eb/F'  :
+				return [];
+//---------------------------------------------------------------------------------------
+			case 'E'      :
+				return [[0, [1,4,0,2], [1,3,0,2]]];
+			case 'Em'     :
+				return [[0, [0,4,3,2], [0,3,2,1]]];
+			case 'E7'     :
+				return [[0, [1,2,0,2], [1,2,0,3]]];
+			case 'Em7'    :
+				return [[0, [0,2,0,2], [0,2,0,3]]];
+			case 'EM7'    :
+				return [[0, [1,3,0,2], [1,3,0,2]]];
+			case 'EmM7':
+				return [[0, [0,3,0,2], [0,3,0,2]]];
+			case 'Em#7'   :
+				return [
+				];
+			case 'E7b5'   :
+				return [
+				];
+			case 'E7#5'   :
+				return [
+				];
+			case 'Em7b5'  :
+				return [[0, [0,2,0,1], [0,2,0,1]]];
+			case 'Em7#5':
+				return [
+				];
+			case 'E7b9'   : return [];
+			case 'Eb5'    : return [];
+			case 'E6'     :
+				return [[0, [4,4,4,4], [1,1,1,1]]];
+			case 'Em6'    :
+				return [[0, [0,1,0,2], [0,1,0,3]]];
+			case 'E9'     :
+				return [[0, [1,2,2,2], [1,3,3,3]]];
+			case 'E9b5'   :
+				return [
+				];
+			case 'E9#5'   :
+				return [
+				];
+			case 'Em9'    :
+				return [[3, [0,4,0,3], [0,2,0,1]]];
+			case 'EM9'    :
+				return [[6, [3,3,0,4], [1,2,0,3]]];
+			case 'Eadd9'  :
+				return [[0, [1,4,2,2], [1,4,2,3]]];
+			case 'E7#9'   :
+				return [
+				];
+			case 'E11'    :
+				return [[0, [1,2,0,0], [1,2,0,0]]];
+			case 'Em11'   :
+				return [[0, [0,1,0,0], [0,1,0,0]]];
+			case 'E13'    : return [[0, [1,2,0,4], [1,2,0,4]]];
+			case 'EM13'   :
+				return [
+				];
+			case 'Esus2'  :
+				return [[0, [4,4,2,2], [3,4,1,1]]];
+			case 'Esus4'  :
+				return [[0, [4,4,0,0], [1,2,0,0]]];
+			case 'E7sus4' :
+				return [[2, [3,3,4,4], [1,2,3,4]]];
+			case 'E9sus4' :
+				return [
+				];
+			case 'Edim'   : return [[0, [0,4,0,1], [0,4,0,1]]];
+			case 'Edim7'  :
+				return [[0, [0,1,0,1], [0,2,0,3]]];
+			case 'Eaug'   :
+				return [[0, [1,0,0,3], [1,0,0,3]]];
+			case 'E5':
+				return [[0, [4,4,0,2], [3,4,0,1]]];
+			case 'E/B'    : return [];
+			case 'E/D'    : return [];
+			case 'E/D#'   : return [];
+			case 'E/F#'   : return [];
+			case 'E/G#'   : return [];
+			case 'Em/B'   : return [];
+			case 'E7/G#':
+				return [
+				];
+//-------------------------------------------------------------------------------------
+			case 'F'      :
+				return [[0, [2,0,1,0], [2,0,1,0]]];
+			case 'Fm'     :
+				return [[0, [1,0,1,3], [1,0,2,4]]];
+			case 'F7'     :
+				return [[0, [2,3,1,3], [2,3,1,4]]];
+			case 'Fm7'    :
+				return [[0, [1,3,1,3], [1,3,1,4]]];
+			case 'FM7'    :
+				return [[0, [2,4,1,3], [2,4,1,3]]];
+			case 'FmM7':
+				return [[0, [1,4,1,3], [1,4,1,3]]];
+			case 'Fm#7'   :
+				return [
+				];
+			case 'F7b5'   :
+				return [
+				];
+			case 'F7#5'   :
+				return [
+				];
+			case 'Fm7b5'  :
+				return [[0, [1,3,1,2], [1,3,1,2]]];
+			case 'Fm7#5':
+				return [
+				];
+			case 'F7b9'   : return [];
+			case 'Fb5'    : return [];
+			case 'F6'     :
+				return [[0, [2,2,1,3], [2,3,1,4]]];
+			case 'Fm6'    :
+				return [[0, [1,2,1,3], [1,3,2,4]]];
+			case 'F9'     :
+				return [[0, [0,0,1,3], [0,0,1,3]]];
+			case 'F9b5'   :
+				return [
+				];
+			case 'F9#5'   :
+				return [
+				];
+			case 'Fm9'    :
+				return [[3, [0,3,2,4], [0,2,1,4]]];
+			case 'FM9'    :
+				return [[0, [0,4,1,0], [0,3,1,0]]];
+			case 'Fadd9'  :
+				return [[0, [0,0,1,0], [0,0,1,0]]];
+			case 'F7#9'   : return [];
+			case 'F11'    :
+				return [[0, [3,3,1,0], [3,4,1,0]]];
+			case 'Fm11'   :
+				return [[0, [1,3,1,1], [1,3,1,1]]];
+			case 'F13'    : 	return [[4, [4,1,1,1], [4,1,1,1]]];
+			case 'FM13'   :
+				return [
+				];
+			case 'Fsus2'  :
+				return [[0, [0,0,1,3], [0,0,1,3]]];
+			case 'Fsus4'  :
+				return [[0, [3,0,1,1], [3,0,1,1]]];
+			case 'F7sus4' :
+				return [[3, [3,3,4,4], [1,1,2,3]]];
+			case 'F9sus4' :
+				return [
+				];
+			case 'Fdim'   : return [[0, [1,0,1,2], [1,0,2,3]]];
+			case 'Fdim7'  :
+				return [[0, [1,2,1,2], [1,3,2,4]]];
+			case 'Faug'   : return [[0, [2,1,1,0], [3,1,2,0]]];
+			case 'F5':
+				return [[0, [0,0,1,3], [0,0,1,3]]];
+			case 'F/A'    : return [];
+			case 'F/C'    : return [];
+			case 'F/E'    : return [];
+			case 'F/Eb'   : return [];
+			case 'F/G'    : return [];
+//-------------------------------------------------------------------------------------
+			case 'F#'     :
+			case 'Gb'     :
+				return [[0, [3,1,2,1], [3,1,2,1]]];
+			case 'F#m'    :
+			case 'Gbm'    :
+				return [[0, [2,1,2,0], [2,1,3,0]]];
+			case 'F#7'    :
+			case 'Gb7'    :
+				return [[0, [3,4,2,4], [2,3,1,4]]];
+			case 'F#m7'   :
+			case 'Gbm7'   :
+				return [[0, [2,4,2,4], [1,3,2,4]]];
+			case 'F#M7'   :
+			case 'GbM7'   :
+				return [[2, [2,4,1,3], [2,4,1,3]]];
+			case 'F#mM7':
+			case 'GbmM7':
+				return [[2, [1,4,1,3], [1,4,1,3]]];
+			case 'F#m#7'   :
+			case 'Gbm#7'   :
+				return [
+				];
+			case 'F#7b5'   :
+			case 'Gb7b5'   :
+				return [
+				];
+			case 'F#7#5'   :
+			case 'Gb7#5'   :
+				return [
+				];
+			case 'F#m7b5' :
+			case 'Gbm7b5' :
+				return [[0, [2,4,2,3], [1,3,1,2]]];
+			case 'F#m7#5':
+			case 'Gbm7#5':
+				return [
+				];
+			case 'F#7b9' :
+			case 'Gb7b9' :
+				return [];
+			case 'F#b5' :
+			case 'Gbb5' :
+				return [];
+			case 'F#6' :
+			case 'Gb6' :
+				return [[0, [3,3,2,4], [2,3,1,4]]];
+			case 'F#m6' :
+			case 'Gbm6' :
+				return [[0, [2,3,2,4], [1,2,1,3]]];
+			case 'F#9' :
+			case 'Gb9' :
+				return [[0, [3,4,4,4], [1,3,3,3]]];
+			case 'F#9b5' :
+			case 'Gb9b5' :
+				return [
+				];
+			case 'F#9#5' :
+			case 'Gb9#5' :
+				return [
+				];
+			case 'F#m9' :
+			case 'Gbm9' :
+				return [[9, [3,1,4,3], [2,1,4,3]]];
+			case 'F#M9' :
+			case 'GbM9' :
+				return [[0, [1,1,1,1], [1,1,1,1]]];
+			case 'F#add9' :
+			case 'Gbadd9' :
+				return [[0, [1,1,2,1], [1,1,2,1]]];
+			case 'F#7#9' :
+			case 'Gb7#9' :
+				return [];
+			case 'F#11' :
+			case 'Gb11' :
+				return [[0, [4,4,2,4], [2,3,1,4]]];
+			case 'F#m11' :
+			case 'Gbm11' :
+				return [[0, [4,4,2,0], [3,4,1,0]]];
+			case 'F#13' :
+			case 'Gb13' :
+				return [[6, [4,1,1,1], [4,1,1,1]]];
+			case 'F#M13' :
+			case 'GbM13' :
+				return [
+				];
+			case 'F#sus2' :
+			case 'Gbsus2' :
+				return [[0, [1,1,2,4], [1,1,2,4]]];
+			case 'F#sus4' :
+			case 'Gbsus4' :
+				return [[0, [4,1,2,2], [4,1,2,3]]];
+			case 'F#7sus4' :
+			case 'Gb7sus4' :
+				return [[4, [3,3,4,4], [1,2,3,4]]];
+			case 'F#9sus4' :
+			case 'Gb9sus4' :
+				return [
+				];
+			case 'F#dim' :
+			case 'Gbdim' :
+				return [[0, [2,0,2,0], [1,0,2,0]]];
+			case 'F#dim7' :
+			case 'Gbdim7' :
+				return [[0, [2,3,2,3], [1,3,2,4]]];
+			case 'F#aug' :
+			case 'Gbaug' :
+				return [[0, [3,2,2,1], [4,2,3,1]]];
+			case 'F#5':
+			case 'Gb5':
+				return [[0, [0,1,2,4], [0,1,2,4]]];
+			case 'F#/A#' :
+			case 'Gb/Bb' :
+				return [];
+			case 'F#/C#' :
+			case 'Gb/Db' :
+				return [];
+			case 'F#/F' :
+			case 'Gb/F' :
+				return [];
+			case 'F#/E' :
+			case 'Gb/E' :
+				return [];
+			case 'F#/G#' :
+			case 'Gb/Ab' :
+				return [];
+//-------------------------------------------------------------------------------------
+			case 'G'      : 
+				return [[0, [0,2,3,2], [0,1,3,2]]];
+			case 'Gm'     :
+				return [[0, [0,2,3,1], [0,2,3,1]]];
+			case 'G7'     :
+				return [[0, [0,2,1,2], [0,2,1,3]]];
+			case 'Gm7'    :
+				return [[0, [0,2,1,1], [0,2,1,1]]];
+			case 'GM7'    :
+				return [[0, [0,2,2,2], [0,1,1,1]]];
+			case 'GmM7':
+				return [[0, [0,2,2,1], [0,2,3,1]]];
+			case 'Gm#7'   :
+				return [
+				];
+			case 'G7b5'   :
+				return [
+				];
+			case 'G7#5'   :
+				return [
+				];
+			case 'Gm7b5'  :
+				return [[0, [0,1,1,1], [0,1,1,1]]];
+			case 'Gm7#5':
+				return [
+				];
+			case 'G7b9'   : return [];
+			case 'Gb5'    : return [];
+			case 'G6'     :
+				return [[0, [0,2,0,2], [0,2,0,3]]];
+			case 'Gm6'    :
+				return [[0, [0,2,0,1], [0,2,0,1]]];
+			case 'G9'     :
+				return [[2, [0,4,4,1], [0,3,4,1]]];
+			case 'G9b5'   :
+				return [
+				];
+			case 'G9#5'   :
+				return [
+				];
+			case 'Gm9'    :
+				return [[0, [3,2,1,0], [3,2,1,0]]];
+			case 'GM9'    :
+				return [[0, [2,3,1,0], [2,4,1,0]]];
+			case 'Gadd9'  :
+				return [[2, [0,1,4,1], [0,1,4,2]]];
+			case 'G7#9'   : return [];
+			case 'G11'    :
+				return [[0, [0,0,1,2], [0,0,1,2]]];
+			case 'Gm11'   :
+				return [[0, [0,0,1,1], [0,0,1,1]]];
+			case 'G13'    : return [[0, [0,4,1,2], [0,4,1,2]]];
+			case 'GM13'   :
+				return [
+				];
+			case 'Gsus2'  :
+				return [[0, [0,2,3,0], [0,2,3,0]]];
+			case 'Gsus4'  :
+				return [[0, [0,2,3,3], [0,1,2,3]]];
+			case 'G7sus4' :
+				return [[0, [0,2,1,3], [0,2,1,3]]];
+			case 'G9sus4' :
+				return [
+				];
+			case 'Gdim'   : return [[0, [0,1,3,1], [0,1,3,2]]];
+			case 'Gdim7'  :
+				return [[0, [0,1,0,1], [0,2,0,3]]];
+			case 'Gaug'   : return [[0, [0,3,3,2], [0,2,3,1]]];
+			case 'G5':
+				return [[2, [0,1,2,4], [0,1,2,4]]];
+			case 'G/B'    : return [];
+			case 'G/D'    : return [];
+			case 'G/F#'   : return [];
+			case 'G/F'    : return [];
+			case 'G/A'    : return [];
+//-----------------------------------------------------------------------------------------------
+			case 'G#'     :
+			case 'Ab'     :
+				return [[2, [4,2,3,2], [3,1,2,1]]];
+			case 'G#m'    :
+			case 'Abm'    :
+				return [[0, [4,3,4,2], [3,2,4,1]]];
+			case 'G#7'    :
+			case 'Ab7'    :
+				return [[0, [1,3,2,3], [1,3,2,4]]];
+			case 'G#m7'    :
+			case 'Abm7'    :
+				return [[0, [1,3,2,2], [1,4,2,3]]];
+			case 'G#M7'    :
+			case 'AbM7'    :
+				return [[0, [1,3,3,3], [1,3,3,3]]];
+			case 'G#mM7':
+			case 'AbmM7':
+				return [[0, [0,3,4,2], [0,2,3,1]]];
+			case 'G#m#7'    :
+			case 'Abm#7'    :
+				return [
+				];
+			case 'G#7b5'    :
+			case 'Ab7b5'    :
+				return [
+				];
+			case 'G#7#5'    :
+			case 'Ab7#5'    :
+				return [
+				];
+			case 'G#m7b5'    :
+			case 'Abm7b5'    :
+				return [[0, [1,2,2,2], [1,2,3,4]]];
+			case 'G#m7#5':
+			case 'Abm7#5':
+				return [
+				];
+			case 'G#7b9'    :
+			case 'Ab7b9'    :
+				return [];
+			case 'G#b5'    :
+			case 'Abb5'    :
+				return [];
+			case 'G#6'    :
+			case 'Ab6'    :
+				return [[0, [2,3,2,4], [1,2,1,3]]];
+			case 'G#m6'    :
+			case 'Abm6'    :
+				return [[3, [2,3,2,4], [1,2,1,3]]];
+			case 'G#9'    :
+			case 'Ab9'    :
+				return [[0, [1,0,2,1], [1,0,3,2]]];
+			case 'G#9b5'    :
+			case 'Ab9b5'    :
+				return [
+				];
+			case 'G#9#5'    :
+			case 'Ab9#5'    :
+				return [
+				];
+			case 'G#m9'    :
+			case 'Abm9'    :
+				return [[0, [4,3,2,1], [4,3,2,1]]];
+			case 'G#M9'    :
+			case 'AbM9'    :
+				return [[0, [0,0,4,1], [0,0,4,1]]];
+			case 'G#add9'    :
+			case 'Abadd9'    :
+				return [[0, [3,3,4,3], [1,1,2,1]]];
+			case 'G#7#9'    :
+			case 'Ab7#9'    :
+				return [];
+			case 'G#11'    :
+			case 'Ab11'    :
+				return [[0, [1,1,2,3], [1,1,2,3]]];
+			case 'G#m11'    :
+			case 'Abm11'    :
+				return [[3, [2,4,2,2], [1,3,1,1]]];
+			case 'G#13'    :
+			case 'Ab13'    :
+				return [[5, [4,2,4,4], [2,1,3,4]]];
+			case 'G#M13'    :
+			case 'AbM13'    :
+				return [[3, [2,4,2,2], [1,3,1,1]]];
+			case 'G#sus2'    :
+			case 'Absus2'    :
+				return [[0, [1,3,4,1], [1,3,4,1]]];
+			case 'G#sus4'    :
+			case 'Absus4'    :
+				return [[0, [1,3,4,4], [1,2,3,4]]];
+			case 'G#7sus4'    :
+			case 'Ab7sus4'    :
+				return [[0, [1,3,2,4], [1,3,2,4]]];
+			case 'G#9sus4'    :
+			case 'Ab9sus4'    :
+				return [
+				];
+			case 'G#dim'    :
+			case 'Abdim'    :
+				return [[0, [1,2,0,2], [1,2,0,3]]];
+			case 'G#dim7'    :
+			case 'Abdim7'    :
+				return [[0, [1,2,1,2], [1,3,2,4]]];
+			case 'G#aug'    :
+			case 'Abaug'    :
+				return [[0, [1,0,0,3], [1,0,0,3]]];
+			case 'G#5':
+			case 'Ab5':
+				return [[0, [1,3,4,0], [1,3,4,0]]];
+			case 'G#/C'    :
+			case 'Ab/C'    :
+				return [];
+			case 'G#/D#'    :
+			case 'Ab/Eb'    :
+				return [];
+			case 'G#/G'    :
+			case 'Ab/G'    :
+				return [];
+			case 'G#/F#'    :
+			case 'Ab/Gb'    :
+				return [];
+			case 'G#/A#'    :
+			case 'Ab/Bb'    :
+				return [];
+//-----------------------------------------------------------------------------------------------
+			case 'A'      :
+				return [[0, [2,1,0,0], [2,1,0,0]]];
+			case 'Am'     :
+				return [[0, [2,0,0,0], [2,0,0,0]]];
+			case 'A7'     :
+				return [[0, [0,1,0,0], [0,1,0,0]]];
+			case 'Am7'    :
+				return [[0, [0,0,0,0], [0,0,0,0]]];
+			case 'AM7'    :
+				return [[0, [1,1,0,0], [1,2,0,0]]];
+			case 'AmM7':
+				return [[0, [1,0,0,0], [1,0,0,0]]];
+			case 'Am#7'   :
+				return [
+				];
+			case 'A7b5'   :
+				return [
+				];
+			case 'A7#5'   :
+				return [
+				];
+			case 'Am7b5'  :
+				return [[0, [2,3,3,3], [1,3,3,3]]];
+			case 'Am7#5':
+				return [
+				];
+			case 'A7b9'   : return [];
+			case 'Ab5'    : return [];
+			case 'A6'     :
+				return [[0, [2,4,2,4], [1,3,1,4]]];
+			case 'Am6'    :
+				return [
+				];
+			case 'A9'     :
+				return [[0, [2,1,3,2], [2,1,4,3]]];
+			case 'A9b5'   :
+				return [
+				];
+			case 'A9#5'   :
+				return [ 
+				];
+			case 'Am9'    :
+				return [[0, [1,0,3,2], [1,0,3,2]]];
+			case 'AM9'    :
+				return [[0, [4,1,4,0], [3,1,4,0]]];
+			case 'Aadd9'  :
+				return [[0, [2,1,0,2], [2,1,0,3]]];
+			case 'A7#9'   : return [];
+			case 'A11'    :
+				return [[0, [2,2,3,4], [1,1,2,3]]];
+			case 'Am11'   :
+				return [[2, [0,0,4,4], [0,0,1,2]]];
+			case 'A13'    :
+				return [[0, [0,1,2,0], [0,1,2,0]]];
+			case 'AM13'   :
+				return [ 
+				];
+			case 'Asus2'  :
+				return [[2, [1,3,4,1], [1,3,4,1]]];
+			case 'Asus4'  :
+				return [[0, [2,2,0,0], [2,3,0,0]]];
+			case 'A7sus4' :
+				return [[0, [0,2,0,0], [0,2,0,0]]];
+			case 'A9sus4' :
+				return [ 
+				];
+			case 'Adim'   :
+				return [[2, [1,2,4,2], [1,2,4,3]]];
+			case 'Adim7'  :
+				return [[0, [2,3,2,3], [1,3,2,4]]];
+			case 'Aaug'   : return [[0, [2,1,1,4], [2,1,1,4]]];
+			case 'A5':
+				return [[0, [2,4,0,0], [1,3,0,0]]];
+			case 'A/C#'   : return [];
+			case 'A/E'    : return [];
+			case 'A/G#'   : return [];
+			case 'A/G'    : return [];
+			case 'A/B'    : return [];
+			case 'Am/G'   : return [];
+			case 'Am/F#'  : return [];
+			case 'Am/C':
+				return [ 
+				];
+			case 'Am/D':
+				return [ 
+				];
+			case 'A7/C#':
+				return [ 
+				];
+			case 'Am7/G':
+				return [ 
+				];
+			case 'AmM7/G#':
+				return [
+				];
+			case 'Am6/F#':
+				return [
+				];
+//----------------------------------------------------------------------------------------
+			case 'A#'     :
+			case 'Bb'     :
+				return [[0, [3,2,1,1], [3,2,1,1]]];
+			case 'A#m'    :
+			case 'Bbm'    :
+				return [[0, [3,1,1,1], [3,1,1,1]]];
+			case 'A#7'    :
+			case 'Bb7'    :
+				return [[0, [1,2,1,1], [1,2,1,1]]];
+			case 'A#m7'    :
+			case 'Bbm7'    :
+				return [[0, [1,1,1,1], [1,1,1,1]]];
+			case 'A#M7'    :
+			case 'BbM7'    :
+				return [[0, [3,2,1,0], [3,2,1,0]]];
+			case 'A#mM7':
+			case 'BbmM7':
+				return [[0, [3,1,1,0], [4,1,2,0]]];
+			case 'A#m#7'  :
+			case 'Bbm#7'  :
+				return [
+				];
+			case 'A#7b5'  :
+			case 'Bb7b5'  :
+				return [
+				];
+			case 'A#7#5'  :
+			case 'Bb7#5'  :
+				return [
+				];
+			case 'A#m7b5'  :
+			case 'Bbm7b5'  :
+				return [[0, [1,1,0,1], [1,2,0,3]]];
+			case 'A#m7#5':
+			case 'Bbm7#5':
+				return [
+				];
+			case 'A#7b9'  :
+			case 'Bb7b9'  :
+				return [];
+			case 'A#b5'  :
+			case 'Bbb5'  :
+				return [];
+			case 'A#6'  :
+			case 'Bb6'  :
+				return [[0, [0,2,1,1], [0,2,1,1]]];
+			case 'A#m6'  :
+			case 'Bbm6'  :
+				return [[0, [0,1,1,1], [0,1,1,1]]];
+			case 'A#9'  :
+			case 'Bb9'  :
+				return [[0, [3,2,4,3], [2,1,4,3]]];
+			case 'A#9b5'  :
+			case 'Bb9b5'  :
+				return [
+				];
+			case 'A#9#5'  :
+			case 'Bb9#5'  :
+				return [
+				];
+			case 'A#m9'  :
+			case 'Bbm9'  :
+				return [[0, [3,1,4,3], [2,1,4,3]]];
+			case 'A#M9':
+			case 'BbM9':
+				return [[2, [2,0,4,4], [1,0,3,4]]];
+			case 'A#add9'  :
+			case 'Bbadd9'  :
+				return [[0, [3,2,1,3], [3,2,1,4]]];
+			case 'A#7#9'  :
+			case 'Bb7#9'  :
+				return [];
+			case 'A#11'  :
+			case 'Bb11'  :
+				return [[3, [1,1,2,3], [1,1,2,3]]];
+			case 'A#m11'  :
+			case 'Bbm11'  :
+				return [[6, [1,3,1,1], [1,3,1,1]]];
+			case 'A#13'  :
+			case 'Bb13'  :
+				return [[0, [0,2,4,1], [0,2,4,1]]];
+			case 'A#M13'  :
+			case 'BbM13'  :
+				return [
+				];
+			case 'A#sus2'  :
+			case 'Bbsus2'  :
+				return [[0, [3,0,1,1], [3,0,1,1]]];
+			case 'A#sus4'  :
+			case 'Bbsus4'  :
+				return [[0, [3,3,1,1], [3,4,1,1]]];
+			case 'A#7sus4'  :
+			case 'Bb7sus4'  :
+				return [[0, [1,3,1,1], [1,3,1,1]]];
+			case 'A#9sus4'  :
+			case 'Bb9sus4'  :
+				return [
+				];
+			case 'A#dim'  :
+			case 'Bbdim'  :
+				return [[0, [3,1,0,1], [3,1,0,2]]];
+			case 'A#dim7'  :
+			case 'Bbdim7'  :
+				return [[0, [0,1,0,1], [0,2,0,3]]];
+			case 'A#aug'  :
+			case 'Bbaug'  :
+				return [[0, [3,2,2,1], [4,2,3,1]]];
+			case 'A#5':
+			case 'Bb5':
+				return [[0, [3,0,1,1], [3,0,1,1]]];
+			case 'A#/D'  :
+			case 'Bb/D'  :
+				return [];
+			case 'A#/F'  :
+			case 'Bb/F'  :
+				return [];
+			case 'A#/A'  :
+			case 'Bb/A'  :
+				return [];
+			case 'A#/G#'  :
+			case 'Bb/Ab'  :
+				return [];
+			case 'A#/C'  :
+			case 'Bb/C'  :
+				return [];
+			case 'Bbm7/Ab':
+				return [
+				];
+//----------------------------------------------------------------------------------------
+			case 'B'      :
+				return [[0, [4,3,2,2], [3,2,1,1]]];
+			case 'Bm'     :
+				return [[0, [4,2,2,2], [3,1,1,1]]];
+			case 'B7'     :
+				return [[0, [2,3,2,2], [1,2,1,1]]];
+			case 'Bm7'    :
+				return [[0, [2,2,2,2], [1,1,1,1]]];
+			case 'BM7'    :
+				return [[0, [4,3,2,1], [4,3,2,1]]];
+			case 'BmM7':
+				return [[0, [3,2,2,2], [2,1,1,1]]];
+			case 'Bm#7'   :
+				return [
+				];
+			case 'B7b5'   :
+				return [
+				];
+			case 'B7#5'   :
+				return [
+				];
+			case 'Bm7b5'  :
+				return [[0, [2,2,1,2], [2,3,1,4]]];
+			case 'Bm7#5':
+				return [
+				];
+			case 'B7b9'   : return [];
+			case 'Bb5'    : return [];
+			case 'B6'     :
+				return [[0, [1,3,2,2], [1,4,2,3]]];
+			case 'Bm6'    :
+				return [[0, [1,2,2,2], [1,2,3,4]]];
+			case 'B9'     :
+				return [[2, [3,2,4,3], [2,1,4,3]]];
+			case 'B9b5'   :
+				return [
+				];
+			case 'B9#5'   :
+				return [
+				];
+			case 'Bm9'    :
+				return [[2, [3,1,4,3], [2,1,4,3]]];
+			case 'BM9'    :
+				return [[0, [3,3,2,4], [2,3,1,4]]];
+			case 'Badd9'  : return [[0, [4,3,2,4], [3,1,2,4]]];
+			case 'B7#9'   :
+				return [
+				];
+			case 'B11'    :
+				return [[0, [4,3,0,0], [2,1,0,0]]];
+			case 'Bm11'   :
+				return [[0, [4,2,0,0], [3,1,0,0]]];
+			case 'B13'    :
+				return [[0, [2,3,4,2], [1,2,3,1]]];
+			case 'BM13'   :
+				return [
+				];
+			case 'Bsus2'  :
+				return [[0, [4,1,2,2], [4,1,2,3]]];
+			case 'Bsus4'  :
+				return [[0, [4,4,2,2], [3,4,1,1]]];
+			case 'B7sus4' :
+				return [[0, [2,4,2,2], [1,3,1,1]]];
+			case 'B9sus4' :
+				return [
+				];
+			case 'Bdim'   :
+				return [
+				];
+			case 'Bdim7'  :
+				return [[0, [1,2,1,2], [1,3,2,4]]];
+			case 'Baug'   : return [[0, [4,3,3,2], [4,2,3,1]]];
+			case 'B5':
+				return [[0, [0,0,2,2], [0,0,1,2]]];
+			case 'B/D#'   : return [];
+			case 'B/F#'   : return [];
+			case 'B/A#'   : return [];
+			case 'B/A'    : return [];
+			case 'B/C#'   : return [];
+			case 'Bm/D'   : return [];
+			case 'B7/D#':
+				return [
 				];
 		}
 	};

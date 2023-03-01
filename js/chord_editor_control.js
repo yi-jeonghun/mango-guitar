@@ -9,7 +9,6 @@ function PlayChord(chord){
 
 function ChordEditorControl(){
 	var self = this;
-	this._chordDB = null;
 	this._chordManager = null;
 	this._musicXMLPlayer = null;
 	this._chord_list = [];
@@ -24,8 +23,7 @@ function ChordEditorControl(){
 		self._musicXMLPlayer = new MusicXMLPlayer(null, null, null);
 		self._musicXMLPlayer.Init();
 		self._musicXMLPlayer.LoadInstruments();
-		self._chordDB = new ChordDB();
-		self._chordManager = new ChordManager();
+		self._chordManager = new ChordManager().Init();
 
 		var ID = self.GetURLParam('ID');
 		self._ID = ID;
@@ -362,7 +360,7 @@ function ChordEditorControl(){
 			}
 
 			var chord_float_ele = null;
-			if(self._chordDB.HasChord(chord_txt)){
+			if(self._chordManager.HasChord(chord_txt)){
 				chord_float_ele = $('<div onmousedown="PlayChord(\'' + chord_txt + '\')"></div>');
 			}else{
 				chord_float_ele = $('<div></div>');
@@ -419,7 +417,7 @@ function ChordEditorControl(){
 			if(chars[c] == ""){
 				htm += '&nbsp;';
 			}else{
-				if(self._chordDB.HasChord(chars[c])){
+				if(self._chordManager.HasChord(chars[c])){
 					htm += '<span class="chord-sm" onmousedown="PlayChord(\'' + chars[c] + '\')">' + chars[c] + '</span>' + '&nbsp;';
 				}else{
 					htm += chars[c] + '&nbsp;';

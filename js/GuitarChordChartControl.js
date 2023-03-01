@@ -4,21 +4,20 @@ $(document).ready(function () {
 
 function GuitarChordChartControl(){
 	var self = this;
-	this._chordDB = null;
 	this._chordManager = null;
 	this._musicXMLPlayer = null;
 	this._selected_root = '';
 	this._selected_chord = '';
 
 	this.Init = function(){
-		self._chordDB = new ChordDB();
 		self._musicXMLPlayer = new MusicXMLPlayer(null, null, null);
 		self._musicXMLPlayer.Init();
 		self._musicXMLPlayer.LoadInstruments();
-		self._chordManager = new ChordManager();
+		self._chordManager = new ChordManager().Init();
 		self.DisplayRootList();
 
 		var chord = self.GetURLParam('chord');
+		console.debug('chord ' + chord);
 		if(chord != null){
 			self.LoadFirstChord(chord);
 			self.UpdateMetadata(chord);
@@ -57,6 +56,7 @@ function GuitarChordChartControl(){
 	};
 
 	this.GetURLParam = function(name){
+		console.debug('window.location.href ' + window.location.href);
 		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 		if (results==null) {
 			return null;
@@ -120,9 +120,9 @@ function GuitarChordChartControl(){
 
 	this.DisplayRootList = function(){
 		var root_list_ele = $('#id_root_list');
-		for(var r=0 ; r<self._chordDB._ROOT_LIST.length ; r++){
-			var btn_ele = $('<button type="button" class="btn btn-sm btn-primary root-btn">' + self._chordDB._ROOT_LIST[r] + '</button>');
-			var id_str = 'id_root_btn-' + self._chordDB._ROOT_LIST[r];
+		for(var r=0 ; r<self._chordManager._chordDB._ROOT_LIST.length ; r++){
+			var btn_ele = $('<button type="button" class="btn btn-sm btn-primary root-btn">' + self._chordManager._chordDB._ROOT_LIST[r] + '</button>');
+			var id_str = 'id_root_btn-' + self._chordManager._chordDB._ROOT_LIST[r];
 			id_str = id_str.replace('#', 'z');
 			btn_ele.attr('id', id_str);
 			btn_ele.on('click', self.OnClickRootChord);
@@ -181,14 +181,14 @@ function GuitarChordChartControl(){
 		chord_list_ele.empty();
 
 		var chord_list = [];
-		for(var t=0 ; t<self._chordDB._TYPE_LIST.length ; t++) {
-			var chord = chord_root + self._chordDB._TYPE_LIST[t];
+		for(var t=0 ; t<self._chordManager._chordDB._TYPE_LIST.length ; t++) {
+			var chord = chord_root + self._chordManager._chordDB._TYPE_LIST[t];
 			chord_list.push(chord);
 		}
 
-		for(var b=0 ; b<self._chordDB._BASE_LIST.length ; b++){
-			if(self._chordDB._BASE_LIST[b].root == chord_root){
-				chord_list = chord_list.concat(self._chordDB._BASE_LIST[b].bases);
+		for(var b=0 ; b<self._chordManager._chordDB._BASE_LIST.length ; b++){
+			if(self._chordManager._chordDB._BASE_LIST[b].root == chord_root){
+				chord_list = chord_list.concat(self._chordManager._chordDB._BASE_LIST[b].bases);
 				break;
 			}
 		}
@@ -233,7 +233,7 @@ function GuitarChordChartControl(){
 		var chord_list_ele = $('#id_chord_list');
 		chord_list_ele.empty();
 
-		var chord_info_list = self._chordDB.GetChordInfoList(chord);
+		var chord_info_list = self._chordManager._chordDB.GetChordInfoList(chord);
 		for(var i=0 ; i<chord_info_list.length ; i++){
 			var chord_display_ele = self._chordManager.GetChordDisplayWithChordInfo(chord_info_list[i], false);
 			chord_display_ele.on('mousedown', self.PlayChord);
@@ -249,7 +249,7 @@ function GuitarChordChartControl(){
 		var index = $(this).attr('index');
 		//console.log(chord + ' ' + index);
 
-		var chord_list = self._chordDB.GetChordInfoList(chord);
+		var chord_list = self._chordManager._chordDB.GetChordInfoList(chord);
 		self._musicXMLPlayer.PlayChordWithChordInfo(chord_list[index], 0.2, 20);
 	};
 };

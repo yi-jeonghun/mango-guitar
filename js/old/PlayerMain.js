@@ -13,7 +13,7 @@ function PlayerMain(){
 		window._song = null;
 		window._player = new Player(_playerMain.FlowControl, _playerMain.OnPlayEnd);
 		_player.Init();
-		window._chordManager = new ChordManager();
+		window._chordManager = new ChordManager().Init();
 
 		self.InitLoading();
 		self.InitHandler();

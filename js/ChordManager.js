@@ -1,6 +1,34 @@
 function ChordManager(){
 	var self = this;
-	this._chordDB = new ChordDB();
+	this._instrument = 'guitar';
+	this._string_count = 6;
+	this._chordDB = null;
+
+	this.Init = function(){
+		var instrument = window.localStorage.getItem('INSTRUMENT');
+		if(instrument != null){
+			self._instrument = instrument;
+		}
+
+		console.debug('self._instrument ' + self._instrument);
+
+		if(self._instrument == 'guitar'){
+			self._string_count = 6;
+		}else if(self._instrument == 'ukulele'){
+			self._string_count = 4;
+		}
+
+		self._chordDB = new ChordDB(self._instrument);
+		return this;
+	};
+
+	this.HasChord = function(chord){
+		return self._chordDB.HasChord(chord);
+	};
+
+	this.Transpose = function(in_chord, up_down){
+		return self._chordDB.Transpose(in_chord, up_down);
+	};
 
 	this.GetChordDisplayWithChordInfo = function(chord_info, sm){
 		return self.GetChordDisplayHTML(chord_info, sm);
@@ -14,6 +42,7 @@ function ChordManager(){
 		return self.GetChordDisplayHTML(chordInfo, sm);
 	};
 
+	//FIXME ukulele
 	this.GetChordDisplayHTML = function(chordInfo, sm){
 		var ele_span = $('<div></div>');
 		if(sm)
@@ -24,7 +53,8 @@ function ChordManager(){
 		var ele_table = $('<table cellspacing="0px" cellpadding="0px"></table>');
 		ele_span.append(ele_table);
 
-		for(var string_idx = 5 ; string_idx >= 0 ; string_idx--){
+		var max_str_idx = self._string_count - 1;
+		for(var string_idx = max_str_idx ; string_idx >= 0 ; string_idx--){
 			var ele_tr = $('<tr></tr>');
 			ele_table.append(ele_tr);
 
@@ -38,7 +68,7 @@ function ChordManager(){
 					if(chordInfo.fret == '') {
 						if(string_idx == 0){
 							ele_td.addClass('cm_fret_neck_bottom');
-						}else if(string_idx == 5){
+						}else if(string_idx == max_str_idx){
 							ele_td.addClass('cm_fret_neck_top');
 						}else{
 							ele_td.addClass('cm_fret_neck');
@@ -46,7 +76,7 @@ function ChordManager(){
 					}else{
 						if(string_idx == 0){
 							ele_td.addClass('cm_fret_middle_bottom');
-						}else if(string_idx == 5){
+						}else if(string_idx == max_str_idx){
 							ele_td.addClass('cm_fret_middle_top');
 						}else{
 							ele_td.addClass('cm_fret_middle');
@@ -61,7 +91,7 @@ function ChordManager(){
 				}else{
 					if(string_idx == 0){
 						ele_td.addClass('cm_fret_bottom');
-					}else if(string_idx == 5){
+					}else if(string_idx == max_str_idx){
 						ele_td.addClass('cm_fret_top');
 					}else{
 						ele_td.addClass('cm_fret');
@@ -164,6 +194,7 @@ function ChordManager(){
 		}
 	};
 
+	//FIXME ukulele
 	this.GetPitches = function(frets, capo){
 		var c = 0;
 		if(capo != null)
