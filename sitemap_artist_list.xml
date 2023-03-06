@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-03-05</lastmod>
+		<lastmod>2023-03-06</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -146,6 +146,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=VDd99yQZmW&amp;name=Leonard Cohen</loc>
+		<lastmod>2023-03-05T10:18:34.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=Hp8ky1Ju1R&amp;name=Lewis Capaldi</loc>
 		<lastmod>2023-02-06T09:30:22.000Z</lastmod>
 		<priority>1.0</priority>
@@ -153,6 +158,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=IGzAioHpgE&amp;name=Linda Ronstadt</loc>
 		<lastmod>2023-02-11T05:56:26.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=x6I7g05zMY&amp;name=Maroon 5</loc>
+		<lastmod>2023-03-06T08:31:58.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -288,6 +298,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=knuiQwxl8y&amp;name=금과 은</loc>
 		<lastmod>2022-12-10T03:38:33.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=bMaiE2H6h0&amp;name=금잔디</loc>
+		<lastmod>2023-03-05T21:59:09.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
