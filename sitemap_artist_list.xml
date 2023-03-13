@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-03-12</lastmod>
+		<lastmod>2023-03-13</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -256,6 +256,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=pRkycnyPeC&amp;name=Susan Jacks</loc>
+		<lastmod>2023-03-12T22:04:06.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=W1xhfa1OFM&amp;name=Tammy Wynette</loc>
 		<lastmod>2023-01-22T08:42:00.000Z</lastmod>
 		<priority>1.0</priority>
@@ -293,6 +298,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=m93JpHKQ0F&amp;name=Vance Joy</loc>
 		<lastmod>2023-01-27T11:47:17.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=DmIDEnb0Cr&amp;name=Weeknd</loc>
+		<lastmod>2023-03-13T08:17:30.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
