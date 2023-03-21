@@ -44,13 +44,13 @@ function ChordManager(){
 
 	//FIXME ukulele
 	this.GetChordDisplayHTML = function(chordInfo, sm){
-		var ele_span = $('<div></div>');
+		var ele_span = $('<div class="text-center" style="width:100%"></div>');
 		if(sm)
 			ele_span.addClass('cm_chord_table_sm');
 		else
 			ele_span.addClass('cm_chord_table');
 
-		var ele_table = $('<table cellspacing="0px" cellpadding="0px"></table>');
+		var ele_table = $('<table class="mx-auto" cellspacing="0px" cellpadding="0px"></table>');
 		ele_span.append(ele_table);
 
 		var max_str_idx = self._string_count - 1;

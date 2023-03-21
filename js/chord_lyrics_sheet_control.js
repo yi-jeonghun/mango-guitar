@@ -15,6 +15,7 @@ function ChordLyricsSheetControl(){
 	this._ele_chord_flow = null;
 	this._id_div_chord_flow = 'id_div_chord_flow';
 	this._transposed_chord_list = [];
+	this._metronome = null;
 
 	this.Init = function(){
 		self._chordManager = new ChordManager().Init();
@@ -268,6 +269,7 @@ function ChordLyricsSheetControl(){
 	this._chord_sync_index = 0;
 	this._overflow_lines = [];
 	this.Preview = function(){
+		console.debug('Preview ');
 		self._overflow_lines = [];
 		var sheet_ele = $('#id_sheet');
 		var width = sheet_ele.width();
@@ -584,9 +586,16 @@ function ChordLyricsSheetControl(){
 			// if(self._is_stop == false){
 				self.UpdateChordSync();
 			// }	
+			if(self._metronome != null){
+				self._metronome.Update(self._timelapse);
+			}
 		}
 
 		requestAnimationFrame(self.Update);
+	};
+
+	this.SetMetronome = function(metronome){
+		self._metronome = metronome;
 	};
 
 	this._flow_sync_chord_index = 0;
@@ -689,6 +698,8 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.DISP_ChordFlow = function(){
+		console.debug('DISP_ChordFlow ' );
+
 		self._ele_chord_flow.empty();
 
 		var beat_index = 0;
@@ -703,7 +714,7 @@ function ChordLyricsSheetControl(){
 
 			var div_ele = null;
 			if(self._is_small_screen){
-				div_ele = $(`<div class="border" style="display:inline-block; width:110px; height: 110px; margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
+				div_ele = $(`<div class="" style="display:inline-block; width:110px; height: 110px; margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
 			}else{
 				div_ele = $(`<div class="col-3" style="margin-bottom:20px" id="id_chord_flow-${i}"></div>`);
 			}
@@ -721,6 +732,8 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.DISP_ChordChart = function(){
+		console.debug('DISP_ChordChart ' );
+
 		self._chord_chart = [];
 		for(var i=0 ; i<self._transposed_chord_list.length ; i++){
 			var chord = self._transposed_chord_list[i].chord;
@@ -736,14 +749,13 @@ function ChordLyricsSheetControl(){
 			}
 		}
 
-		console.debug('DISP_ChordChart ' );
 		$('#id_div_chord_chart').html('');
 		var parent_ele = $('#id_div_chord_chart');
 		parent_ele.empty();
 
 		for(var g=0 ; g<self._chord_chart.length ; g++){
 			var chord_txt = self._chord_chart[g];
-			var div_ele = $(`<div class="col-3" style="margin-bottom:20px"></div>`);
+			var div_ele = $(`<div class="col-3" style="margin-bottom:10px"></div>`);
 
 			var chord_ele = self._chordManager.GetChordDisplay(chord_txt, false);
 			chord_ele.on('mousedown', self.PlayChord);
