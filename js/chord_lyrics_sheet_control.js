@@ -207,6 +207,9 @@ function ChordLyricsSheetControl(){
 			for(var c=self._sheet.capo ; c>0 ; c--){
 				chord_txt = self._chordManager.Transpose(chord_txt, 'down');
 			}
+			if(chord_txt == 'A#'){
+				chord_txt = 'Bb';
+			}
 			self._transposed_chord_list[i].chord = chord_txt;
 		}
 	};
