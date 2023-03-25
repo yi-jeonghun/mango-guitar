@@ -16,6 +16,7 @@ function ChordLyricsSheetControl(){
 	this._id_div_chord_flow = 'id_div_chord_flow';
 	this._transposed_chord_list = [];
 	this._metronome = null;
+	this._id = '';
 
 	this.Init = function(){
 		self._chordManager = new ChordManager().Init();
@@ -53,16 +54,44 @@ function ChordLyricsSheetControl(){
 			self._ele_chord_flow.hide();
 		}
 
-		var id = GetURLParam('id');
-		var arr = id.split('_');
+		self._id = GetURLParam('id');
+		var arr = self._id.split('_');
 		if(arr.length > 0){
 			var sheet_uid = arr[0];
 			self.LoadSheet(sheet_uid);
 		}
 
 		self.InitHandle();
+		self.InitKeyHandle();
 		self.Update();
 		return this;
+	};
+
+	this._control_key_holding = false;
+	this.InitKeyHandle = function(){
+		$(document).keydown(function (e) {
+			console.log('e.which down' + e.which);
+			switch (e.which) {
+				case 17://control
+					self._control_key_holding = true;
+					break;
+				case 89:// y
+					if(self._control_key_holding){
+						self._control_key_holding = false;
+						var url = './yt_producer.html?id=' + self._id;
+						window.open(url, '_blank');
+					}
+					break;
+			}
+		});
+		$(document).keyup(function (e) {
+			// console.log('e.which up' + e.which);
+			switch (e.which) {
+				case 17://control
+					self._control_key_holding = false;
+					break;
+			}
+		});
 	};
 
 	this.ChangeScreenForEmbed = function(){
