@@ -7,6 +7,7 @@ function YT_Producer(){
 	this._lazy_loader = null;
 	this._instrument;
 	this._metronome = null;
+	this._title_font_size = 5;
 
 	this.Init = function(){
 		self._metronome = new Metronome().Init('metronome');
@@ -18,6 +19,9 @@ function YT_Producer(){
 			$('#id_label_instrument').html('Guitar Lyrics Chords');
 		}
 
+		$('#id_label_title_font_size').html(self._title_font_size);
+
+		self.InitHandle();
 		self.InitKeyHandle();
 		self._lazy_loader = setInterval(self.LazyLoad, 500);
 
@@ -44,6 +48,19 @@ function YT_Producer(){
 					self.Step4();
 					break;
 			}
+		});
+	};
+
+	this.InitHandle = function(){
+		$('#id_btn_title_font_plus').on('click', function(){
+			self._title_font_size++;
+			$('#id_label_title_font_size').html(self._title_font_size);
+			$('#id_label_title').css('font-size', `${self._title_font_size}em`);
+		});
+		$('#id_btn_title_font_minus').on('click', function(){
+			self._title_font_size--;
+			$('#id_label_title_font_size').html(self._title_font_size);
+			$('#id_label_title').css('font-size', `${self._title_font_size}em`);
 		});
 	};
 
@@ -93,7 +110,7 @@ function YT_Producer(){
 
 				self._metronome.SetSheet(window._chord_lyrics_sheet_control._sheet);
 				window._chord_lyrics_sheet_control.SetMetronome(self._metronome);
-				self.Step1();
+				self.Step3();
 			}
 			// console.debug('window._chord_lyrics_sheet_control._sheet.capo ' + window._chord_lyrics_sheet_control._sheet.capo);
 		}
@@ -174,9 +191,9 @@ function YT_Producer(){
 
 		$('#id_img_logo').css('width', '80px');
 		$('#id_img_logo').css('height', '80px');
-		self.SetPosition('id_img_logo', '', '30px', '', '70px');
-		self.SetPosition('id_label_mango_guitar', '', '35px', '', '50px');
-		self.SetPosition('id_label_mango_guitar_com', '', '20px', '', '30px');
+		self.SetPosition('id_img_logo', '10px', '', '10px', '');
+		self.SetPosition('id_label_mango_guitar', '', '15px', '', '140px');
+		self.SetPosition('id_label_mango_guitar_com', '', '15px', '', '120px');
 
 		$('#id_label_title2').show();
 		$('#id_label_artist2').show();

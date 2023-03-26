@@ -26,7 +26,7 @@
 		<div id="id_label_instrument" class="text-center" style="color:rgb(105, 105, 105); font-size: 3em; margin-top:40px"></div>
 		<div id="id_label_title" 
 			class="text-center" 
-			style="font-size:3em; margin-top: 20px; padding-left: 10px; padding-right: 10px; z-index: 1; background-color: white;">
+			style="font-weight: bold; font-size:5em; margin-top: 20px; padding-left: 10px; padding-right: 10px; z-index: 1; background-color: white;">
 		</div>	
 		<div id="id_label_artist" class="text-center" style="font-size:2em; margin-top: 20px;"></div>
 		<div id="id_div_capo" class="text-center" style="font-size:1.3em; margin-top: 20px">
@@ -48,38 +48,40 @@
 		</div>
 
 		<!--  -->
-		<div class="d-flex" style="margin-bottom: 10px;">
-			<div style="width: 600px;">
-				<div id="id_label_title2" style="margin-top: 15px; margin-left:15px; font-size: 1.3em;"></div>
-				<div id="id_label_artist2" style="margin-top: 10px; margin-left:15px; font-size: 1.1em;"></div>
-			</div>
-			<div id="id_MP_div_video" class="MP_div_video_sm flex" style="">
-				<div id="id_MP_player" class="MP_player_sm"></div>
-			</div>
-		</div>
 		<div id="id_div_chord_flow_embed" class="" style="margin-left:100px; margin-bottom: 10px; height: 110px; width: 550px; overflow: auto; white-space: nowrap;"></div>
 		<canvas class="border" id="metronome" width="550px" height="6px" style="margin-left:100px; margin-bottom: 1px;"></canvas>		
 		<div class="" style="padding-left: 100px; padding-right: 100px;">
 			<div id="id_sheet" class="" style="width:600px; height: 190px; font-size: 1.2em;"></div>	
 		</div>
-		<div id="id_div_capo3" style="position: absolute; right: 15px; top:120px">Capo <span id="id_label_capo3"></span></div>
-		<div id="id_div_bpm3" style="position: absolute; right:15px; top:150px">BPM <span id="id_label_bpm3"></span></div>
+		<div class="d-flex border-top" style="position:absolute ; bottom: 0px;">
+			<div style="width: 500px;">
+				<div id="id_label_title2" style="font-weight: bold ; margin-top: 15px; margin-left:15px; font-size: 1.3em;"></div>
+				<div id="id_label_artist2" style="margin-top: 10px; margin-left:15px; font-size: 1.1em;"></div>
+			</div>
+			<div class="text-right" style="width: 100px; padding-right: 10px;">
+				<div id="id_div_capo3" style="margin-top: 15px;">Capo <span id="id_label_capo3"></span></div>
+				<div id="id_div_bpm3" style="margin-top: 10px;">BPM <span id="id_label_bpm3"></span></div>		
+			</div>
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
+			</div>
+		</div>
 	</div>
 <!-- style="" -->
 
 	<div id="id_div_chord_flow"></div>
 	<div id="id_label_video_id"></div>
+
+	<div>
+		Title Font Size <span id="id_label_title_font_size"></span>
+		<button type="button" class="btn btn-sm btn-light" id="id_btn_title_font_plus">+</button>
+		<button type="button" class="btn btn-sm btn-light" id="id_btn_title_font_minus">-</button>
+	</div>
+
 </body>
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="js/metronome.js"></script>
 
-<script type="text/javascript" src="js/ChordDB.js"></script>
-<script type="text/javascript" src="js/ChordManager.js"></script>
-<script type="text/javascript" src="js/Drums.js"></script>
-<script type="text/javascript" src="js/MusicXMLPlayer.js"></script>
-<script type="text/javascript" src="js/const.js"></script>
-<script type="text/javascript" src="js/youtube_iframe_player.js"></script>
-<script type="text/javascript" src="js/mango_player.js"></script>
-<script type="text/javascript" src="js/chord_lyrics_sheet_control.js"></script>
+<script type="text/javascript" src="js/chord_lyrics_sheet.min.js"></script>
 
 <script type="text/javascript" src="js/yt_producer.js"></script>
