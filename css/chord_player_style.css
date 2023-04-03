@@ -28,6 +28,9 @@
 .MP_div_video_sm{
 	width: 200px; 
 	height: 100px;
+	position:absolute;
+	right: 0px;
+	margin: 5px;
 }
 .MP_player_sm{
 	width: 200px; 
@@ -61,6 +64,7 @@
 		bottom: 0px;
 		width: 120px; 
 		height: 100px;	
+		margin: 0px;
 		z-index: 2
 	}
 	.MP_player_sm{
