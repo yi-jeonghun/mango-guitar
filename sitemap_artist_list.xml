@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-03-28</lastmod>
+		<lastmod>2023-04-07</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -31,11 +31,6 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=aVqO0UcHxF&amp;name=Audrey Hepburn</loc>
-		<lastmod>1970-01-01T00:00:00.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=bqxNWVgn06&amp;name=Ben E. King</loc>
 		<lastmod>2023-02-11T13:27:21.000Z</lastmod>
 		<priority>1.0</priority>
@@ -58,11 +53,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=MKTgWBBVnb&amp;name=Bruno Mars</loc>
 		<lastmod>2023-01-28T22:24:45.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=j8xpzj4EAP&amp;name=BTS</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -113,11 +103,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=D5R8bXTrRw&amp;name=Frankie Valli</loc>
 		<lastmod>2023-01-22T08:41:45.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=njv0mfJd9D&amp;name=Hanson</loc>
-		<lastmod>2023-03-12T05:09:25.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -236,11 +221,6 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=V1yQNGqDH6&amp;name=Queen</loc>
-		<lastmod>2023-01-20T12:56:08.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=EAjqLa6k7d&amp;name=Radio Head</loc>
 		<lastmod>2023-01-27T11:21:53.000Z</lastmod>
 		<priority>1.0</priority>
@@ -291,23 +271,13 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=1bg2VMBysg&amp;name=Test</loc>
-		<lastmod>2023-02-04T11:16:00.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=nPLWuTs6Ry&amp;name=The Animals</loc>
 		<lastmod>2023-02-11T23:33:44.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=4vyJ1LdOxn&amp;name=The Beatles</loc>
-		<lastmod>2023-03-27T22:11:21.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=mHaLNlDfGW&amp;name=The Carpenters</loc>
-		<lastmod>2023-01-17T12:51:57.000Z</lastmod>
+		<lastmod>2023-03-27T22:14:21.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -333,11 +303,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=RGx3bCPrJV&amp;name=Westlife</loc>
 		<lastmod>2023-03-23T09:31:41.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=9ivokM1Jf0&amp;name=WSG WANNABE</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -393,11 +358,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=4eAzveSjPn&amp;name=김민기</loc>
 		<lastmod>2022-12-21T12:33:29.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=MlwNk9CcSm&amp;name=김세화</loc>
-		<lastmod>1970-01-01T00:00:00.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -466,11 +426,6 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=lcV22TwFlO&amp;name=나훈아</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=A79mAEywh3&amp;name=남궁옥분</loc>
 		<lastmod>2022-12-06T10:45:18.000Z</lastmod>
 		<priority>1.0</priority>
@@ -501,6 +456,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=UHWooTpDzb&amp;name=둘다섯</loc>
+		<lastmod>2023-04-06T21:56:28.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=PY93rOffeW&amp;name=들국화</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -518,11 +478,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=hdW58Bzfq8&amp;name=로이킴</loc>
 		<lastmod>2023-03-13T12:24:21.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=g2tDxUIu29&amp;name=루시드폴</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -576,11 +531,6 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=nsEwrqq0H7&amp;name=사랑과 평화</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=3MHhNTBPAx&amp;name=산울림</loc>
 		<lastmod>2022-12-09T12:34:57.000Z</lastmod>
 		<priority>1.0</priority>
@@ -588,11 +538,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=46D24W8uUj&amp;name=샌드 페블즈</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=YlnDRZIR6Z&amp;name=서유석</loc>
-		<lastmod>1970-01-01T00:00:00.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -618,11 +563,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=FYl0dWqrIS&amp;name=시인과 촌장</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=87pQVbrpqB&amp;name=신성우</loc>
-		<lastmod>1970-01-01T00:00:00.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -671,11 +611,6 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=SVwND8VOyz&amp;name=영탁</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=YolQBwmYk8&amp;name=예민</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
@@ -683,11 +618,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=Bfve9OFjC0&amp;name=윤도현</loc>
 		<lastmod>2023-03-27T12:28:30.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=iJsvPrToiN&amp;name=윤상</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -868,11 +798,6 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=KQVoSKqu5x&amp;name=징검다리</loc>
 		<lastmod>2022-12-25T10:11:24.000Z</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://mango-guitar.com/artist.html?artist_uid=zzE4xaofff&amp;name=차중락</loc>
-		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
