@@ -70,12 +70,12 @@ function YT_Producer(){
 		console.debug('auto Step ' + self._auto_step);
 
 		if(self._auto_step == 1){
-			setTimeout(self.AutoStart, 3000);
+			setTimeout(self.AutoStart, 2000);
 		}
 
 		if(self._auto_step == 2){
 			self.Step2();
-			setTimeout(self.AutoStart, 5000);
+			setTimeout(self.AutoStart, 3000);
 		}
 		if(self._auto_step == 3){
 			self.Step3();
@@ -105,12 +105,12 @@ function YT_Producer(){
 				$('#id_label_title2').html(window._chord_lyrics_sheet_control._sheet.title);
 				$('#id_label_artist2').html(window._chord_lyrics_sheet_control._sheet.artist_name);
 
-				var link = 'https://www.y2mate.com/kr/youtube-mp3/search/' + window._chord_lyrics_sheet_control._sheet.video_id;
-				$('#id_label_video_id').html(`<a href="${link}" target="_blank">mp3</a>`);
+				var link = 'https://www.y2mate.com/youtube/' + window._chord_lyrics_sheet_control._sheet.video_id;
+				$('#id_label_video_id').html(`<a href="${link}" target="_blank">[Audio Download]</a>`);
 
 				self._metronome.SetSheet(window._chord_lyrics_sheet_control._sheet);
 				window._chord_lyrics_sheet_control.SetMetronome(self._metronome);
-				self.Step3();
+				self.Step1();
 			}
 			// console.debug('window._chord_lyrics_sheet_control._sheet.capo ' + window._chord_lyrics_sheet_control._sheet.capo);
 		}
@@ -165,6 +165,8 @@ function YT_Producer(){
 		self.SetPosition('id_label_mango_guitar', '', '55px', '', '50px');
 		self.SetPosition('id_label_mango_guitar_com', '', '40px', '', '30px');
 
+		$('#id_step3_bottom').removeClass('border-top');
+
 		$('#id_label_title').show();
 		$('#id_label_artist').show();
 		$('#id_div_capo').show();
@@ -181,6 +183,8 @@ function YT_Producer(){
 		self.SetPosition('id_label_mango_guitar', '', '55px', '30px', '');
 		self.SetPosition('id_label_mango_guitar_com', '', '40px', '60px', '');
 
+		$('#id_step3_bottom').removeClass('border-top');
+
 		$('#id_label_chord_chart').show();
 		$('#id_div_chord_chart').show();
 	};
@@ -194,6 +198,12 @@ function YT_Producer(){
 		self.SetPosition('id_img_logo', '10px', '', '10px', '');
 		self.SetPosition('id_label_mango_guitar', '', '15px', '', '140px');
 		self.SetPosition('id_label_mango_guitar_com', '', '15px', '', '120px');
+
+		$('#id_MP_div_video').css('position', 'fixed');
+		$('#id_MP_div_video').css('left', '694px');
+		$('#id_MP_div_video').css('top', '444px');
+
+		$('#id_step3_bottom').addClass('border-top');
 
 		$('#id_label_title2').show();
 		$('#id_label_artist2').show();
