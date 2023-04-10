@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-04-07</lastmod>
+		<lastmod>2023-04-10</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -56,6 +56,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=JbvXCEzSM8&amp;name=Bryan Adams</loc>
+		<lastmod>2023-04-10T12:56:30.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=Qcv8Yo5bUx&amp;name=Coldplay</loc>
 		<lastmod>2023-02-08T13:12:04.000Z</lastmod>
 		<priority>1.0</priority>
@@ -93,6 +98,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=7k8oZWndFn&amp;name=Eric Clapton</loc>
 		<lastmod>2023-03-23T08:40:24.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=Byeqya6t3L&amp;name=Extreme</loc>
+		<lastmod>2023-04-07T08:23:12.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -457,7 +467,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=UHWooTpDzb&amp;name=둘다섯</loc>
-		<lastmod>2023-04-06T21:56:28.000Z</lastmod>
+		<lastmod>2023-04-07T22:15:47.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
