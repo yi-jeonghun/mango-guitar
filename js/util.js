@@ -12,7 +12,13 @@ function DateYMD(date_str){
 }
 
 function GetSheetItem(sheet){
-	var link_sheet = `./chord_lyrics_sheet.html?id=${sheet.sheet_uid}_${sheet.artist_name}-${sheet.title}`;
+	var region = '';
+	if(sheet.region_type == 'POP_SONG'){
+		region = 'pop';
+	}else{
+		region = 'kpop';
+	}
+	var link_sheet = `./chord_lyrics_sheet/${region}/${sheet.release_year}/chord_lyrics_sheet-${sheet.artist_name}-${sheet.title}.htm?id=${sheet.sheet_uid}`;
 	var link_artist = `./artist.html?artist_uid=${sheet.artist_uid}&name=${sheet.artist_name}`;
 
 	var h = `
