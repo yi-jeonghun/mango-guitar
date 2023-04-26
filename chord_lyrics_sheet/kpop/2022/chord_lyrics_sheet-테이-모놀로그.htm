@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>테이 - 모놀로그 @ mango-guitar.com</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+	<meta name="description" content="테이 모놀로그 Guitar Chord, Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords">
+	<meta name="keywords" content="테이, 모놀로그, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync, 기타, 통기타, 기타 악보, 기타 코드, 코드 악보, 기타 코드 악보, 쉬운 기타 악보, 쉬운 기타 코드">
+
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/nanumgothiccoding.css">
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="/css/chords.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/chord_player_style.css">
+
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div id="id_div_head" include-html="head.html">
+	<div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/guitar_chord_chart.html">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<!--=============================== HEAD ==================================-->	
+
+<div class="container">
+	<div class="row border-bottom" id="id_div_title_area">
+		<div class="col-11 col-sm-9">
+			<h5 id="id_label_title" class="py-1">모놀로그</h5>
+			<div id="id_label_artist">테이</div>			
+		</div>
+		<div class="col-1 col-sm-3">
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
+		<div class="col-4">
+			<div class="capo-div">
+				Capo
+				<select id="id_select_capo">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="speed-div">
+				Speed
+				<span class="text-center mx-2" id="id_label_speed">1.0</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
+			</div>
+		</div>
+		<div class="col-4 text-right">
+			<div class="button-div">
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_stop">Stop</button>
+			</div>
+		</div>
+	</div>
+	<div class="row border">
+		<div class="col-12 col-sm-6" id="id_sheet">
+			<pre>   E                  C#m      
+다 잊었다는 거짓말 또 해 버렸죠 
+        A             E        G#m      
+내 마음에 그대란 사람 없다고 했죠 
+       C#m7  G#m7     A       E      B      
+너무나 쉽게 잊혀졌다고 이젠 남이라고 
+ 
+C#m7       G#m7     A     B     E      
+서툰 내 사랑에 지쳐 떠난 그대 
+     F#m7      B7      
+너무 많이 울려서 
+     G#m7      C#m7       A      
+잡을 용기조차 낼 수 없었죠 
+      B         B      
+미안해요 내 사랑아 
+     E               G#7      
+다신 나 같은 사람 만나지 마요 
+       C#m7      
+혹시 찾아가도 두 번 다시 
+   G#            A      
+나를 허락해 주지 마요 
+            E      
+그댄 여리고 너무 착해서 
+  F#m7        B      
+싫단 말도 잘 못하는데 
+      E            G#7      
+많이 부족한 나를 사랑한 그대 
+       C#m7      
+이거면 됐어요 더 이상은 
+  G#     G#7      A      
+그대 불행하지 않도록 
+            E        C#m7      
+나 이쯤에서 없어지는 게 
+  F#m7     B           E      
+그댈 위한 나의 사랑인 걸요 
+C#m7       G#m7     A   B   E      
+너무 투명해서 때론 불안했죠 
+    F#m7      B7      
+제멋대로 살아온 나를 
+G#m7       C#m7       A      
+감당할 수 없을 것 같죠 
+      B          B      
+미안해요 내 사랑아 
+     E              G#7      
+다신 나 같은 사람 만나지 마요 
+       C#m7      
+혹시 찾아가도 두 번 다시 
+  G#             A      
+나를 허락해 주지 마요 
+            E      
+그댄 여리고 너무 착해서 
+  F#m7        B      
+싫단 말도 잘 못하는데 
+     E            G#7      
+고마웠어요 나를 사랑해 줘서 
+        C#m7      
+나 같은 사람이 두 번 다시 
+ G#7              A      
+감히 받을 수 없는 사랑 
+            E       C#m7      
+그대 때문에 행복했어요 
+  F#m7       B      
+울지 마요 그대 
+            F#m7      
+잘 생각해 봐요 
+      B       G#7       C#m      
+나쁜 일들만 가득했던 우리 
+    A       B     B      
+다 잊어야 해요 
+       E            G#m      
+다신 나 같은 사람 만나지 마요 
+       C#m      
+혹시 찾아가도 두 번 다시 
+  G#7          A      
+나를 허락해 주지 마요 
+            E      
+그댄 여리고 너무 착해서 
+  F#m7        B      
+싫단 말도 잘 못하는데 
+      E            G#7      
+많이 부족한 나를 사랑한 그대 
+       C#m      
+이거면 됐어요 
+            G#             A      
+더 이상은 그대 불행하지 않도록 
+            E        C#m      
+나 이쯤에서 없어지는 게 
+ F#m7       B          C#m      
+그댈 위한 나의 사랑인 걸요 
+ 
+B     E     A     C#m      
+B     E     A      
+ 
+ 
+</pre>
+		</div>
+		<div class="col-6 col-sm-6 border-left" id="id-div-chord-area">
+			<div style="height: 45px;" class="py-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active small" href="#" id="id_nav_chord_flow">Chord Flow</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link small" href="#" id="id_nav_chord_chart">Chord Chart</a>
+					</li>
+				</ul>	
+			</div>
+			<div class="container-fluid">
+				<div class="row" id="id_div_chord_flow" style="height:500px; overflow-y: auto;"></div>
+				<div class="row" id="id_div_chord_chart" style="height:500px; overflow-y: auto; display: none;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="id_div_chord_flow_embed" 
+	style="display: none; background-color: ghostwhite; height:120px; width:100%; overflow: auto; white-space: nowrap;">
+</div>
+
+<div class="footer">
+	
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+
+<script type="text/javascript" src="/js/chord_lyrics_sheet.min.js"></script>

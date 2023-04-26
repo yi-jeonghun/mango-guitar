@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Ed Sheeran - Photograph @ mango-guitar.com</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+	<meta name="description" content="Ed Sheeran Photograph Guitar Chord, Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords">
+	<meta name="keywords" content="Ed Sheeran, Photograph, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync, 기타, 통기타, 기타 악보, 기타 코드, 코드 악보, 기타 코드 악보, 쉬운 기타 악보, 쉬운 기타 코드">
+
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/nanumgothiccoding.css">
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="/css/chords.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/chord_player_style.css">
+
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div id="id_div_head" include-html="head.html">
+	<div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/guitar_chord_chart.html">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<!--=============================== HEAD ==================================-->	
+
+<div class="container">
+	<div class="row border-bottom" id="id_div_title_area">
+		<div class="col-11 col-sm-9">
+			<h5 id="id_label_title" class="py-1">Photograph</h5>
+			<div id="id_label_artist">Ed Sheeran</div>			
+		</div>
+		<div class="col-1 col-sm-3">
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
+		<div class="col-4">
+			<div class="capo-div">
+				Capo
+				<select id="id_select_capo">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="speed-div">
+				Speed
+				<span class="text-center mx-2" id="id_label_speed">1.0</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
+			</div>
+		</div>
+		<div class="col-4 text-right">
+			<div class="button-div">
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_stop">Stop</button>
+			</div>
+		</div>
+	</div>
+	<div class="row border">
+		<div class="col-12 col-sm-6" id="id_sheet">
+			<pre>E     E     C#m    C#m 
+B     B     A     A 
+ 
+            E     E 
+Loving can hurt, 
+            C#m            C#m 
+loving can hurt sometimes 
+              B              B     A    A 
+But it's the only thing that I know 
+              E     E 
+When it gets hard, 
+                     C#m            C#m 
+you know it can get hard sometimes 
+          B             B            A     A 
+It is the only thing makes us feel alive 
+C#m                           A 
+We keep this love in a photograph 
+E                          B 
+We made these memories for ourselves 
+          C#m 
+Where our eyes are never closing 
+A 
+Hearts are never broken 
+    E                       B 
+And time's forever frozen, still 
+           E 
+So you can keep me 
+E                          B 
+Inside the pocket of your ripped jeans 
+B                          C#m 
+Holding me closer 'til our eyes meet 
+C#m                  A     A 
+You won't ever be alone, wait for me to come home 
+ 
+E     E 
+ 
+            E     E 
+Loving can heal, 
+            C#m            C#m 
+loving can mend your soul 
+             B               B            A     A 
+And it's the only thing that I know, know 
+                    E 
+I swear it will get easier 
+   E                         C#m 
+Remember that with every piece of ya 
+C#m                B                   B                 A     A 
+Hmm, and it's the only thing we take with us when we die 
+    C#m                             A 
+Hmm, we keep this love in a photograph 
+E                          B 
+We made these memories for ourselves 
+          C#m 
+Where our eyes are never closing 
+A 
+Hearts were never broken 
+     E                       B 
+And time's forever frozen, still 
+            E 
+So you can keep me 
+E                          B 
+Inside the pocket of your ripped jeans 
+B                          C#m 
+Holding me closer 'til our eyes meet 
+C#m                  A     A 
+You won't ever be alone 
+            E 
+And if you hurt me 
+E                        B 
+That's okay, baby, only words bleed 
+B                             C#m 
+Inside these pages, you just hold me 
+    C#m                   A 
+And I won't ever let you go 
+A                    C#m      
+Wait for me to come home 
+C#m                   A 
+Wait for me to come home 
+A                    E 
+Wait for me to come home 
+E                    B 
+Wait for me to come home 
+B            E      
+Oh, you can fit me 
+            E                              B 
+Inside the necklace you got when you were sixteen 
+B                                C#m 
+Next to your heartbeat where I should be 
+C#m                        A     A 
+Keep it deep within your soul 
+            E 
+And if you hurt me 
+        E                      B 
+Well, that's okay, baby, only words bleed 
+B                             C#m 
+Inside these pages, you just hold me 
+    C#m                   A     A 
+And I won't ever let you go 
+             E      
+When I'm away,  
+E                        E 
+I will remember how you kissed me 
+E                           C#m 
+Under the lamppost back on Sixth street 
+C#m                                A      
+Hearing you whisper through the phone 
+A         E           E 
+"Wait for me to come home" 
+ 
+ 
+ 
+</pre>
+		</div>
+		<div class="col-6 col-sm-6 border-left" id="id-div-chord-area">
+			<div style="height: 45px;" class="py-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active small" href="#" id="id_nav_chord_flow">Chord Flow</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link small" href="#" id="id_nav_chord_chart">Chord Chart</a>
+					</li>
+				</ul>	
+			</div>
+			<div class="container-fluid">
+				<div class="row" id="id_div_chord_flow" style="height:500px; overflow-y: auto;"></div>
+				<div class="row" id="id_div_chord_chart" style="height:500px; overflow-y: auto; display: none;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="id_div_chord_flow_embed" 
+	style="display: none; background-color: ghostwhite; height:120px; width:100%; overflow: auto; white-space: nowrap;">
+</div>
+
+<div class="footer">
+	
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+
+<script type="text/javascript" src="/js/chord_lyrics_sheet.min.js"></script>

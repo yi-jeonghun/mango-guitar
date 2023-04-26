@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>송창식 - 담배가게 아가씨 @ mango-guitar.com</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+	<meta name="description" content="송창식 담배가게 아가씨 Guitar Chord, Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords">
+	<meta name="keywords" content="송창식, 담배가게 아가씨, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync, 기타, 통기타, 기타 악보, 기타 코드, 코드 악보, 기타 코드 악보, 쉬운 기타 악보, 쉬운 기타 코드">
+
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/nanumgothiccoding.css">
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="/css/chords.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/chord_player_style.css">
+
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div id="id_div_head" include-html="head.html">
+	<div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/guitar_chord_chart.html">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<!--=============================== HEAD ==================================-->	
+
+<div class="container">
+	<div class="row border-bottom" id="id_div_title_area">
+		<div class="col-11 col-sm-9">
+			<h5 id="id_label_title" class="py-1">담배가게 아가씨</h5>
+			<div id="id_label_artist">송창식</div>			
+		</div>
+		<div class="col-1 col-sm-3">
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
+		<div class="col-4">
+			<div class="capo-div">
+				Capo
+				<select id="id_select_capo">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="speed-div">
+				Speed
+				<span class="text-center mx-2" id="id_label_speed">1.0</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
+			</div>
+		</div>
+		<div class="col-4 text-right">
+			<div class="button-div">
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_stop">Stop</button>
+			</div>
+		</div>
+	</div>
+	<div class="row border">
+		<div class="col-12 col-sm-6" id="id_sheet">
+			<pre>E7     
+E7                    E7      
+우리동네 담배가게에는 아가씨가 예쁘다네
+A7                      A7     
+짧은 머리 곱게 빗은것이 정말 예쁘다네
+B7              A7        
+온동네 청년들이 너도 나도 기웃 기웃 기웃
+D7                       E7     
+그러나 그 아가씨는 새침떼기
+E7                   E7     
+앞집의 꼴두기 녀석은 딱지를 맞았다네
+A7                        A7     
+만화가게 용팔이 그 녀석도 딱지를 맞았다네
+B7                A7     
+그렇다면 동네에선 오직 하나 나만 남았는데
+D7                 E7     
+아 기대하시라 개봉 박두
+E7                   E7     
+다음날 아침 일찍부터 담배하나 사러가서
+E7                     B7     
+가지고간 장미 한송이를 살짝 건네어 주고
+E7                   E7     
+그 아가씨가 놀랄적에 눈싸움 한판을 벌인다
+C7                   C7     
+하라라 라라라라 라라 라라 라
+D7               E7     
+오 그 아가씨 웃었어
+E7                     E7     
+하루종일 가슴 설레이며 퇴근시간 기다렸지
+A7                       A7     
+오랫만에 말끔히 차려입고 그 아가씨 기다렸지
+B7              A7     
+점잖게 다가서서 미소띠며 인사를 했지
+D7                     E7     
+그러나 그 아가씨는 콧방귀
+E7                       E7     
+그렇다고 이대로 물러나면 대장부가 아니지
+A7                         A7     
+그 아가씨 발걸음 소리 맞춰 뒤따라 걸어간다
+B7              A7     
+틀려서는 안되지 번호 부쳐 하나 둘 셋 
+D7                E7     
+오 위대할손 나의 끈기
+E7                         E7     
+바로 그때 이것 참 야단났네 골몰길 어귀에서
+E7                     B7     
+아랫 동네 불량배들에게 그 아가씨 포위됐네
+E7               E7     
+옳다구나 이 때다 백마의 기사가 나가신다
+C7                C7     
+아자자자자자자자 아자자자자
+D7              E7          
+아 하늘빛이 노랗다
+
+E7     E7     A7     A7     
+B7     A7     D7     E7     
+
+E7                    E7     
+우리동네 담배가게에는 아가씨가 예쁘다네
+E7                 B7     
+지금은 그전보 다도 백배는 예쁘다네
+E7                   E7     
+나를 보면은 웃어주는 아가씨 나는 정말 사랑해
+C7               C7     
+아라라라라라라라 라라라라
+D7                    E7     
+에 나는 지금 담배사러 간다
+
+E7     E7     A7     A7     
+B7     A7     D7     E7     
+E7     E7     A7     A7     
+B7     A7     D7     E7     
+E7     E7     A7     A7     
+B7     A7     D7     
+
+</pre>
+		</div>
+		<div class="col-6 col-sm-6 border-left" id="id-div-chord-area">
+			<div style="height: 45px;" class="py-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active small" href="#" id="id_nav_chord_flow">Chord Flow</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link small" href="#" id="id_nav_chord_chart">Chord Chart</a>
+					</li>
+				</ul>	
+			</div>
+			<div class="container-fluid">
+				<div class="row" id="id_div_chord_flow" style="height:500px; overflow-y: auto;"></div>
+				<div class="row" id="id_div_chord_chart" style="height:500px; overflow-y: auto; display: none;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="id_div_chord_flow_embed" 
+	style="display: none; background-color: ghostwhite; height:120px; width:100%; overflow: auto; white-space: nowrap;">
+</div>
+
+<div class="footer">
+	
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+
+<script type="text/javascript" src="/js/chord_lyrics_sheet.min.js"></script>

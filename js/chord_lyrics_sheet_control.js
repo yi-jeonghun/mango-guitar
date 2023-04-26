@@ -215,7 +215,7 @@ function ChordLyricsSheetControl(){
 	};
 
 	this.LoadSheet = function(sheet_uid){
-		$.getJSON(`db/chord_lyrics_sheet/${sheet_uid}.json`, function(sheet) {
+		$.getJSON(`/db/chord_lyrics_sheet/${sheet_uid}.json`, function(sheet) {
 			self._sheet = sheet;
 			self._sheet.chord_list = JSON.parse(self._sheet.chord_list);
 

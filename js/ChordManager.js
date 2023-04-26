@@ -100,7 +100,7 @@ function ChordManager(){
 					if(chordInfo.stringFrets[string_idx] == fret_idx){
 						var fn = chordInfo.fingers[string_idx];
 						if(fn != 0){
-							var ele = $('<img width="10px" height="10px" src="img/f'+fn+'.png">');
+							var ele = $('<img width="10px" height="10px" src="/img/f'+fn+'.png">');
 							ele_td.append(ele);
 						}
 					}

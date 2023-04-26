@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>NCT DREAM - Candy @ mango-guitar.com</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+	<meta name="description" content="NCT DREAM Candy Guitar Chord, Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords">
+	<meta name="keywords" content="NCT DREAM, Candy, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync, 기타, 통기타, 기타 악보, 기타 코드, 코드 악보, 기타 코드 악보, 쉬운 기타 악보, 쉬운 기타 코드">
+
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/nanumgothiccoding.css">
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="/css/chords.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/chord_player_style.css">
+
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div id="id_div_head" include-html="head.html">
+	<div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/guitar_chord_chart.html">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<!--=============================== HEAD ==================================-->	
+
+<div class="container">
+	<div class="row border-bottom" id="id_div_title_area">
+		<div class="col-11 col-sm-9">
+			<h5 id="id_label_title" class="py-1">Candy</h5>
+			<div id="id_label_artist">NCT DREAM</div>			
+		</div>
+		<div class="col-1 col-sm-3">
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
+		<div class="col-4">
+			<div class="capo-div">
+				Capo
+				<select id="id_select_capo">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="speed-div">
+				Speed
+				<span class="text-center mx-2" id="id_label_speed">1.0</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
+			</div>
+		</div>
+		<div class="col-4 text-right">
+			<div class="button-div">
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_stop">Stop</button>
+			</div>
+		</div>
+	</div>
+	<div class="row border">
+		<div class="col-12 col-sm-6" id="id_sheet">
+			<pre>Take it when I check it with the team 
+Show's sold out, would they buy me the theme song 
+의지 그래 spend a million like a bae, hol' up 
+Ahhhhh, candy! 
+ 
+A#     D#     F 
+A#     D#     F 
+A#     D#     F 
+A#     D#     F 
+ 
+       A#             D#         F 
+사실은 오늘 너와의 만남을 정리하고 싶어 
+A#              D#         F 
+널 만날 거야 이런 날 이해해 
+       A#                 D#        F 
+어렵게 맘 정한 거라 네게 말할 거지만 
+       A#                 D#        F 
+사실 오늘 아침에 그냥 나 생각한 거야 
+       A#             D#        F 
+햇살에 일어나 보니 너무나 눈부셔 
+        A#                D#       F 
+모든 게 다 변한 거야 널 향한 마음도 
+ 
+      A#     Gm    D#       F 
+그렇지만 널 사랑 않는 게 아냐 
+       A#     Gm D#       F 
+이제는 나를 변화시킬 테니까 
+   A#           Gm 
+너 몰래 몰래 몰래 
+              D#          F 
+다른 여자들과 비교 비교했지 
+       A# 
+자꾸만 깨어지는 환상 속에 
+Gm 
+혼자서 울고 있는 
+D#                 F 
+초라하게 갇혀버린 나를 보았어 
+ 
+A# 
+널 떠날 거야 (Oh) 널 떠날 거야 (Oh) 
+D#               F 
+하지만 아직까지 사랑하는 걸 
+     A#             Gm  D# 
+그래 그렇지만 내 맘속에 너를 잊어갈 거야 
+     Dm               Gm 
+머리 위로 비친 내 하늘 바라다보며 
+     D#                F 
+널 향한 마음을 이제는 굳혔지만 
+Dm              Gm 
+웬일인지 네게 더 다가갈수록 
+     F#                 G#     G# 
+우린 같은 하늘 아래 서 있었지 
+        C#    F#        G#     C# 
+단지 널 사랑해 이렇게 말했지 
+       A#m   F#   G# 
+이제껏 준비했던 많은 말을 뒤로한 채 
+C#     F#        G#     C# 
+언제나 니 옆에 있을게 
+       A#m     G# 
+이렇게 약속을 하겠어 
+F#         G#       C# 
+저 하늘을 바라다보며 
+ 
+A#m              Gm 
+내게 하늘이 열려있어 
+     D#              F 
+그래 그래 너는 내 앞에 서 있고 
+     A#             Gm 
+그래 다른 연인들은 키스를 해 
+    D#                      F 
+하지만 항상 나는 너의 뒤에 있어야만 해 
+ 
+A# 
+이제 그만해 (Oh) 나도 남잔데 (Hey) 
+D#                 F 
+내 마음 너도 알고 있는 걸 알아 
+     A#             Gm 
+그래 이제 나도 지쳐서 
+       D# 
+하늘만 바라볼 수밖에 
+ 
+A#             D#    F 
+내게 하늘이 열려있어 
+     A#     Gm      D#       F 
+그래 그래 너는 내 앞에 서 있고 
+     A#             D#      F 
+그래 다른 연인들은 키스를 해 
+      A#     Gm     D#    F 
+왜 난 너의 뒤에 있어야 할까 
+ 
+       A#              D#       F 
+햇살에 일어나 보니 너무나 눈부셔 
+        A#               D#        F 
+모든 게 다 변한 거야 널 향한 마음도 
+      A#     Gm  D#         F 
+그렇지만 널 사랑 않는 게 아냐 
+       A#    Gm  D# 
+이제는 나를 변화시킬 테니까 
+     Dm               Gm 
+머리 위로 비친 내 하늘 바라다보며 
+     D#m               F 
+널 향한 마음을 이제는 굳혔지만 
+Dm              Gm 
+웬일인지 네게 더 다가갈수록 
+     F#                 G#      G# 
+우린 같은 하늘 아래 서 있었지 
+ 
+        C#    F#        G#     C# 
+단지 널 사랑해 이렇게 말했지 
+       A#m       G# 
+이제껏 준비했던 많은 말을 뒤로한 채 
+C#     F#        G#     C# 
+언제나 니 옆에 있을게 
+       A#m     G#      F#         G# 
+이렇게 약속을 하겠어 저 하늘을 바라보며 
+C#       F#         G#     C# 
+한 번 더 한 번 더 말했지 
+       A#m  F#    G# 
+이제껏 준비했던 많은 말을 뒤로한 채 
+C#     F#        G#     C# 
+언제나 니 옆에 있을게 
+  A#m      G#       F#         G#        C# 
+다신 너 혼자 아냐 너의 곁엔 내가 있잖아 
+ 
+ 
+ 
+ 
+ 
+</pre>
+		</div>
+		<div class="col-6 col-sm-6 border-left" id="id-div-chord-area">
+			<div style="height: 45px;" class="py-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active small" href="#" id="id_nav_chord_flow">Chord Flow</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link small" href="#" id="id_nav_chord_chart">Chord Chart</a>
+					</li>
+				</ul>	
+			</div>
+			<div class="container-fluid">
+				<div class="row" id="id_div_chord_flow" style="height:500px; overflow-y: auto;"></div>
+				<div class="row" id="id_div_chord_chart" style="height:500px; overflow-y: auto; display: none;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="id_div_chord_flow_embed" 
+	style="display: none; background-color: ghostwhite; height:120px; width:100%; overflow: auto; white-space: nowrap;">
+</div>
+
+<div class="footer">
+	
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+
+<script type="text/javascript" src="/js/chord_lyrics_sheet.min.js"></script>

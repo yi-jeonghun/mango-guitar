@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>IVE - After Like @ mango-guitar.com</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+	<meta name="description" content="IVE After Like Guitar Chord, Ukulele Chord. Play or practice guitar along youtube video. Adjust speed, transpose chords">
+	<meta name="keywords" content="IVE, After Like, guitar, guitar chord, ukulele, ukelele chord, chord, chords, chord sheet, sheet music, score, easy chord, lyrics, youtube sync, 기타, 통기타, 기타 악보, 기타 코드, 코드 악보, 기타 코드 악보, 쉬운 기타 악보, 쉬운 기타 코드">
+
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/nanumgothiccoding.css">
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="/css/chords.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/chord_player_style.css">
+
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div id="id_div_head" include-html="head.html">
+	<div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/guitar_chord_chart.html">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<!--=============================== HEAD ==================================-->	
+
+<div class="container">
+	<div class="row border-bottom" id="id_div_title_area">
+		<div class="col-11 col-sm-9">
+			<h5 id="id_label_title" class="py-1">After Like</h5>
+			<div id="id_label_artist">IVE</div>			
+		</div>
+		<div class="col-1 col-sm-3">
+			<div id="id_MP_div_video" class="MP_div_video_sm flex">
+				<div id="id_MP_player" class="MP_player_sm"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
+		<div class="col-4">
+			<div class="capo-div">
+				Capo
+				<select id="id_select_capo">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="speed-div">
+				Speed
+				<span class="text-center mx-2" id="id_label_speed">1.0</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
+				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
+			</div>
+		</div>
+		<div class="col-4 text-right">
+			<div class="button-div">
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
+				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_stop">Stop</button>
+			</div>
+		</div>
+	</div>
+	<div class="row border">
+		<div class="col-12 col-sm-6" id="id_sheet">
+			<pre>
+A A 
+A  Dm        Dm        G        G  
+또 모르지 내 마음이 저 날씨처럼 바뀔지
+   C         C           F     F
+날 나조차 다 알 수 없으니
+
+Dm        Dm       G         G
+그게 뭐가 중요하니 지금 네게 완전히
+   C         C           F    F 
+푹 빠졌단 게 중요한 거지
+
+     Dm       Dm        G        G 
+아마 꿈만 같겠지만 분명 꿈이 아니야 
+     C         C         F        F 
+달리 설명할 수 없는 이건 사랑일 거야
+     Dm        Dm        G        G 
+방금 내가 말한 감정 감히 의심하지 마
+     C         C    A      A     Dm 
+그냥 좋다는 게 아냐 what's after 'like'?
+Dm     G        G           C 
+You and I  It's more than 'like'
+   C      F         F    Dm 
+L 다음 또 O 다음 난 yeah
+Dm      G        G          C      C
+You and I   It's more than 'like'
+A      A      Dm    Dm 
+What's after 'like'?
+
+Gm Gm C C 
+F F A# A# Gm 
+Gm A
+A      A     
+What's after 'like'?
+
+Dm        Dm        G         G                  
+조심해 두 심장에 핀 새파란 이 불꽃이
+   C        C         F        F     
+저 태양보다 뜨거울 테니
+   Dm         Dm        G         G        
+난 저 위로 또 아래로 내 그래프는 폭이 커
+C   C          F                 F 
+    Yeah, that's me (yeah, that's me)
+      Dm        Dm        G        G
+두 번 세 번 피곤하게 자꾸 질문하지 마
+     C         C          F        F 
+내 장점이 뭔지 알아? 바로 솔직한 거야
+     Dm        Dm        G        G 
+방금 내가 말한 감정 감히 의심하지 마
+     C         C    A        A        Dm 
+그냥 좋다는 게 아냐 what's after 'like'?
+
+Dm      G         G          C
+You and I   It's more than 'like'
+ 
+   C      F           F     Dm 
+L 다음 또 O 다음 난 yeah
+Dm      G         G         C     
+You and I   It's more than 'like'
+C 
+What's after 'like'?
+A        A     Dm    Dm
+What's after 'like'?
+
+Gm Gm C C 
+F F A# A# 
+Gm Gm A A Am 
+What after like 내 맘에 strike
+지금 느낀 짜릿함은 마치 tike
+LO 다음에 I 그 다음에 VE
+여긴 너와 내 space 아무도 막지 못해
+나를 보면 눈 깜빡할
+시간 조차도 아까울 걸
+드디어 만나 반가워
+L-O-V-E 사이 놓일 I
+(What's after 'like'?)
+
+Dm      Dm        G          G 
+You and I   It's more than 'like'
+C    C     F        F 
+E~ 앞 또 V~ 앞 난 yeah
+Dm      Dm        G          G    C   C 
+You and I   It's more than 'like'
+A        A 
+What's after 'like'?
+Dm      Dm       G           G 
+You and I  It's more than 'like'
+C       C        F      F
+L 다음 또 O 다음 난 yeah
+Dm      Dm        G          G    C   C 
+You and I   It's more than 'like'
+A        A 
+What's after 'like'?
+
+Dm Dm Gm Gm 
+C C F F 
+A# A# Gm Gm A 
+A       A        Dm
+What's after 'like'?</pre>
+		</div>
+		<div class="col-6 col-sm-6 border-left" id="id-div-chord-area">
+			<div style="height: 45px;" class="py-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active small" href="#" id="id_nav_chord_flow">Chord Flow</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link small" href="#" id="id_nav_chord_chart">Chord Chart</a>
+					</li>
+				</ul>	
+			</div>
+			<div class="container-fluid">
+				<div class="row" id="id_div_chord_flow" style="height:500px; overflow-y: auto;"></div>
+				<div class="row" id="id_div_chord_chart" style="height:500px; overflow-y: auto; display: none;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="id_div_chord_flow_embed" 
+	style="display: none; background-color: ghostwhite; height:120px; width:100%; overflow: auto; white-space: nowrap;">
+</div>
+
+<div class="footer">
+	
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+
+<script type="text/javascript" src="/js/chord_lyrics_sheet.min.js"></script>
