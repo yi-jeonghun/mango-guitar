@@ -23,6 +23,7 @@ function ChordLyricsSheetControl(){
 		var playlist_storage = new PlaylistStorage_Local();
 		window._mango_player = new MangoPlayer().Init(playlist_storage, 100, 100);
 		window._mango_player.SetFlowEventCallback(self.OnFlowEvent);
+		self._metronome = new Metronome().Init('metronome');
 
 		var embed_param = null;
 		{
@@ -219,6 +220,7 @@ function ChordLyricsSheetControl(){
 			self._sheet = sheet;
 			self._sheet.chord_list = JSON.parse(self._sheet.chord_list);
 
+			self._metronome.SetSheet(self._sheet);
 			self.Transpose();
 			self.DISP_Sheet();
 			self.LoadVideo();

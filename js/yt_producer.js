@@ -6,11 +6,9 @@ function YT_Producer(){
 	var self = this;
 	this._lazy_loader = null;
 	this._instrument;
-	this._metronome = null;
 	this._title_font_size = 5;
 
 	this.Init = function(){
-		self._metronome = new Metronome().Init('metronome');
 		self._instrument = window.localStorage.getItem('INSTRUMENT');
 
 		if(self._instrument == 'ukulele'){
@@ -108,8 +106,6 @@ function YT_Producer(){
 				var link = 'https://www.y2mate.com/youtube/' + window._chord_lyrics_sheet_control._sheet.video_id;
 				$('#id_label_video_id').html(`<a href="${link}" target="_blank">[Audio Download]</a>`);
 
-				self._metronome.SetSheet(window._chord_lyrics_sheet_control._sheet);
-				window._chord_lyrics_sheet_control.SetMetronome(self._metronome);
 				self.Step1();
 			}
 			// console.debug('window._chord_lyrics_sheet_control._sheet.capo ' + window._chord_lyrics_sheet_control._sheet.capo);
