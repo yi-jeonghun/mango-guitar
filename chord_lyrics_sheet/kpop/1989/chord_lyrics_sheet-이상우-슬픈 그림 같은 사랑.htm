@@ -83,7 +83,6 @@
 		<div class="col-11 col-sm-9">
 			<h5 id="id_label_title" class="py-1">슬픈 그림 같은 사랑</h5>
 			<div id="id_label_artist">이상우</div>
-			<canvas class="border" id="metronome" width="550px" height="6px" style="margin-left:100px; margin-bottom: 1px;"></canvas>
 		</div>
 		<div class="col-1 col-sm-3">
 			<div id="id_MP_div_video" class="MP_div_video_sm flex">
@@ -92,7 +91,10 @@
 		</div>
 	</div>
 	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
-		<div class="col-4">
+		<div class="col-6">
+			<canvas class="" id="metronome" width="" height="6px" style=""></canvas>
+		</div>
+		<div class="col-3 d-flex">
 			<div class="capo-div">
 				Capo
 				<select id="id_select_capo">
@@ -114,8 +116,6 @@
 					<option value="15">15</option>
 				</select>
 			</div>
-		</div>
-		<div class="col-4">
 			<div class="speed-div">
 				Speed
 				<span class="text-center mx-2" id="id_label_speed">1.0</span>
@@ -123,7 +123,7 @@
 				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
 			</div>
 		</div>
-		<div class="col-4 text-right">
+		<div class="col-3 text-right">
 			<div class="button-div">
 				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
 				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>

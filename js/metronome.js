@@ -4,24 +4,25 @@ function Metronome(){
   this._width = 0;
   this._height = 0;
   this._ctx = null;
+  this._id = null;
 
   this.Init = function(id){
+    self._id = id;
     var canvas = document.getElementById(id);
     self._width = canvas.width;
     self._height = canvas.height;
     self._ctx = canvas.getContext('2d');
+    self._ctx.scale(1, 1);
     return this;
   };
 
   this.SetSheet = function(sheet){
     this._sheet = sheet;
-		// console.debug('._sheet ' + JSON.stringify(self._sheet));
-		// console.debug('self._sheet.chord_list.length ' + self._sheet.chord_list.length);
-		// console.debug('self._sheet.chord_list. 0 ' + self._sheet.chord_list[0].time_ms);
-		// for(var i=0 ; i<self._sheet.chord_list.length ; i++){
-		// 	console.debug(i + ' => ' + self._sheet.chord_list[i].time_ms);
-		// }
-	};
+
+    var canvas = document.getElementById(self._id);
+    self._width = canvas.width;
+    self._height = canvas.height;
+  };
 
   this.Update = function(ms){
 		// console.debug('ms ' + ms + ' ' + self._sheet.chord_list[0].time_ms);

@@ -46,6 +46,14 @@
 	height:545px; 
 	overflow-y: auto;
 }
+#metronome{
+	height:6px;
+	width:100%;
+	border: 1px solid gray;
+}
+.speed-div{
+	margin-left: 10px;
+}
 /* ============================= */
 @media (max-width: 576px) {
 	.footer{
@@ -82,6 +90,7 @@
 		position: fixed;
 		bottom: 30px;
 		left: 130px;
+		margin-left: 0px;
 		z-index: 3;
 	}
 	.button-div{
@@ -109,5 +118,13 @@
 		height: calc(100vh - 220px);
 		overflow: auto;
 		white-space: nowrap;
-	}	
+	}
+	#metronome{
+		height:6px;
+		width:100vw;
+		position:fixed;
+		left: 0px;
+		top:115px;
+		z-index:4;
+	}
 }
