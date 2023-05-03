@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-04-28</lastmod>
+		<lastmod>2023-05-03</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/2001/chord_lyrics_sheet-쿨-아로하.htm?id=RRHAZ7EhKo</loc>
+		<lastmod>2023-05-03T08:32:48.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/1989/chord_lyrics_sheet-김성호-회상.htm?id=jOjXH6RN86</loc>
+		<lastmod>2023-05-02T21:49:02.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/2019/chord_lyrics_sheet-장범준-흔들리는 꽃들 속에서 네 샴푸 향이 느껴진 거야.htm?id=kdDQCCT46V</loc>
+		<lastmod>2023-04-28T08:01:37.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/2013/chord_lyrics_sheet-아이유-잊혀진 계절.htm?id=lJsysEVzzj</loc>

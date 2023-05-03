@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-04-28</lastmod>
+		<lastmod>2023-05-03</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -373,6 +373,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=4eAzveSjPn&amp;name=김민기</loc>
 		<lastmod>2022-12-21T12:33:29.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=iCBVoN4axr&amp;name=김성호</loc>
+		<lastmod>2023-05-03T11:36:46.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -771,6 +776,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=qTzcZ8LbYW&amp;name=장범준</loc>
+		<lastmod>2023-05-03T12:40:22.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=EOnuWwBRJg&amp;name=장혜리</loc>
 		<lastmod>2022-12-24T10:49:05.000Z</lastmod>
 		<priority>1.0</priority>
@@ -848,6 +858,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=7nRBNW3egY&amp;name=최희준</loc>
 		<lastmod>2022-12-04T03:54:43.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=cXmV6Ic9Yu&amp;name=쿨</loc>
+		<lastmod>2023-05-03T12:38:37.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
