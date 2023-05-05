@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-05-03</lastmod>
+		<lastmod>2023-05-05</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -198,6 +198,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=OkBnz9kpjJ&amp;name=Milie Cyrus</loc>
 		<lastmod>2023-02-02T11:39:03.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=nkhSsid4FL&amp;name=N.EX.T</loc>
+		<lastmod>2023-05-05T01:39:18.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -718,6 +723,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=PsqsU0aJW5&amp;name=이연실</loc>
 		<lastmod>2023-03-25T00:06:02.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=4qC65pyt6I&amp;name=이은하</loc>
+		<lastmod>2023-05-05T01:20:56.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
