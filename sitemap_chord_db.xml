@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-06-12</lastmod>
+		<lastmod>2023-06-13</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/2018/chord_lyrics_sheet-폴킴-모든 날 모든 순간.htm?id=C0sGJVgwMy</loc>
+		<lastmod>2023-06-12T21:28:04.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/2006/chord_lyrics_sheet-임현정-첫사랑.htm?id=d3NRBENH7g</loc>

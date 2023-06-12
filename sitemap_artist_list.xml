@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-06-12</lastmod>
+		<lastmod>2023-06-13</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -777,7 +777,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=jZviexX7GZ&amp;name=임현정</loc>
-		<lastmod>2023-06-12T13:02:41.000Z</lastmod>
+		<lastmod>2023-06-12T13:06:35.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -908,6 +908,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=EWl1qhxPX8&amp;name=펄시스터즈</loc>
 		<lastmod>2022-12-06T12:17:34.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=XGjfq3gPqM&amp;name=폴킴</loc>
+		<lastmod>2023-06-12T21:44:30.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
