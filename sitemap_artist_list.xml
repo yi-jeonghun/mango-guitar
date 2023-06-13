@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-06-13</lastmod>
+		<lastmod>2023-06-14</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -258,6 +258,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=PYQONfcJNy&amp;name=Sixpense None The Richer</loc>
 		<lastmod>2023-03-12T04:47:41.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=IF0PFCsw8h&amp;name=Skeeter Davis</loc>
+		<lastmod>2023-06-13T21:35:13.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
