@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-06-15</lastmod>
+		<lastmod>2023-06-22</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -13,6 +13,11 @@
 	<url>
 		<loc>https://mango-guitar.com/artist.html?artist_uid=38TtoIifVo&amp;name=4 Non Blondes</loc>
 		<lastmod>2023-02-16T11:42:08.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/artist.html?artist_uid=lSkY7zqQRl&amp;name=ABBA</loc>
+		<lastmod>2023-06-21T21:57:43.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
