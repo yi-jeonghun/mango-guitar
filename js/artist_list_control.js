@@ -28,7 +28,8 @@ function ArtistListControl(){
 			if(artist.sheet_count == 0){
 				continue;
 			}
-			var link = `./artist.html?artist_uid=${artist.artist_uid}&name=${artist.name}`;
+			var first_char = artist.name.charAt(0);
+			var link = `./artist/${first_char}/artist-${artist.name}-${artist.artist_uid}.htm?artist_uid=${artist.artist_uid}`;
 
 			h += `
 			<div class="col-4 py-3">

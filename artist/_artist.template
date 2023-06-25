@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<title id="id_title">Artist @ Mango Guitar</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta id="id_description" name="description" content="">
+	<meta id="id_keyword" name="keywords" content="">
+	
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+{INCLUDE_HTML:HEAD}
+<!--=============================== HEAD ==================================-->	
+
+<div class="container py-3 ">
+	<div class="row border-bottom py-3">
+		<div class="col-12">
+			<h5>{ARTIST_NAME}</h5>
+		</div>
+	</div>
+	<div class="row py-3" id="id_div_list">
+		{SHEET_LIST}
+	</div>
+</div>
+
+</body>
+</html>
+
+<!-- <script type="text/javascript" src="/js/head_control.js"></script> -->
+<!-- <script type="text/javascript" src="/js/util.js"></script> -->
+<!-- <script type="text/javascript" src="/js/artist_control.js"></script> -->

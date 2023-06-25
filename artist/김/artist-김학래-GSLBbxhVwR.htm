@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<title id="id_title">Artist @ Mango Guitar</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta id="id_description" name="description" content="">
+	<meta id="id_keyword" name="keywords" content="">
+	
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/guitar_chord_chart.html">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--=============================== HEAD ==================================-->	
+
+<div class="container py-3 ">
+	<div class="row border-bottom py-3">
+		<div class="col-12">
+			<h5>김학래</h5>
+		</div>
+	</div>
+	<div class="row py-3" id="id_div_list">
+		
+		<div class="col-sm-2 col-6 py-2">
+			<a href="./chord_lyrics_sheet/kpop/1979/chord_lyrics_sheet-김학래-내가.htm?id=HqFlhLwKYp"><img style="width:100%; height:auto;" src="https://img.youtube.com/vi/jcpQgw3JPM0/0.jpg"></a>
+			<div>
+				<a href="./chord_lyrics_sheet/kpop/1979/chord_lyrics_sheet-김학래-내가.htm?id=HqFlhLwKYp">내가</a>
+			</div>
+			<div style="font-size:0.8em; color:#777777">
+				<a href="./artist.html?artist_uid=undefined&name=김학래">김학래</a>
+			</div>
+			<div class="d-flex">
+				<div class="container-fluid mx-0 px-0">
+					<div class="row">
+						<div class="col-4 " style="font-size:0.8em">(1979)</div>
+						<div class="col-8 text-right" style="font-size:0.8em">2022-12-24</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+<script type="text/javascript" src="/js/artist_control.js"></script>
