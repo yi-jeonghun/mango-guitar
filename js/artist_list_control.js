@@ -7,7 +7,7 @@ function ArtistListControl(){
 	this._artist_list = null;
 
 	this.Init = function(){
-		self.LoadList();
+		// self.LoadList();
 		return this;
 	};
 
