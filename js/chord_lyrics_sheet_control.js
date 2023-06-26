@@ -208,8 +208,8 @@ function ChordLyricsSheetControl(){
 			for(var c=self._sheet.capo ; c>0 ; c--){
 				chord_txt = self._chordManager.Transpose(chord_txt, 'down');
 			}
-			if(chord_txt == 'A#'){
-				chord_txt = 'Bb';
+			if(chord_txt.startsWith('A#')){
+				chord_txt = chord_txt.replace('A#', 'Bb');
 			}
 			self._transposed_chord_list[i].chord = chord_txt;
 		}
@@ -523,8 +523,8 @@ function ChordLyricsSheetControl(){
 				if(self._chordManager.HasChord(chars[c])){
 					var chord_txt = chars[c];
 
-					if(chord_txt == 'A#'){
-						chord_txt = 'Bb';
+					if(chord_txt.startsWith('A#')){
+						chord_txt = chord_txt.replace('A#', 'Bb');
 					}
 
 					h += `<span id="id_chord_sync-${self._chord_sync_index}" class="chord-sm" onmousedown="PlayChord('${chord_txt}')">${chord_txt}</span>&nbsp;`;
