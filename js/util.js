@@ -18,8 +18,10 @@ function GetSheetItem(sheet){
 	}else{
 		region = 'kpop';
 	}
-	var link_sheet = `./chord_lyrics_sheet/${region}/${sheet.release_year}/chord_lyrics_sheet-${sheet.artist_name}-${sheet.title}.htm?id=${sheet.sheet_uid}`;
-	var link_artist = `./artist.html?artist_uid=${sheet.artist_uid}&name=${sheet.artist_name}`;
+
+	var first_char = sheet.artist_name.charAt(0);
+	var link_sheet = `/chord_lyrics_sheet/${region}/${sheet.release_year}/chord_lyrics_sheet-${sheet.artist_name}-${sheet.title}.htm?id=${sheet.sheet_uid}`;
+	var link_artist = `/artist/${first_char}/artist-${sheet.artist_name}-${sheet.artist_uid}.htm?artist_uid=${sheet.artist_uid}`;
 
 	var h = `
 	<div class="col-sm-2 col-6 py-2">
