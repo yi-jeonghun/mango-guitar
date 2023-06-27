@@ -10,13 +10,13 @@
 		gtag('config', 'G-WPEKG1F8TF');
 	</script>
 
-	<title id="id_title">Artist @ Mango Guitar</title>
+	<title id="id_title">{TITLE}</title>
 	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta id="id_description" name="description" content="">
-	<meta id="id_keyword" name="keywords" content="">
+	<meta id="id_description" name="description" content="{DESCRIPTION}">
+	<meta id="id_keyword" name="keywords" content="{KEYWORDS}">
 	
 	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
