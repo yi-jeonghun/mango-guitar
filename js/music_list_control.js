@@ -25,8 +25,16 @@ function MusicListControl(){
 			self._region = region;
 		}
 
+		var page = GetURLParam('page');
+		if(page == null){
+			self._cur_page = 0;
+		}else{
+			self._cur_page = page - 1;
+		}
+
 		console.debug('era ' + self._era);
 		console.debug('region ' + self._region);
+		console.debug('cur_page ' + self._cur_page);
 		self.LoadList();
 		self.FocusEraRegionButton();
 		return this;
@@ -73,9 +81,7 @@ function MusicListControl(){
 
 	this.MoveToPage = function(page){
 		console.debug('page ' + page);
-		self._cur_page = page;
-		self.DISP_paging();
-		self.DISP_SheetList();
+		window.location.href = `./music_list.html?era=${self._era}&region=${self._region}&page=${page}`;
 	};
 
 	this.FocusEraRegionButton = function(){
@@ -93,7 +99,7 @@ function MusicListControl(){
 		var h = '';
 		for(var i=0 ; i<page_count ; i++){
 			console.log('i ' + i);
-			var on_click = `window._music_list_control.MoveToPage(${i})`;
+			var on_click = `window._music_list_control.MoveToPage(${i+1})`;
 			if(self._cur_page == i){
 				h += `<span style="padding:5px"><u>&nbsp;<b>${i+1}</b>&nbsp;</u><span>`;
 			}else{
