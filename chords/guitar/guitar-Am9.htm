@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEKG1F8TF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-WPEKG1F8TF');
+	</script>
+
+	<title id="id_title">AM9 Guitar Chords @ mango-guitar.comMango Guitar | Guitar Chord Chart</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="description" content="AM9, Source for guitar chords, play guitar along youtube video play. practice guitar">
+	<meta name="keywords" content="AM9, guitar, guitar chords, chords, practice guitar, Guitar Chord Chart, Chord Chart, Chord Table, Chord List">
+
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src='/lib/webaudiofont/WebAudioFontPlayer.js'></script>
+	<script type="text/javascript" src="/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
+	<link href="/lib/fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+	<link href="/css/guitar_chord_chart_style.css" rel="stylesheet">
+	<link href="/css/chords.css" rel="stylesheet">
+	<link href="/css/head.css" rel="stylesheet">
+
+	<!-- <script type="text/javascript" src="js/auth_control.js"></script> -->
+
+	<script type="text/javascript" src="/js/ChordDB.js"></script>
+	<script type="text/javascript" src="/js/ChordManager.js"></script>
+	<script type="text/javascript" src="/js/Drums.js"></script>
+	<script type="text/javascript" src="/js/MusicXMLPlayer.js"></script>
+	<script type="text/javascript" src="/js/const.js"></script>
+</head>
+<body>
+
+<!--=============================== HEAD ==================================-->
+<div><div class="container-fluid">
+	<div class="row head">
+		<div class="col-12">
+			<div class="head-title">
+				<span id="icon_menu_bar" onClick="window._head_control.OpenMenu()"><i class="fas fa-bars"></i></span>
+				&nbsp;
+				<a href="/index.html">Mango Guitar</a>
+			</div>
+
+			<img class="head-logo-img" src="/img/logo_100x100.png">
+
+			<div class="head-menu" id="id_head_menu">
+				<div class="head_menu_title d-flex">
+					<div class="w-80">Mango Guitar</div>
+					<div class="menu_close_btn" onClick="window._head_control.CloseMenu()"><i class="fas fa-times"></i></div>
+				</div>
+				<span class="head-menu-item"><a href="/index.html">Home</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=pop">Pop Music</a></span>
+				<span class="head-menu-item"><a href="/music_list.html?era=all&region=kpop">K-Pop Music</a></span>
+				<span class="head-menu-item"><a href="/artist_list.html">Artist</a></span>
+				<span class="head-menu-item"><a href="/chords/guitar/guitar-C.htm">Chord Table</a></span>
+
+				<span class="head-choose-instrument">
+					<div class="badge badge-small badge-danger py-1" id="id_btn_guitar" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px;" onClick="window._head_control.ChooseGuitar()">
+						Guitar
+					</div>
+					<div class="badge badge-small badge-light py-1" id="id_btn_ukulele" style="font-size:1.1em; cursor:pointer; width: 110px; height: 28px; margin-left: 10px;" onClick="window._head_control.ChooseUkulele()">
+						Ukulele
+					</div>
+				</span>
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--=============================== HEAD ==================================-->
+
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-12 py-2"><H2>Chord Diagrams</H2></div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			
+							<a href="/chords/guitar/guitar-C.htm"><button type="button" id='id_root_btn-C' class="btn btn-primary root-btn">C</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Cz.htm"><button type="button" id='id_root_btn-Cz' class="btn btn-primary root-btn">C#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Db.htm"><button type="button" id='id_root_btn-Db' class="btn btn-primary root-btn">Db</button></a>
+
+						
+							<a href="/chords/guitar/guitar-D.htm"><button type="button" id='id_root_btn-D' class="btn btn-primary root-btn">D</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Dz.htm"><button type="button" id='id_root_btn-Dz' class="btn btn-primary root-btn">D#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Eb.htm"><button type="button" id='id_root_btn-Eb' class="btn btn-primary root-btn">Eb</button></a>
+
+						
+							<a href="/chords/guitar/guitar-E.htm"><button type="button" id='id_root_btn-E' class="btn btn-primary root-btn">E</button></a>
+
+						
+							<a href="/chords/guitar/guitar-F.htm"><button type="button" id='id_root_btn-F' class="btn btn-primary root-btn">F</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Fz.htm"><button type="button" id='id_root_btn-Fz' class="btn btn-primary root-btn">F#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Gb.htm"><button type="button" id='id_root_btn-Gb' class="btn btn-primary root-btn">Gb</button></a>
+
+						
+							<a href="/chords/guitar/guitar-G.htm"><button type="button" id='id_root_btn-G' class="btn btn-primary root-btn">G</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Gz.htm"><button type="button" id='id_root_btn-Gz' class="btn btn-primary root-btn">G#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Ab.htm"><button type="button" id='id_root_btn-Ab' class="btn btn-primary root-btn">Ab</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A.htm"><button type="button" id='id_root_btn-A' class="btn btn-danger root-btn">A</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Az.htm"><button type="button" id='id_root_btn-Az' class="btn btn-primary root-btn">A#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Bb.htm"><button type="button" id='id_root_btn-Bb' class="btn btn-primary root-btn">Bb</button></a>
+
+						
+							<a href="/chords/guitar/guitar-B.htm"><button type="button" id='id_root_btn-B' class="btn btn-primary root-btn">B</button></a>
+
+						
+		</div>
+	</div>
+
+	<div class="row border-bottom">
+		<div class="col-12" id="id_type_list">
+			
+							<a href="/chords/guitar/guitar-A.htm"><button type="button" id="id_chord_btn-A" class="btn btn-sm btn-primary chord-btn">A</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am.htm"><button type="button" id="id_chord_btn-Am" class="btn btn-sm btn-primary chord-btn">Am</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7.htm"><button type="button" id="id_chord_btn-A7" class="btn btn-sm btn-primary chord-btn">A7</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am7.htm"><button type="button" id="id_chord_btn-Am7" class="btn btn-sm btn-primary chord-btn">Am7</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AM7.htm"><button type="button" id="id_chord_btn-AM7" class="btn btn-sm btn-primary chord-btn">AM7</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AmM7.htm"><button type="button" id="id_chord_btn-AmM7" class="btn btn-sm btn-primary chord-btn">AmM7</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Amz7.htm"><button type="button" id="id_chord_btn-Amz7" class="btn btn-sm btn-primary chord-btn">Am#7</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7b5.htm"><button type="button" id="id_chord_btn-A7b5" class="btn btn-sm btn-primary chord-btn">A7b5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7z5.htm"><button type="button" id="id_chord_btn-A7z5" class="btn btn-sm btn-primary chord-btn">A7#5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am7b5.htm"><button type="button" id="id_chord_btn-Am7b5" class="btn btn-sm btn-primary chord-btn">Am7b5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am7z5.htm"><button type="button" id="id_chord_btn-Am7z5" class="btn btn-sm btn-primary chord-btn">Am7#5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7b9.htm"><button type="button" id="id_chord_btn-A7b9" class="btn btn-sm btn-primary chord-btn">A7b9</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Ab5.htm"><button type="button" id="id_chord_btn-Ab5" class="btn btn-sm btn-primary chord-btn">Ab5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A6.htm"><button type="button" id="id_chord_btn-A6" class="btn btn-sm btn-primary chord-btn">A6</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am6.htm"><button type="button" id="id_chord_btn-Am6" class="btn btn-sm btn-primary chord-btn">Am6</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A9.htm"><button type="button" id="id_chord_btn-A9" class="btn btn-sm btn-primary chord-btn">A9</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A9b5.htm"><button type="button" id="id_chord_btn-A9b5" class="btn btn-sm btn-primary chord-btn">A9b5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A9z5.htm"><button type="button" id="id_chord_btn-A9z5" class="btn btn-sm btn-primary chord-btn">A9#5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am9.htm"><button type="button" id="id_chord_btn-Am9" class="btn btn-sm btn-primary chord-btn">Am9</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AM9.htm"><button type="button" id="id_chord_btn-AM9" class="btn btn-sm btn-danger chord-btn">AM9</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Aadd9.htm"><button type="button" id="id_chord_btn-Aadd9" class="btn btn-sm btn-primary chord-btn">Aadd9</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7z9.htm"><button type="button" id="id_chord_btn-A7z9" class="btn btn-sm btn-primary chord-btn">A7#9</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A11.htm"><button type="button" id="id_chord_btn-A11" class="btn btn-sm btn-primary chord-btn">A11</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am11.htm"><button type="button" id="id_chord_btn-Am11" class="btn btn-sm btn-primary chord-btn">Am11</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A13.htm"><button type="button" id="id_chord_btn-A13" class="btn btn-sm btn-primary chord-btn">A13</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AM13.htm"><button type="button" id="id_chord_btn-AM13" class="btn btn-sm btn-primary chord-btn">AM13</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Asus2.htm"><button type="button" id="id_chord_btn-Asus2" class="btn btn-sm btn-primary chord-btn">Asus2</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Asus4.htm"><button type="button" id="id_chord_btn-Asus4" class="btn btn-sm btn-primary chord-btn">Asus4</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7sus4.htm"><button type="button" id="id_chord_btn-A7sus4" class="btn btn-sm btn-primary chord-btn">A7sus4</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A9sus4.htm"><button type="button" id="id_chord_btn-A9sus4" class="btn btn-sm btn-primary chord-btn">A9sus4</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Adim.htm"><button type="button" id="id_chord_btn-Adim" class="btn btn-sm btn-primary chord-btn">Adim</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Adim7.htm"><button type="button" id="id_chord_btn-Adim7" class="btn btn-sm btn-primary chord-btn">Adim7</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Aaug.htm"><button type="button" id="id_chord_btn-Aaug" class="btn btn-sm btn-primary chord-btn">Aaug</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A5.htm"><button type="button" id="id_chord_btn-A5" class="btn btn-sm btn-primary chord-btn">A5</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AxCz.htm"><button type="button" id="id_chord_btn-AxCz" class="btn btn-sm btn-primary chord-btn">A/C#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AxE.htm"><button type="button" id="id_chord_btn-AxE" class="btn btn-sm btn-primary chord-btn">A/E</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AxGz.htm"><button type="button" id="id_chord_btn-AxGz" class="btn btn-sm btn-primary chord-btn">A/G#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AxG.htm"><button type="button" id="id_chord_btn-AxG" class="btn btn-sm btn-primary chord-btn">A/G</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AxB.htm"><button type="button" id="id_chord_btn-AxB" class="btn btn-sm btn-primary chord-btn">A/B</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AmxC.htm"><button type="button" id="id_chord_btn-AmxC" class="btn btn-sm btn-primary chord-btn">Am/C</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AmxD.htm"><button type="button" id="id_chord_btn-AmxD" class="btn btn-sm btn-primary chord-btn">Am/D</button></a>
+
+						
+							<a href="/chords/guitar/guitar-A7xCz.htm"><button type="button" id="id_chord_btn-A7xCz" class="btn btn-sm btn-primary chord-btn">A7/C#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am7xG.htm"><button type="button" id="id_chord_btn-Am7xG" class="btn btn-sm btn-primary chord-btn">Am7/G</button></a>
+
+						
+							<a href="/chords/guitar/guitar-AmM7xGz.htm"><button type="button" id="id_chord_btn-AmM7xGz" class="btn btn-sm btn-primary chord-btn">AmM7/G#</button></a>
+
+						
+							<a href="/chords/guitar/guitar-Am6xFz.htm"><button type="button" id="id_chord_btn-Am6xFz" class="btn btn-sm btn-primary chord-btn">Am6/F#</button></a>
+
+						
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12" id="id_chord_display">
+			AM9
+		</div>
+	</div>
+
+	<div class="row" id="id_chord_list">
+		<div id="id_chord_disp" chord="AM9" index="0" class="text-center col-6 col-sm-4 col-md-3 col-lg-2 chord-item pointer" style="width:100%"><table class="mx-auto" cellspacing="0px" cellpadding="0px"><tr><td class="cm_chord_td cm_fret_neck_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"><img width="10px" height="10px" src="/img/f4.png"></td></tr><tr><td class="cm_chord_td cm_fret_neck"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_neck"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f3.png"></td></tr><tr><td class="cm_chord_td cm_fret_neck"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_neck">O</td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_neck_bottom">X</td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td></tr></table></div><div id="id_chord_disp" chord="AM9" index="1" class="text-center col-6 col-sm-4 col-md-3 col-lg-2 chord-item pointer" style="width:100%"><table class="mx-auto" cellspacing="0px" cellpadding="0px"><tr><td class="cm_chord_td cm_fret_middle_top"></td><td class="cm_chord_td cm_fret_top"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f2.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f4.png"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle_bottom">X</td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td></tr>
+							<tr>
+							<td></td>
+							<td colspan="4" style="font-size:1em; padding-top:10px">Fret 4</td>
+							</tr>
+							</table></div><div id="id_chord_disp" chord="AM9" index="2" class="text-center col-6 col-sm-4 col-md-3 col-lg-2 chord-item pointer" style="width:100%"><table class="mx-auto" cellspacing="0px" cellpadding="0px"><tr><td class="cm_chord_td cm_fret_middle_top"></td><td class="cm_chord_td cm_fret_top"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f3.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f4.png"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"><img width="10px" height="10px" src="/img/f2.png"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td></tr>
+							<tr>
+							<td></td>
+							<td colspan="4" style="font-size:1em; padding-top:10px">Fret 4</td>
+							</tr>
+							</table></div><div id="id_chord_disp" chord="AM9" index="3" class="text-center col-6 col-sm-4 col-md-3 col-lg-2 chord-item pointer" style="width:100%"><table class="mx-auto" cellspacing="0px" cellpadding="0px"><tr><td class="cm_chord_td cm_fret_middle_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"><img width="10px" height="10px" src="/img/f4.png"></td><td class="cm_chord_td cm_fret_top"></td></tr><tr><td class="cm_chord_td cm_fret_middle">X</td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f3.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f2.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle">X</td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle_bottom"></td><td class="cm_chord_td cm_fret_bottom"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td></tr>
+							<tr>
+							<td></td>
+							<td colspan="4" style="font-size:1em; padding-top:10px">Fret 5</td>
+							</tr>
+							</table></div><div id="id_chord_disp" chord="AM9" index="4" class="text-center col-6 col-sm-4 col-md-3 col-lg-2 chord-item pointer" style="width:100%"><table class="mx-auto" cellspacing="0px" cellpadding="0px"><tr><td class="cm_chord_td cm_fret_middle_top"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"><img width="10px" height="10px" src="/img/f3.png"></td><td class="cm_chord_td cm_fret_top"></td><td class="cm_chord_td cm_fret_top"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f4.png"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f1.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"><img width="10px" height="10px" src="/img/f2.png"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle">X</td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td><td class="cm_chord_td cm_fret"></td></tr><tr><td class="cm_chord_td cm_fret_middle_bottom">X</td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td><td class="cm_chord_td cm_fret_bottom"></td></tr>
+							<tr>
+							<td></td>
+							<td colspan="4" style="font-size:1em; padding-top:10px">Fret 6</td>
+							</tr>
+							</table></div>
+	</div>
+
+	<p class="py-3"/>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/head_control.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+<script type="text/javascript" src="/js/GuitarChordChartControl.js"></script>
