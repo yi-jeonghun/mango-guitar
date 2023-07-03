@@ -4647,3 +4647,9 @@ function ChordDB(instrument) {
 		}
 	};
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = new ChordDB('guitar');
+} else {
+	window._chord_db = new ChordDB('guitar');
+}

@@ -121,7 +121,7 @@ function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCall
 			}
 			if(default_guitar_added == false){
 				self._instrument_count_total++;
-				var path = '../lib/webaudiofontdata/sound/' + self._DEFAULT_GUITAR + '.js';
+				var path = '/lib/webaudiofontdata/sound/' + self._DEFAULT_GUITAR + '.js';
 				self._player.loader.startLoad(self._audioContext, path, self._DEFAULT_GUITAR_VARIABLE);
 				self._player.loader.waitLoad(self.CallbackInstLoad);
 			}
@@ -135,7 +135,7 @@ function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCall
 			}
 			if(default_stick_added == false){
 				self._instrument_count_total++;
-				var path = '../lib/webaudiofontdata/sound/' + self._DEFAULT_READY_STICK;
+				var path = '/lib/webaudiofontdata/sound/' + self._DEFAULT_READY_STICK;
 				self._player.loader.startLoad(self._audioContext, path, self._DEFAULT_READY_STICK_VARIABLE);
 				self._player.loader.waitLoad(self.CallbackInstLoad);
 			}
@@ -143,7 +143,7 @@ function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCall
 
 		for(var i=0 ; i<self._instrument_arr.length ; i++){
 			//console.log('ins ' + self._instrument_arr[i]._id +  self._instrument_arr[i]._key);
-			var path = '../lib/webaudiofontdata/sound/' + self._instrument_arr[i]._key + '.js';
+			var path = '/lib/webaudiofontdata/sound/' + self._instrument_arr[i]._key + '.js';
 			var variable = '_tone_' + self._instrument_arr[i]._key;
 			self._instrument_arr[i]._variable = variable;
 			self._player.loader.startLoad(self._audioContext, path, variable);
@@ -152,7 +152,7 @@ function MusicXMLPlayer(flowControlCallback, playEndCallback, instrumentLoadCall
 
 		for(var p=0 ; p<self._percussion_arr.length ; p++){
 			//console.log('per ' + self._percussion_arr[p]._id + ' ' + self._percussion_arr[p]._key);
-			var path = '../lib/webaudiofontdata/sound/' + self._percussion_arr[p]._key;
+			var path = '/lib/webaudiofontdata/sound/' + self._percussion_arr[p]._key;
 			var variable = DRUM_GetVariable(self._percussion_arr[p]._key);
 			var pitch = DRUM_GetPitch(self._percussion_arr[p]._key);
 			self._percussion_arr[p]._variable = variable;

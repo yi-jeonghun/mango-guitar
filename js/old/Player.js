@@ -51,7 +51,7 @@ function Player(flowControlCallback, playEndCallback) {
 
 	//fixme 이 함수는 key뒤에 js를 붙여야 하지만
 	this.LoadInstrument = function(key){
-		var path = 'lib/webaudiofontdata/sound/' + key + '.js';
+		var path = '/lib/webaudiofontdata/sound/' + key + '.js';
 		var variableName = '_tone_' + key;
 		self._player.loader.startLoad(self._audioContext, path, variableName);
 		self._player.loader.waitLoad(function(key){
@@ -72,7 +72,7 @@ function Player(flowControlCallback, playEndCallback) {
 
 	//fixme 이 함수는 key가 js 파일이다. 통일 필요.
 	this.LoadDrum = function(key){
-		var path = 'lib/webaudiofontdata/sound/' + key;
+		var path = '/lib/webaudiofontdata/sound/' + key;
 		var variableName = DRUM_GetVariable(key);
 		self._player.loader.startLoad(self._audioContext, path, variableName);
 		self._player.loader.waitLoad(function(){

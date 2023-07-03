@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	new GuitarChordChartControl().Init();
+	window._guitar_chord_chart_control = new GuitarChordChartControl().Init();
 });
 
 function GuitarChordChartControl(){
@@ -14,45 +14,12 @@ function GuitarChordChartControl(){
 		self._musicXMLPlayer.Init();
 		self._musicXMLPlayer.LoadInstruments();
 		self._chordManager = new ChordManager().Init();
-		self.DisplayRootList();
 
-		var chord = self.GetURLParam('chord');
-		console.debug('chord ' + chord);
-		if(chord != null){
-			self.LoadFirstChord(chord);
-			self.UpdateMetadata(chord);
-		}
+		self.InitHandle();
 	};
 
-	this.UpdateMetadata = function(chord){
-		var dec_chord = chord.replace(/z/g, '#');
-		dec_chord = dec_chord.replace('x', '/');
-
-		{
-			var id_title_str = $('#id_title').text();
-			id_title_str = id_title_str.replace('|', '| ' + dec_chord + ' ');
-			$('#id_title').text(id_title_str);
-		}
-		{
-			var str = $('#id_description').attr('content');
-			str = dec_chord + ' ' + str;
-			$('#id_description').attr('content', str);
-		}
-		{
-			var str = $('#id_keywords').attr('content');
-			str = dec_chord + ' ' + str;
-			$('#id_keywords').attr('content', str);
-		}
-		{
-			var str = $('#id_og_title').attr('content');
-			str = str.replace('|', '| ' + dec_chord + ' ');
-			$('#id_og_title').attr('content', str);
-		}
-		{
-			var str = $('#id_og_desc').attr('content');
-			str = dec_chord + ' ' + str;
-			$('#id_og_desc').attr('content', str);
-		}
+	this.InitHandle = function(){
+		$('[id="id_chord_disp"]').on('mousedown', self.PlayChord);
 	};
 
 	this.GetURLParam = function(name){
@@ -118,29 +85,19 @@ function GuitarChordChartControl(){
 		self.ColorChordButton('id_chord_btn-'+chord);
 	};
 
-	this.DisplayRootList = function(){
-		var root_list_ele = $('#id_root_list');
-		for(var r=0 ; r<self._chordManager._chordDB._ROOT_LIST.length ; r++){
-			var btn_ele = $('<button type="button" class="btn btn-sm btn-primary root-btn">' + self._chordManager._chordDB._ROOT_LIST[r] + '</button>');
-			var id_str = 'id_root_btn-' + self._chordManager._chordDB._ROOT_LIST[r];
-			id_str = id_str.replace('#', 'z');
-			btn_ele.attr('id', id_str);
-			btn_ele.on('click', self.OnClickRootChord);
-			root_list_ele.append(btn_ele);
-		}
-	};
-
 	this.ColorRootButton = function(root_id){
+		console.debug('self._selected_root ' + self._selected_root);
+		console.debug('root_id ' + root_id);
 		if(self._selected_root == root_id)
 			return;
 
 		if(self._selected_root != ''){
-			$('#'+self._selected_root).removeClass('btn-secondary');
+			$('#'+self._selected_root).removeClass('btn-danger');
 			$('#'+self._selected_root).addClass('btn-primary');
 		}
 
 		$('#'+root_id).removeClass('btn-primary');
-		$('#'+root_id).addClass('btn-secondary');
+		$('#'+root_id).addClass('btn-danger');
 
 		self._selected_root = root_id;
 	};
@@ -151,15 +108,16 @@ function GuitarChordChartControl(){
 			return;
 
 		if(self._selected_chord != ''){
-			$('#'+self._selected_chord).removeClass('btn-secondary');
+			$('#'+self._selected_chord).removeClass('btn-danger');
 			$('#'+self._selected_chord).addClass('btn-primary');
 		}
 		$('#'+chord_id).removeClass('btn-primary');
-		$('#'+chord_id).addClass('btn-secondary');
+		$('#'+chord_id).addClass('btn-danger');
 		self._selected_chord = chord_id;
 	};
 
 	this.OnClickRootChord = function(){
+		console.debug('this.id ' + this.id);
 		self.ColorRootButton(this.id);
 
 		var chord_root = this.id.split('-')[1];
