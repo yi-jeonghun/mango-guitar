@@ -52,7 +52,14 @@
 	border: 1px solid gray;
 }
 .speed-div{
-	margin-left: 10px;
+	margin-left: 12px;
+}
+.volume-div{
+	margin-left: 12px
+}
+.volume-slide-div{
+	margin-left: 5px;
+	margin-top: 5px;
 }
 /* ============================= */
 @media (max-width: 576px) {
@@ -82,17 +89,25 @@
 	}
 	.capo-div{
 		position: fixed;
-		bottom: 60px;
+		bottom: 65px;
 		left: 130px;
 		z-index: 3;
 	}
 	.speed-div{
 		position: fixed;
-		bottom: 30px;
+		bottom: 35px;
 		left: 130px;
 		margin-left: 0px;
 		z-index: 3;
 	}
+	.volume-div{
+		position: fixed;
+		bottom: 4px;
+		left: 130px;
+		margin-left: 0px;
+		z-index: 3;
+		width: 150px;
+	}	
 	.button-div{
 		position: fixed;
 		bottom: 5px;

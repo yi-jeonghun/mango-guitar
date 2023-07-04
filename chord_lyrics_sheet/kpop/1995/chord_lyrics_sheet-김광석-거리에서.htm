@@ -81,7 +81,9 @@
 <div class="container">
 	<div class="row border-bottom" id="id_div_title_area">
 		<div class="col-11 col-sm-9">
-			<h5 id="id_label_title" class="py-1">거리에서</h5>
+			<div class="">
+				<h5 id="id_label_title" class="py-1">거리에서</h5>
+			</div>
 			<div id="id_label_artist">김광석</div>
 		</div>
 		<div class="col-1 col-sm-3">
@@ -91,10 +93,10 @@
 		</div>
 	</div>
 	<div class="row py-0 border-bottom py-2" id="id_div_control_pannel">
-		<div class="col-6">
+		<div class="col-5">
 			<canvas class="" id="metronome" width="" height="6px" style=""></canvas>
 		</div>
-		<div class="col-3 d-flex">
+		<div class="col-5 d-flex">
 			<div class="capo-div">
 				Capo
 				<select id="id_select_capo">
@@ -122,8 +124,14 @@
 				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_minus">-</span>
 				<span class="badge badge-sm border" style="cursor:pointer" id="id_btn_speed_plus">+</span>	
 			</div>
+			<div class="volume-div d-flex">
+				<div>Volume</div>
+				<div class="volume-slide-div">
+					<input class="" type="range" min="0" max="100" value="50" id="id_slider_volume" style="width: 100%;">
+				</div>
+			</div>
 		</div>
-		<div class="col-3 text-right">
+		<div class="col-2 text-right">
 			<div class="button-div">
 				<!-- <button type="button" class="btn btn-sm btn-primary" id="id_btn_reload">Reload</button> -->
 				<button type="button" class="btn btn-sm btn-primary my-1" id="id_btn_play">Play</button>
