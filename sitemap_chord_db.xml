@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-06-25</lastmod>
+		<lastmod>2023-07-05</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/1986/chord_lyrics_sheet-김현식-비처럼 음악처럼.htm?id=DN4VegVmuN</loc>
+		<lastmod>2023-07-05T08:25:54.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet/pop/1974/chord_lyrics_sheet-ABBA-Honey Honey.htm?id=YQno0KejNP</loc>
