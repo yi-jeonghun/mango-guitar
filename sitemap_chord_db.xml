@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-07-06</lastmod>
+		<lastmod>2023-07-08</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/pop/2008/chord_lyrics_sheet-Jason Mraz-Lucky.htm?id=0pnFYAx8on</loc>
+		<lastmod>2023-07-07T23:52:07.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/pop/1977/chord_lyrics_sheet-Anne Murray-You Are My Sunshine.htm?id=151xq7tK7o</loc>
+		<lastmod>2023-07-06T08:17:45.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet/pop/1976/chord_lyrics_sheet-Leo Sayer-When I Need You.htm?id=UiGKijP1Vi</loc>
