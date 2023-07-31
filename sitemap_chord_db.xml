@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-07-08</lastmod>
+		<lastmod>2023-07-31</lastmod>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://www.mango-guitar.com/</loc>
+		<lastmod>2023-07-31</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
