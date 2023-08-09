@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-07-31</lastmod>
+		<lastmod>2023-08-09</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
@@ -221,6 +221,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist/M/artist-Michael Learns To Rock-MjIDi2apds.htm?artist_uid=MjIDi2apds</loc>
+		<lastmod>2023-08-09T12:04:55.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist/M/artist-Milie Cyrus-OkBnz9kpjJ.htm?artist_uid=OkBnz9kpjJ</loc>
 		<lastmod>2023-02-02T11:39:03.000Z</lastmod>
 		<priority>1.0</priority>
@@ -292,7 +297,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist/S/artist-Stephen Sanchez-IJv10mFNV4.htm?artist_uid=IJv10mFNV4</loc>
-		<lastmod>2023-02-14T08:20:55.000Z</lastmod>
+		<lastmod>2023-08-05T08:39:06.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -357,7 +362,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist/Y/artist-YB-bUjMyC8XpV.htm?artist_uid=bUjMyC8XpV</loc>
-		<lastmod>2022-12-04T05:47:29.000Z</lastmod>
+		<lastmod>2023-08-05T11:54:50.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
@@ -741,6 +746,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://mango-guitar.com/artist/이/artist-이세계-F5VdsYDrUS.htm?artist_uid=F5VdsYDrUS</loc>
+		<lastmod>2023-08-09T12:42:44.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://mango-guitar.com/artist/이/artist-이수미-gZdSMQvogr.htm?artist_uid=gZdSMQvogr</loc>
 		<lastmod>2022-12-08T12:28:36.000Z</lastmod>
 		<priority>1.0</priority>
@@ -832,7 +842,7 @@
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/artist/전/artist-전영-pzLQkDq7a7.htm?artist_uid=pzLQkDq7a7</loc>
-		<lastmod>2022-12-22T09:34:17.000Z</lastmod>
+		<lastmod>2023-08-05T12:54:38.000Z</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>

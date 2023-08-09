@@ -2,13 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://mango-guitar.com/</loc>
-		<lastmod>2023-07-31</lastmod>
+		<lastmod>2023-08-09</lastmod>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://www.mango-guitar.com/</loc>
-		<lastmod>2023-07-31</lastmod>
+		<lastmod>2023-08-09</lastmod>
 		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/pop/1995/chord_lyrics_sheet-Michael Learns To Rock-That's Why (You Go Away).htm?id=p8epMwVusl</loc>
+		<lastmod>2023-08-09T11:22:17.000Z</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://mango-guitar.com/chord_lyrics_sheet/kpop/2021/chord_lyrics_sheet-이세계-낭만젊음사랑.htm?id=kgzEdLRvo4</loc>
+		<lastmod>2023-08-05T12:00:03.000Z</lastmod>
+		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://mango-guitar.com/chord_lyrics_sheet/pop/2008/chord_lyrics_sheet-Jason Mraz-Lucky.htm?id=0pnFYAx8on</loc>
