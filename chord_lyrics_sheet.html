@@ -1,0 +1,47 @@
+<script>
+	var url = window.location.href;
+	var arr = url.split('=');
+	var param = '';
+	if(arr.length >= 2){
+		param = arr[1];
+	}
+
+	var id = '';
+	var artist_title = '';
+	var arr2 = param.split('_');
+	if(arr2.length >= 2){
+		id = arr2[0];
+		artist_title = arr2[1];
+	}
+
+	console.debug('id ' + id);
+	console.debug('artist_title ' + artist_title);
+
+	var region = '';
+	var year = '';
+
+	switch(id){
+		case 'q42HXiljFC':
+			region = 'kpop';
+			year = '1986';
+			break;
+		case 'BGgXKFZGqQ':
+			region = 'kpop';
+			year = '1988';
+			break;
+		case '6Vf0WTq7z1':
+			region = 'kpop';
+			year = '2022';
+			break;
+	}
+
+	var new_url = `https://mango-guitar.com/chord_lyrics_sheet/${region}/${year}/chord_lyrics_sheet-${artist_title}.htm?id=${id}`;
+
+	document.write(`
+	<head>
+		<meta http-equiv="refresh" content="0; url=${new_url}">
+		<link rel="canonical" href="${new_url}" />
+	</head>
+	`);
+
+</script>
