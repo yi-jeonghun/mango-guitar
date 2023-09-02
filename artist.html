@@ -1,0 +1,32 @@
+<script>
+	var url = window.location.href;
+	var arr = url.split('?');
+
+	if(arr.length >= 2){
+		var query = arr[1];
+		var params = query.split('&');
+		var artist_uid = '';
+		var name = '';
+		for(var i=0 ; i<params.length ; i++){
+			var key_value = params[i].split('=');
+			if(key_value[0] == 'artist_uid'){
+				artist_uid = key_value[1];
+			}
+			if(key_value[0] == 'name'){
+				name = key_value[1];
+			}
+		}
+
+		var dec = decodeURI(name);
+		var first_char = dec.charAt(0);
+
+		var new_url = `https://mango-guitar.com/artist/${first_char}/artist-${name}-${artist_uid}.htm?artist_uid=${artist_uid}`;
+		document.write(`
+		<head>
+			<meta http-equiv="refresh" content="0; url=${new_url}">
+			<link rel="canonical" href="${new_url}" />
+		</head>
+	`);
+	}
+</script>
+
