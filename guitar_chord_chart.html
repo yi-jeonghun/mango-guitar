@@ -1,0 +1,17 @@
+<script>
+	var url = window.location.href;
+	var arr = url.split('=');
+	var chord = '';
+	if(arr.length >= 2){
+		chord = arr[1];
+	}
+
+	var new_url = `https://mango-guitar.com/chords/guitar/guitar-${chord}.htm`;
+
+	document.write(`
+	<head>
+		<meta http-equiv="refresh" content="0; url=${new_url}">
+		<link rel="canonical" href="${new_url}" />
+	</head>
+	`);
+</script>
